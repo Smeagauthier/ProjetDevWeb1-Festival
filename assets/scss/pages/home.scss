@@ -1,0 +1,76 @@
+@import "../base/variables.scss";
+
+.intro-home
+{
+    position: relative;
+    height: 90vh;
+    width : 100%;
+    
+    .image-background{
+        background-image: url('../images/photos/home/home-no-logo.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 90vh; 
+        width : 100%;
+        
+        .infos {
+            position: absolute;
+            top: 55%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Inter';
+            
+            .titre-carte {
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 40px;
+            }
+            
+            p {
+                font-size: 23px;
+                font-weight: 900;
+                line-height: 1;
+                left:0; 
+            }
+            
+            a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: $btnOrange;
+                color: white;
+                text-decoration: none;
+                font-size: 23px;
+                font-weight: bolder;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+                border-radius: 50px;
+                font-weight: 900;
+                
+                &:hover {
+                    background-color: darken($btnOrange, 10%);
+                }
+            }
+        }
+
+        .overlay{
+            background-color: blue;
+            position: absolute;
+            height: 50px;
+            bottom: 3%;
+            transform: rotate(-4deg);
+        }
+        
+        .bande-mauve {
+            background-color: $purple;
+            position: absolute;
+            height: 50px;
+            width: 110vw;
+            left: -5vw;
+            bottom: 5%;
+            transform: rotate(-4deg);
+        }
+    }
+}

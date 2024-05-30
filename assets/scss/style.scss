@@ -1,5 +1,6 @@
 @import "./base/variables.scss";
 @import "./layout/header.scss"; 
+@import "./pages/home.scss"; 
 
 *{
     margin : 0; 
@@ -22,23 +23,8 @@ body{
 
 //--------------------- HOME ---------------------
 
-.intro-home
-{
-    position: relative;
-    height: 90vh;
-    width : 100%;
-    overflow:hidden; 
-
-    .image-background{
-        background-image: url('../images/photos/home/home-no-logo.jpg');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        
-        .afficher{
-            height:100vh; 
-            width: 100vw; 
-        }
-    }
+.menu-dates{
+    display:hidden; 
 }
+
 
