@@ -1,0 +1,92 @@
+nav {
+  display: flex;
+  width: 100%;
+  min-height: 115px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 80%;
+}
+nav .logo img {
+  height: 82px;
+  width: 138px;
+  rotate: -9deg;
+  align-items: center;
+  padding-top: 15px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  flex: 1;
+  margin: 0 10px;
+}
+nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 22px;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+nav ul li a:hover {
+  color: #FB9300;
+  transition: 0.4s ease;
+}
+nav ul li:last-child a {
+  padding-right: 70px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #BBDADE;
+  font-family: "Inter";
+}
+
+.intro-home {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+.intro-home .image-background {
+  background-image: url("../images/photos/home/home-no-logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.intro-home .image-background .afficher {
+  height: 100vh;
+  width: 100vw;
+}
+
+/*# sourceMappingURL=style.css.map */

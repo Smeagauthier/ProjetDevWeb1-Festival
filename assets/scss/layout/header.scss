@@ -1,0 +1,151 @@
+@import "../base/variables.scss";
+
+
+nav{
+    display:flex; 
+    width: 100%;
+    min-height:115px;
+    background-color: black;
+    position: fixed; 
+    top:0; 
+    right:0; 
+    z-index:100; 
+
+    // .menu-burger{
+
+    //     #nav-icon4 {
+    //         width: 60px;
+    //         height: 45px;
+    //         position: relative;
+    //         margin: 50px auto;
+    //         -webkit-transform: rotate(0deg);
+    //         -moz-transform: rotate(0deg);
+    //         -o-transform: rotate(0deg);
+    //         transform: rotate(0deg);
+    //         -webkit-transition: .5s ease-in-out;
+    //         -moz-transition: .5s ease-in-out;
+    //         -o-transition: .5s ease-in-out;
+    //         transition: .5s ease-in-out;
+    //         cursor: pointer;
+    //       }
+          
+    //       #nav-icon4 span {
+    //         display: block;
+    //         position: absolute;
+    //         height: 9px;
+    //         width: 100%;
+    //         background: #d3531a;
+    //         border-radius: 9px;
+    //         opacity: 1;
+    //         left: 0;
+    //         -webkit-transform: rotate(0deg);
+    //         -moz-transform: rotate(0deg);
+    //         -o-transform: rotate(0deg);
+    //         transform: rotate(0deg);
+    //         -webkit-transition: .25s ease-in-out;
+    //         -moz-transition: .25s ease-in-out;
+    //         -o-transition: .25s ease-in-out;
+    //         transition: .25s ease-in-out;
+    //       }
+    //     #nav-icon4 {
+    //     }
+        
+    //     #nav-icon4 span:nth-child(1) {
+    //       top: 0px;
+    //       -webkit-transform-origin: left center;
+    //       -moz-transform-origin: left center;
+    //       -o-transform-origin: left center;
+    //       transform-origin: left center;
+    //     }
+        
+    //     #nav-icon4 span:nth-child(2) {
+    //       top: 18px;
+    //       -webkit-transform-origin: left center;
+    //       -moz-transform-origin: left center;
+    //       -o-transform-origin: left center;
+    //       transform-origin: left center;
+    //     }
+        
+    //     #nav-icon4 span:nth-child(3) {
+    //       top: 36px;
+    //       -webkit-transform-origin: left center;
+    //       -moz-transform-origin: left center;
+    //       -o-transform-origin: left center;
+    //       transform-origin: left center;
+    //     }
+        
+    //     #nav-icon4.open span:nth-child(1) {
+    //       -webkit-transform: rotate(45deg);
+    //       -moz-transform: rotate(45deg);
+    //       -o-transform: rotate(45deg);
+    //       transform: rotate(45deg);
+    //       top: -3px;
+    //       left: 8px;
+    //     }
+        
+    //     #nav-icon4.open span:nth-child(2) {
+    //       width: 0%;
+    //       opacity: 0;
+    //     }
+        
+    //     #nav-icon4.open span:nth-child(3) {
+    //       -webkit-transform: rotate(-45deg);
+    //       -moz-transform: rotate(-45deg);
+    //       -o-transform: rotate(-45deg);
+    //       transform: rotate(-45deg);
+    //       top: 39px;
+    //       left: 8px;
+    //     }
+    // }
+
+    .logo{
+        cursor:pointer; 
+        margin-left:70px;
+        width: 80%; 
+        img{
+            height:82px; 
+            width: 138px;
+            rotate: (-9deg);
+            align-items: center;
+            padding-top: 15px;
+        }
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+
+        li{
+            flex:1; 
+            margin:0 10px; 
+            a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Inter';
+                font-weight: bold;
+                font-size: 22px;
+                height: 100%;
+                color: white;
+                text-decoration: none;
+                padding: 0 10px;
+
+                &:hover{
+                    color:$btnOrange; 
+                    transition: 0.4s ease;
+                }
+            }
+
+            &:last-child a{
+                padding-right: 70px;
+            }
+        }
+    }
+
+    
+
+}
+
+@media (max-width:900px){
+    nav{ display:none;}
+}
