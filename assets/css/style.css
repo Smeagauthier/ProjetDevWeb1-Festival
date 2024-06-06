@@ -92,6 +92,7 @@ nav ul li a:hover {
   background-size: cover;
   height: 90vh;
   width: 100%;
+  position: relative;
 }
 .intro-home .image-background .infos {
   position: absolute;
@@ -101,16 +102,18 @@ nav ul li a:hover {
   color: white;
   font-family: "Inter";
 }
-.intro-home .image-background .infos .titre-carte {
+.intro-home .image-background .infos .title-card {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 40px;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 }
 .intro-home .image-background .infos p {
   font-size: 23px;
   font-weight: 900;
   line-height: 1;
   left: 0;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 }
 .intro-home .image-background .infos a {
   display: inline-block;
@@ -125,30 +128,311 @@ nav ul li a:hover {
   transition: background-color 0.3s ease;
   border-radius: 50px;
   font-weight: 900;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
 .intro-home .image-background .infos a:hover {
   background-color: #c87500;
 }
-.intro-home .image-background .overlay {
-  background-color: blue;
-  position: absolute;
-  height: 50px;
-  bottom: 3%;
-  transform: rotate(-4deg);
-}
-.intro-home .image-background .bande-mauve {
+.intro-home .image-background .purple-band {
   background-color: #A678B1;
   position: absolute;
-  height: 50px;
-  width: 110vw;
+  height: 65px;
+  width: 120vw;
   left: -5vw;
-  bottom: 5%;
+  bottom: 4%;
   transform: rotate(-4deg);
+  z-index: 3;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+.intro-home .image-background .purple-band .wrapperSlogan {
+  display: relative;
+  height: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
+}
+.intro-home .image-background .purple-band .slogan {
+  display: flex;
+  white-space: nowrap;
+  padding: 3px 0;
+  font-size: 3.2em;
+  color: white;
+  font-weight: 800;
+  width: 550px;
+  text-transform: uppercase;
+  position: absolute;
+  left: max(3300px, 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  letter-spacing: 1px;
+}
+.intro-home .image-background .purple-band .slogan1 {
+  animation-delay: -25s;
+}
+.intro-home .image-background .purple-band .slogan2 {
+  animation-delay: -20s;
+}
+.intro-home .image-background .purple-band .slogan3 {
+  animation-delay: -15s;
+}
+.intro-home .image-background .purple-band .slogan4 {
+  animation-delay: -10s;
+}
+.intro-home .image-background .purple-band .slogan5 {
+  animation-delay: -5s;
+}
+.intro-home .image-background .purple-band .slogan6 {
+  animation-delay: 0s;
+}
+@keyframes scrollLeft {
+  to {
+    left: -550px;
+  }
+}
+.intro-home .image-background:after {
+  content: "";
+  position: absolute;
+  bottom: -7.5%;
+  left: -5vw;
+  width: 120vw;
+  height: 100px;
+  background-color: #BBDADE;
+  transform: rotate(-4deg);
+}
+
+.line-up {
+  padding-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.line-up .line-up-date {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: rgba(239, 63, 15, 0.8);
+  font-weight: 900;
+  text-transform: uppercase;
+  min-width: 77.4%;
+}
+.line-up .line-up-date .day, .line-up .line-up-date .date {
+  flex: 1;
+}
+.line-up .line-up-date .day {
+  text-align: left;
+}
+.line-up .line-up-date .date {
+  text-align: right;
+  position: relative;
+  bottom: -10px;
+}
+.line-up .border-bottom-date {
+  border-bottom: rgba(230, 191, 151, 0.5) 3px solid;
+  width: 61%;
+  position: relative;
+  left: -8%;
+}
+
+.artists-list {
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 4em;
+  list-style: none;
+  gap: 5px;
+  font-family: "Inter";
+  font-weight: 800;
+  min-height: 100%;
+  flex-wrap: wrap;
+  left: 0;
+  padding-top: 2%;
+  max-width: 61%;
+}
+.artists-list .artist {
+  cursor: pointer;
+}
+.artists-list .artist.stroke {
+  color: #BBDADE;
+  background-color: transparent;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+.artists-list .artist:hover {
+  color: #A678B1;
+  transition: 0.5s ease;
+}
+
+.more {
+  font-size: 2em;
+  color: black;
+  text-transform: uppercase;
+  max-width: 61%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.container .btnMoreNames {
+  display: flex;
+  min-width: 9em;
+  min-height: 75px;
+  background-color: #FB9300;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 900;
+  border-radius: 50px;
+  margin-top: 3%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+.container .btnMoreNames:hover {
+  background-color: #c87500;
+  transition: 0.3s ease;
+}
+
+.playlist {
+  padding: 5% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  min-height: 500px;
+  min-width: 100%;
+  background-color: rgba(166, 120, 177, 0.3);
+}
+.contact .formContact {
+  display: flex;
+  flex-direction: column;
+}
+.contact .formContact .formTitle {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  letter-spacing: 2%;
+  font-size: 3em;
+  font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+.contact .formContact .formExplanation {
+  padding-top: 2%;
+  width: 70%;
+  text-align: center;
+  font-size: 18px;
+}
+
+form {
+  padding-top: 4%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+}
+form .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2em;
+  width: 100%;
+}
+form .grid-container .form-group {
+  display: flex;
+  flex-direction: column;
+}
+form .grid-container .form-group input {
+  padding: 0.5em;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+}
+form .grid-container .form-group input::placeholder {
+  font-family: "Inter";
+  font-style: italic;
+  font-size: 18px;
+}
+form .grid-container .form-group input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+}
+form .form-group {
+  width: 100%;
+}
+form .form-group textarea {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 250px;
+  width: 100%;
+  grid-column: span 3;
+  resize: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+  font-family: "Inter";
+}
+form .form-group textarea::placeholder {
+  font-family: "Inter";
+  font-style: italic;
+  font-size: 18px;
+}
+form .form-group textarea:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+}
+form .btnSend {
+  display: flex;
+  min-width: 9em;
+  min-height: 75px;
+  background-color: #FB9300;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 900;
+  border-radius: 50px;
+  margin-top: 3%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+  outline: none;
+  border: none;
+  margin: 4%;
+}
+form .btnSend:hover {
+  background-color: #c87500;
+  transition: 0.3s ease;
+}
+
+footer {
+  min-height: 300px;
+  background-color: black;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: #FB9300;
+  color: white;
 }
 
 html, body {
@@ -163,10 +447,7 @@ html, body {
 body {
   background-color: #BBDADE;
   font-family: "Inter";
-}
-
-.menu-dates {
-  display: hidden;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

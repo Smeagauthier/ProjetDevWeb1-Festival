@@ -1,5 +1,8 @@
 @import "../base/variables.scss";
 
+
+// --------------------- INTRO IMAGE ACCUEIL ---------------------
+
 .intro-home
 {
     position: relative;
@@ -13,7 +16,9 @@
         background-size: cover;
         height: 90vh; 
         width : 100%;
+        position:relative; 
         
+        //Infos par dessus l'image
         .infos {
             position: absolute;
             top: 55%;
@@ -22,17 +27,20 @@
             color: white;
             font-family: 'Inter';
             
-            .titre-carte {
+            .title-card {
                 font-weight: 900;
                 text-transform: uppercase;
                 font-size: 40px;
+                text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
             }
             
             p {
                 font-size: 23px;
                 font-weight: 900;
                 line-height: 1;
-                left:0; 
+                left:0;
+                text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+ 
             }
             
             a {
@@ -48,25 +56,343 @@
                 transition: background-color 0.3s ease;
                 border-radius: 50px;
                 font-weight: 900;
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+                
                 
                 &:hover {
                     background-color: darken($btnOrange, 10%);
                 }
             }
         }
-
-        .overlay{
-           
-        }
         
-        .bande-mauve {
+        .purple-band {
             background-color: $purple;
             position: absolute;
-            height: 50px;
-            width: 110vw;
+            height: 65px;
+            width: 120vw;
             left: -5vw;
-            bottom: 5%;
+            bottom: 4%;
             transform: rotate(-4deg);
+            z-index:3;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+
+
+            .wrapperSlogan{
+                display:relative; 
+                height:100%;
+                overflow:hidden;
+                mask-image: linear-gradient(
+                    to right, 
+                    rgba(0,0,0,0), 
+                    rgba(0,0,0,1) 20%,
+                    rgba(0,0,0,1) 80%, 
+                    rgba(0,0,0,0)
+                ); 
+            }
+
+            .slogan{
+                display:flex; 
+                white-space: nowrap; //Eviter que le slogan arrive sur 2 lignes
+                padding: 3px 0;
+                font-size: 3.2em;
+                color: white;
+                font-weight: 800;
+                width: 550px; 
+                text-transform: uppercase;
+                position: absolute;
+                left: max(calc(550px * 6), 100%); //Gérer le responsive --> max va prendre la plus grosse valeur pour appliquer la taille
+                animation-name: scrollLeft;
+                animation-duration: 30s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                letter-spacing: 1px;
+
+            }
+
+            //Gestion du timing des slogans --> durée de chaque élément (total durée / nombre d'éléments) * (nombre d'éléments - 1) * -1
+            .slogan1{animation-delay: calc(30s / 6 * (6 - 1) * -1);}
+            .slogan2{animation-delay: calc(30s / 6 * (6 - 2) * -1);}
+            .slogan3{animation-delay: calc(30s / 6 * (6 - 3) * -1);}
+            .slogan4{animation-delay: calc(30s / 6 * (6 - 4) * -1);}
+            .slogan5{animation-delay: calc(30s / 6 * (6 - 5) * -1);}
+            .slogan6{animation-delay: calc(30s / 6 * (6 - 6) * -1);}
+
+
+            @keyframes scrollLeft{
+                to {
+                    left:-550px; 
+                }
+            }
+            
+        }
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -7.5%;
+            left: -5vw;
+            width: 120vw;
+            height:100px;
+            background-color: $bgColor;
+            transform: rotate(-4deg);
+        }
+    }
+}
+
+
+.line-up {
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    
+    .line-up-date {
+        // background:red;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: $salmon;
+        font-weight: 900;
+        text-transform: uppercase;
+        min-width:77.4%;
+        
+        .day, .date {
+            flex: 1;
+        }
+        
+        .day {
+            text-align: left;
+            // margin-right: 5em;
+        }
+        
+        .date {
+            text-align: right;
+            // margin-left:em;
+            position:relative; 
+            bottom: -10px;
+        }
+    }
+    
+    .border-bottom-date {
+        border-bottom: rgba(230, 191, 151, 0.50) 3px solid;
+        width: 61%;
+        position: relative;
+        left: -8%;
+    }
+}
+
+.artists-list {
+    
+    display:flex;
+    position: relative;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 4em;
+    list-style: none;
+    gap: 5px;
+    font-family: 'Inter';
+    font-weight: 800;
+    min-height:100%;
+    // background:red;
+    flex-wrap: wrap;
+    left:0;
+    padding-top:2%;
+    max-width: 61%;
+    
+    .artist{
+        
+        cursor:pointer;
+        
+        &.stroke{
+            color: $bgColor;
+            background-color: transparent;
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        } 
+        
+        &:hover{
+            color:$purple; 
+            transition: 0.5s ease;
+        }
+    }
+    
+}
+
+.more{
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    max-width: 61%;
+}
+
+.container{
+    display:flex;
+    width: 100%; 
+    align-items: center;
+    justify-content: center;
+    
+    .btnMoreNames{
+        display:flex; 
+        min-width: 9em;
+        min-height: 75px; 
+        background-color: $btnOrange;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        font-weight:900;
+        border-radius: 50px;
+        margin-top:3%;
+        align-items: center;
+        justify-content: center;
+        cursor:pointer; 
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+        
+        &:hover {
+            background-color: darken($btnOrange, 10%);
+            transition: 0.3s ease;
+        }
+    }
+}
+
+.playlist{
+    padding: 5% 5%;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    min-height: 500px;
+    min-width:100%; 
+    background-color:rgba(166, 120, 177, 0.3);
+    
+    .formContact{
+        display:flex;
+        flex-direction: column;
+        
+        .formTitle{
+            
+            padding-top:2%;
+            width:100%;
+            display:flex;
+            letter-spacing: 2%;
+            font-size: 3em;
+            font-weight: 800;
+            color: black;
+            text-transform: uppercase;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .formExplanation{
+            
+            padding-top:2%;
+            width: 70%; 
+            text-align: center;
+            font-size:18px; 
+        }
+    }
+}
+
+form {
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2em;
+        width: 100%;
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            
+            input {
+                padding: 0.5em;
+                font-size: 18px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                width: 100%;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+                
+                &::placeholder{
+                    font-family: 'Inter';
+                    font-style: italic;
+                    font-size: 18px;
+                }
+                
+                &:focus{
+                    border:none; 
+                    outline:none;
+                    box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+                    
+                }
+            }
+        }
+    }
+    
+    .form-group {
+        
+        width: 100%;
+        
+        textarea {
+            padding:0.5em; 
+            margin-top: 0.5em;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            height: 250px;
+            width: 100%;
+            grid-column: span 3;
+            resize: none;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+            font-family: 'Inter';
+            
+            
+            &::placeholder{
+                font-family: 'Inter';
+                font-style: italic;
+                font-size: 18px;
+            }
+            
+            &:focus{
+                border:none; 
+                outline:none;
+                box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+                
+            }
+        }
+    }
+    
+    .btnSend{
+        
+        display:flex; 
+        min-width: 9em;
+        min-height: 75px; 
+        background-color: $btnOrange;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight:900;
+        border-radius: 50px;
+        margin-top:3%;
+        align-items: center;
+        justify-content: center;
+        cursor:pointer; 
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+        outline:none; 
+        border:none;
+        margin: 4%;  
+        
+        &:hover {
+            background-color: darken($btnOrange, 10%);
+            transition: 0.3s ease;
         }
     }
 }
