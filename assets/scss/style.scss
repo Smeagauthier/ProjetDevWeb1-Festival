@@ -2,18 +2,20 @@
 @import "./layout/header.scss"; 
 @import "./pages/home.scss"; 
 @import "./layout/footer.scss";
+@import "./pages/lineup.scss"; 
+@import "./pages/carteLineUp.scss";
 
 
 *{
     margin : 0; 
     padding : 0; 
     box-sizing: border-box;
-
     &::selection{
         background-color: $btnOrange;
         color : white; 
     }
 }
+
 
 html, body{
     height:100%;
@@ -28,6 +30,7 @@ body{
     background-color: $bgColor;
     font-family: 'Inter';  
     overflow-x: hidden;
+    min-height:100vh; 
 }
 
 //--------------------- HOME ---------------------

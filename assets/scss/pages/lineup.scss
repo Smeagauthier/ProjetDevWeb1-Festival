@@ -1,0 +1,151 @@
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../layout/footer.scss"; 
+@import "../layout/header.scss"; 
+
+.title {
+    width: 100%; 
+    display: flex;
+    @include title(11%);
+}
+
+.sortByDay {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-top: 30px;
+    font-weight: 700; 
+    width: 60%;
+    // background: red;
+    gap: 50px;
+    margin: 0 auto;
+    
+    div {
+        cursor: pointer;
+        
+        &:hover {
+            transform: scale(1.1);
+            color: $btnOrange;
+            transition: 0.3s ease-in-out; 
+        }
+    }
+}
+
+.border-bottom {
+    border-bottom: rgba(230, 191, 151, 0.50) 3px solid;
+    width: 100%;
+    position: relative;
+    left: 0;
+    padding-top: 5px;  
+}
+
+section {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        padding: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+        .artist-card {
+            background-color: $purple;
+            height: 23.75em; 
+            // width: auto; 
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            align-items: center; 
+            
+            .image {
+                width: 100%;
+                height: 22em;
+                display: flex;
+                justify-content: center;
+                overflow: hidden; 
+                object-position: center;
+                
+                img {
+                    width: 100%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+            }
+            
+            .info {
+                color: white;
+                padding: 12px;
+                text-align: left;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                height: 20%;
+                flex-wrap: nowrap; 
+                
+                h2 {
+                    width: 72%;
+                    font-size: 1.5em;
+                    margin: 0;
+                    letter-spacing: 1px; 
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    position: relative;
+                    background: linear-gradient(to left, white 50%, $orangeLight 50%) right;
+                    background-size: 200% 100%;
+                    background-position: 100%;
+                    background-clip: text;
+                    color: transparent;
+                    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+                    white-space: nowrap;
+                    transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out; 
+                    
+                    &:hover {
+                        transform: scale(1.03);
+                        background-position: 0;
+                        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+                    }
+                }
+                
+                .details {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9em;
+                    align-items: center;
+                    
+                    span {
+                        display: block;
+                        margin-right: 25%;
+                        white-space: nowrap; //flex-wrap pour le conteneur, white-space pour contenu
+                        padding-left: 1%;
+                    }
+                    
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    
+                    .chevron {
+                        width: 2em;
+                        height: auto;
+                        transform: rotate(-90deg);
+                        cursor: pointer;
+                        position: relative;
+                        animation-direction: reverse;
+                        transition: 0.5s ease;
+                        
+                        &:hover {
+                            transform: scale(1.2);
+                            transition: 0.5s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

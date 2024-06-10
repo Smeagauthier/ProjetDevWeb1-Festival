@@ -1,89 +1,169 @@
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  width: 100%;
 }
-
-nav {
+header nav {
+  position: absolute;
+  height: 115px;
+  background-color: black;
   display: flex;
   width: 100%;
-  min-height: 115px;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  right: 0;
   z-index: 100;
-  text-transform: uppercase;
-  justify-content: space-between;
+  padding: 10px;
   align-items: center;
 }
-nav .menu-dates {
+header nav .menu-burger {
+  display: none;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
   display: flex;
-  align-items: flex-start;
-  flex: 1;
-  width: 50%;
-  font-family: "Inter";
   font-weight: 600;
   font-size: 21px;
   color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
 }
-nav .menu-dates img {
+header nav .menu-dates img {
   width: 15px;
   height: 25px;
   transform: rotate(90deg);
   margin: 0 10px;
 }
-nav .logo {
+header nav .logo {
   cursor: pointer;
   margin-left: 70px;
   width: 15%;
   flex-shrink: 0;
 }
-nav .logo img {
-  height: 82px;
+header nav .logo img {
+  height: 90px;
   width: 138px;
   transform: rotate(-9deg);
-  align-items: center;
-  padding-top: 15px;
+  padding: 5px;
 }
-nav ul {
-  list-style: none;
+header nav ul {
   display: flex;
-  width: auto;
-  flex-wrap: wrap;
-  padding-right: 70px;
-  flex: 2;
+  margin-left: auto;
+  justify-content: flex-end;
 }
-nav ul li {
-  flex: 1;
-  margin: 0 15px;
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
 }
-nav ul li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Inter";
-  font-weight: bold;
-  font-size: 22px;
-  height: 100%;
-  color: white;
+header nav ul li a {
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
 }
-nav ul li a:hover {
+header nav ul li a:hover {
   color: #FB9300;
   transition: 0.4s ease;
 }
 
-@media (max-width: 900px) {
-  li a {
+@media screen and (max-width: 1230px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav ul li {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
     display: none;
+  }
+  header nav .menu-dates {
+    justify-content: center;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 70px;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 630px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    height: 160px;
+  }
+  header nav .menu-dates {
+    position: absolute;
+    bottom: 0;
+    left: -30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    width: 100%;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
   }
 }
 .intro-home {
   position: relative;
   height: 90vh;
   width: 100%;
+  display: flex;
 }
 .intro-home .image-background {
   background-image: url("../images/photos/home/home-no-logo.jpg");
@@ -97,10 +177,11 @@ nav ul li a:hover {
 .intro-home .image-background .infos {
   position: absolute;
   top: 55%;
-  left: 30%;
+  left: 35%;
   transform: translate(-50%, -50%);
   color: white;
   font-family: "Inter";
+  flex-wrap: nowrap;
 }
 .intro-home .image-background .infos .title-card {
   font-weight: 900;
@@ -129,6 +210,7 @@ nav ul li a:hover {
   border-radius: 50px;
   font-weight: 900;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+  flex-wrap: nowrap;
 }
 .intro-home .image-background .infos a:hover {
   background-color: #c87500;
@@ -136,8 +218,8 @@ nav ul li a:hover {
 .intro-home .image-background .purple-band {
   background-color: #A678B1;
   position: absolute;
-  height: 65px;
-  width: 120vw;
+  height: 10%;
+  width: 110%;
   left: -5vw;
   bottom: 4%;
   transform: rotate(-4deg);
@@ -145,7 +227,7 @@ nav ul li a:hover {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
 .intro-home .image-background .purple-band .wrapperSlogan {
-  display: relative;
+  position: relative;
   height: 100%;
   overflow: hidden;
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
@@ -153,7 +235,6 @@ nav ul li a:hover {
 .intro-home .image-background .purple-band .slogan {
   display: flex;
   white-space: nowrap;
-  padding: 3px 0;
   font-size: 3.2em;
   color: white;
   font-weight: 800;
@@ -206,34 +287,40 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   position: relative;
 }
 .line-up .line-up-date {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 2rem;
   color: rgba(239, 63, 15, 0.8);
   font-weight: 900;
   text-transform: uppercase;
   min-width: 77.4%;
+  padding: 0 2%;
+  box-sizing: border-box;
 }
 .line-up .line-up-date .day, .line-up .line-up-date .date {
   flex: 1;
 }
 .line-up .line-up-date .day {
-  text-align: left;
+  position: relative;
+  left: -2%;
 }
 .line-up .line-up-date .date {
   text-align: right;
-  position: relative;
-  bottom: -10px;
+  position: static;
+  bottom: 0;
+  padding-right: 10px;
 }
 .line-up .border-bottom-date {
   border-bottom: rgba(230, 191, 151, 0.5) 3px solid;
   width: 61%;
   position: relative;
   left: -8%;
+  overflow: hidden;
 }
 
 .artists-list {
@@ -270,11 +357,12 @@ nav ul li a:hover {
   color: black;
   text-transform: uppercase;
   max-width: 61%;
+  flex-wrap: nowrap;
 }
 
 .container {
   display: flex;
-  width: 100%;
+  max-height: 20%;
   align-items: center;
   justify-content: center;
 }
@@ -304,11 +392,13 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
 }
 
 .contact {
+  display: flex;
   min-height: 500px;
-  min-width: 100%;
+  width: 100%;
   background-color: rgba(166, 120, 177, 0.3);
 }
 .contact .formContact {
@@ -331,10 +421,10 @@ nav ul li a:hover {
   padding-top: 2%;
   width: 70%;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.2em;
+  flex-wrap: nowrap;
 }
-
-form {
+.contact .formContact form {
   padding-top: 4%;
   display: flex;
   flex-direction: column;
@@ -342,41 +432,41 @@ form {
   align-items: center;
   margin: 0 auto;
 }
-form .grid-container {
+.contact .formContact form .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2em;
   width: 100%;
 }
-form .grid-container .form-group {
+.contact .formContact form .grid-container .form-group {
   display: flex;
   flex-direction: column;
 }
-form .grid-container .form-group input {
+.contact .formContact form .grid-container .form-group input {
   padding: 0.5em;
-  font-size: 18px;
+  font-size: 1.3em;
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 100%;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
 }
-form .grid-container .form-group input::placeholder {
+.contact .formContact form .grid-container .form-group input::placeholder {
   font-family: "Inter";
   font-style: italic;
   font-size: 18px;
 }
-form .grid-container .form-group input:focus {
+.contact .formContact form .grid-container .form-group input:focus {
   border: none;
   outline: none;
   box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
 }
-form .form-group {
+.contact .formContact form .form-group {
   width: 100%;
 }
-form .form-group textarea {
+.contact .formContact form .form-group textarea {
   padding: 0.5em;
   margin-top: 0.5em;
-  font-size: 18px;
+  font-size: 1.3em;
   border: 1px solid #ccc;
   border-radius: 10px;
   height: 250px;
@@ -386,17 +476,17 @@ form .form-group textarea {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
   font-family: "Inter";
 }
-form .form-group textarea::placeholder {
+.contact .formContact form .form-group textarea::placeholder {
   font-family: "Inter";
   font-style: italic;
   font-size: 18px;
 }
-form .form-group textarea:focus {
+.contact .formContact form .form-group textarea:focus {
   border: none;
   outline: none;
   box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
 }
-form .btnSend {
+.contact .formContact form .btnSend {
   display: flex;
   min-width: 9em;
   min-height: 75px;
@@ -415,14 +505,806 @@ form .btnSend {
   border: none;
   margin: 4%;
 }
-form .btnSend:hover {
+.contact .formContact form .btnSend:hover {
   background-color: #c87500;
   transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .intro-home {
+    height: auto;
+  }
+  .intro-home .image-background {
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
+  }
+  .intro-home .image-background .infos {
+    top: 55%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+  .intro-home .image-background .infos .title-card {
+    font-size: 20px;
+  }
+  .intro-home .image-background .infos p, .intro-home .image-background .infos a {
+    font-size: 16px;
+  }
+  .intro-home .image-background .infos a {
+    padding: 8px 16px;
+  }
+  .intro-home .image-background .purple-band {
+    height: 50px;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan {
+    font-size: 2em;
+    padding: 1% 0;
+    animation-duration: 20s;
+    left: max(60em, 100%);
+    width: 10em;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan1 {
+    animation-delay: -16.6666666667s;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan2 {
+    animation-delay: -13.3333333333s;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan3 {
+    animation-delay: -10s;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan4 {
+    animation-delay: -6.6666666667s;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan5 {
+    animation-delay: -3.3333333333s;
+  }
+  .intro-home .image-background .purple-band .wrapperSlogan .slogan6 {
+    animation-delay: 0s;
+  }
+  .line-up .line-up-date {
+    font-size: 1.5rem;
+  }
+  .line-up .border-bottom-date {
+    width: 80%;
+    left: 0;
+  }
+  .artists-list {
+    font-size: 2em;
+    max-width: 80%;
+  }
+  .more {
+    font-size: 1em;
+    max-width: 80%;
+  }
+  .container .btnMoreNames {
+    min-width: 10em;
+    min-height: 60px;
+    font-size: 2em;
+  }
+  .contact .formContact form .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact .formContact .btnSend {
+    min-width: 7em;
+    min-height: 60px;
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .intro-home .image-background .infos .title-card {
+    font-size: 18px;
+  }
+  .intro-home .image-background .infos p, .intro-home .image-background .infos a {
+    font-size: 14px;
+  }
+  .intro-home .image-background .infos a {
+    padding: 6px 12px;
+  }
+  .line-up .line-up-date {
+    font-size: 1.2rem;
+  }
+  .artists-list {
+    font-size: 1.5em;
+  }
+  .more {
+    font-size: 0.75em;
+  }
+  .container .btnMoreNames {
+    min-width: 10em;
+    min-height: 50px;
+    font-size: 1.5em;
+  }
+  .contact .formContact form .form-group input, .contact .formContact form .form-group textarea {
+    font-size: 14px;
+  }
+  .contact .formContact .btnSend {
+    min-width: 5em;
+    min-height: 50px;
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 999px) {
+  .artists-list {
+    font-size: 3em;
+    max-width: 75%;
+  }
+  .more {
+    font-size: 1.5em;
+    max-width: 70%;
+    position: relative;
+    left: -2.2%;
+  }
+}
+footer {
+  min-height: 300px;
+  background-color: black;
 }
 
 footer {
   min-height: 300px;
   background-color: black;
+}
+
+header {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+header nav {
+  position: absolute;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+}
+header nav .menu-burger {
+  display: none;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: 0.4s ease;
+}
+
+@media screen and (max-width: 1230px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav ul li {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    justify-content: center;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 70px;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 630px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    height: 160px;
+  }
+  header nav .menu-dates {
+    position: absolute;
+    bottom: 0;
+    left: -30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    width: 100%;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+.title {
+  width: 100%;
+  display: flex;
+  padding-top: 11%;
+  width: 100%;
+  display: flex;
+  letter-spacing: 2%;
+  font-size: 3em;
+  font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortByDay {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-top: 30px;
+  font-weight: 700;
+  width: 60%;
+  gap: 50px;
+  margin: 0 auto;
+}
+.sortByDay div {
+  cursor: pointer;
+}
+.sortByDay div:hover {
+  transform: scale(1.1);
+  color: #FB9300;
+  transition: 0.3s ease-in-out;
+}
+
+.border-bottom {
+  border-bottom: rgba(230, 191, 151, 0.5) 3px solid;
+  width: 100%;
+  position: relative;
+  left: 0;
+  padding-top: 5px;
+}
+
+section .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+section .cards .artist-card {
+  background-color: #A678B1;
+  height: 23.75em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  align-items: center;
+}
+section .cards .artist-card .image {
+  width: 100%;
+  height: 22em;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  object-position: center;
+}
+section .cards .artist-card .image img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+}
+section .cards .artist-card .info {
+  color: white;
+  padding: 12px;
+  text-align: left;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  flex-wrap: nowrap;
+}
+section .cards .artist-card .info h2 {
+  width: 72%;
+  font-size: 1.5em;
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(to left, white 50%, rgb(255, 163, 34) 50%) right;
+  background-size: 200% 100%;
+  background-position: 100%;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+  white-space: nowrap;
+  transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out;
+}
+section .cards .artist-card .info h2:hover {
+  transform: scale(1.03);
+  background-position: 0;
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+}
+section .cards .artist-card .info .details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  align-items: center;
+}
+section .cards .artist-card .info .details span {
+  display: block;
+  margin-right: 25%;
+  white-space: nowrap;
+  padding-left: 1%;
+}
+section .cards .artist-card .info .details img {
+  width: 100px;
+  height: 100px;
+}
+section .cards .artist-card .info .details .chevron {
+  width: 2em;
+  height: auto;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  position: relative;
+  animation-direction: reverse;
+  transition: 0.5s ease;
+}
+section .cards .artist-card .info .details .chevron:hover {
+  transform: scale(1.2);
+  transition: 0.5s ease;
+}
+
+header {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+header nav {
+  position: absolute;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+}
+header nav .menu-burger {
+  display: none;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: 0.4s ease;
+}
+
+@media screen and (max-width: 1230px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav ul li {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    justify-content: center;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 70px;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 630px) {
+  header {
+    width: 100%;
+  }
+  header nav {
+    height: 160px;
+  }
+  header nav .menu-dates {
+    position: absolute;
+    bottom: 0;
+    left: -30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+    margin-left: 70px;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    width: 100%;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+footer {
+  min-height: 300px;
+  background-color: black;
+}
+
+.purple-band2 {
+  background-color: #A678B1;
+  position: absolute;
+  height: 10%;
+  width: 110%;
+  left: -5vw;
+  top: 30%;
+  transform: rotate(-4deg);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+.purple-band2 .wrapperSlogan2 {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0));
+}
+.purple-band2 .slogan2 {
+  display: flex;
+  white-space: nowrap;
+  font-size: 2.7em;
+  color: white;
+  font-weight: 800;
+  width: 550px;
+  text-transform: uppercase;
+  position: absolute;
+  left: max(4400px, 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+.purple-band2 .slogan1 {
+  animation-delay: -27.2727272727s;
+}
+.purple-band2 .slogan2 {
+  animation-delay: -24.5454545455s;
+}
+.purple-band2 .slogan3 {
+  animation-delay: -21.8181818182s;
+}
+.purple-band2 .slogan4 {
+  animation-delay: -19.0909090909s;
+}
+.purple-band2 .slogan5 {
+  animation-delay: -16.3636363636s;
+}
+.purple-band2 .slogan6 {
+  animation-delay: -13.6363636364s;
+}
+.purple-band2 .slogan7 {
+  animation-delay: -10.9090909091s;
+}
+.purple-band2 .slogan8 {
+  animation-delay: -8.1818181818s;
+}
+.purple-band2 .slogan9 {
+  animation-delay: -5.4545454545s;
+}
+.purple-band2 .slogan10 {
+  animation-delay: -2.7272727273s;
+}
+.purple-band2 .slogan11 {
+  animation-delay: 0s;
+}
+@keyframes scrollLeft {
+  to {
+    left: -550px;
+  }
+}
+
+.container {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  top: 10%;
+  position: relative;
+  flex-direction: column;
+}
+.container .description {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  left: 0;
+  top: 10%;
+  width: 80%;
+}
+.container .description img {
+  width: 465px;
+  height: 500px;
+}
+.container .description .infos {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  height: 100%;
+  padding-left: 8%;
+  margin-top: 14%;
+  flex-direction: column;
+}
+.container .description .infos .day {
+  color: rgb(255, 163, 34);
+  font-weight: 600;
+  text-transform: lowercase;
+  font-size: 1.5em;
+}
+.container .description .infos .programmation {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1%;
+  min-width: 100%;
+  flex-wrap: nowrap;
+}
+.container .description .infos .programmation .stage {
+  font-size: 1.3em;
+  color: white;
+  text-transform: lowercase;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container .description .infos .programmation .hour {
+  padding-left: 25%;
+  font-size: 1.3em;
+  color: white;
+  text-transform: lowercase;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container .description .infos .introducing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+.container .description .infos .introducing .par {
+  padding: 3% 0;
+}
+.container .description .infos .introducing .intro-title {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.container .description .infos .introducing .content {
+  padding-top: 1%;
+}
+.container .description .infos .icons-social {
+  display: flex;
+  flex-direction: row;
+}
+.container .description .infos .icons-social a {
+  display: flex;
+  justify-content: start;
+  padding: 2% 2%;
+}
+.container .description .infos .icons-social a img {
+  filter: invert(71%) sepia(16%) saturate(1012%) hue-rotate(240deg) brightness(73%) contrast(86%);
+}
+.container .description .infos .icons-social a:first-child {
+  padding-left: 0;
+}
+.container .description .infos .icons-social a img {
+  height: 25px;
+  width: 25px;
+}
+.container .description .infos .icons-social a img:hover {
+  transform: scale(1.2);
+  transition: 0.4s ease;
+  filter: invert(43%) sepia(18%) saturate(1234%) hue-rotate(242deg) brightness(97%) contrast(93%);
+}
+
+.bio-container {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  height: 60%;
+  flex-direction: column;
+  left: 8%;
+}
+.bio-container .bio-content {
+  width: 465px;
+  text-align: justify;
+}
+.bio-container .bio-content p {
+  padding-top: 5%;
+  line-height: 1.5;
+}
+.bio-container .bio-content p:first-child {
+  padding-top: 0;
+}
+.bio-container .bio-content p mark {
+  font-weight: 700;
+  background: none;
 }
 
 * {
@@ -448,6 +1330,7 @@ body {
   background-color: #BBDADE;
   font-family: "Inter";
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+@mixin title ($padding){
+    padding-top: $padding;
+    width:100%;
+    display:flex;
+    letter-spacing: 2%;
+    font-size: 3em;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btn{
+
+}

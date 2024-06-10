@@ -1,6 +1,7 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const navIcon = document.getElementById('nav-icon4');
-    navIcon.addEventListener('click', () => {
-        navIcon.classList.toggle('open');
-    });
+const menuBurger = document.querySelector('.menu-burger'); 
+const navMenu = document.querySelector('.menu-classique');
+
+menuBurger.addEventListener('click', () => {
+    menuBurger.classList.toggle('active');
+    navMenu.classList.toggle('active');
 });
