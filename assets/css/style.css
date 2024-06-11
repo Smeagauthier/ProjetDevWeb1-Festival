@@ -1,7 +1,7 @@
 header {
   display: flex;
   position: relative;
-  width: 100%;
+  min-width: 100%;
 }
 header nav {
   position: absolute;
@@ -64,29 +64,43 @@ header nav ul li a {
   color: white;
   font-size: 22px;
   font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
 }
 header nav ul li a:hover {
   color: #FB9300;
-  transition: 0.4s ease;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
-@media screen and (max-width: 1230px) {
-  header {
-    width: 100%;
-  }
-  header nav {
-    justify-content: space-between;
-  }
+@media screen and (max-width: 1220px) {
   header nav ul li {
-    margin: 0 10px;
+    margin: 0 15px;
+    flex-wrap: nowrap;
   }
 }
-@media screen and (max-width: 1045px) {
+@media screen and (max-width: 1120px) {
   header {
-    width: 100%;
+    min-width: 100%;
   }
   header nav {
     justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
   }
   header nav .menu-classique {
     position: fixed;
@@ -109,48 +123,54 @@ header nav ul li a:hover {
     display: none;
   }
   header nav .menu-dates {
-    justify-content: center;
+    margin-left: 30px;
   }
   header nav .menu-burger {
     display: block;
     position: relative;
     top: 0;
-    margin-right: 70px;
+    margin-right: 5%;
     font-size: 2em;
     cursor: pointer;
   }
 }
-@media screen and (max-width: 630px) {
-  header {
-    width: 100%;
-  }
+@media screen and (max-width: 600px) {
   header nav {
-    height: 160px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
   }
   header nav .menu-dates {
-    position: absolute;
-    bottom: 0;
-    left: -30%;
-    width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-    flex-wrap: wrap;
-    margin-left: 70px;
+    font-size: 20px;
+    white-space: nowrap;
   }
   header nav .menu-dates img {
     width: 15px;
-    height: 15px;
+    height: 25px;
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 500px) {
-  header {
-    width: 100%;
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
   }
-  header nav .logo {
-    margin-left: 5%;
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
   }
   header nav .infos {
     margin-top: 10%;
@@ -159,9 +179,194 @@ header nav ul li a:hover {
     margin-right: 5%;
   }
 }
+header {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+}
+header nav {
+  position: absolute;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+}
+header nav .menu-burger {
+  display: none;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  header nav ul li {
+    margin: 0 15px;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 1120px) {
+  header {
+    min-width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    margin-left: 30px;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
+  }
+  header nav .menu-dates {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 25px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
+  }
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+.intro {
+  overflow: hidden;
+}
+
 .intro-home {
   position: relative;
-  height: 90vh;
+  min-height: 95vh;
   width: 100%;
   display: flex;
 }
@@ -177,11 +382,11 @@ header nav ul li a:hover {
 .intro-home .image-background .infos {
   position: absolute;
   top: 55%;
-  left: 35%;
+  left: 25%;
   transform: translate(-50%, -50%);
   color: white;
   font-family: "Inter";
-  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .intro-home .image-background .infos .title-card {
   font-weight: 900;
@@ -274,7 +479,7 @@ header nav ul li a:hover {
 .intro-home .image-background:after {
   content: "";
   position: absolute;
-  bottom: -7.5%;
+  bottom: -8%;
   left: -5vw;
   width: 120vw;
   height: 100px;
@@ -300,7 +505,7 @@ header nav ul li a:hover {
   text-transform: uppercase;
   min-width: 77.4%;
   padding: 0 2%;
-  box-sizing: border-box;
+  white-space: nowrap;
 }
 .line-up .line-up-date .day, .line-up .line-up-date .date {
   flex: 1;
@@ -327,27 +532,35 @@ header nav ul li a:hover {
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: flex-start;
   text-transform: uppercase;
-  font-size: 4em;
+  font-size: 3.6em;
   list-style: none;
   gap: 5px;
   font-family: "Inter";
   font-weight: 800;
   min-height: 100%;
   flex-wrap: wrap;
-  left: 0;
+  left: 20%;
   padding-top: 2%;
-  max-width: 61%;
+  width: 60%;
 }
-.artists-list .artist {
+.artists-list a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.artists-list a .artist {
   cursor: pointer;
 }
-.artists-list .artist.stroke {
+.artists-list a .artist.stroke {
   color: #BBDADE;
   background-color: transparent;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
-.artists-list .artist:hover {
+.artists-list a .artist:hover {
   color: #A678B1;
   transition: 0.5s ease;
 }
@@ -356,19 +569,21 @@ header nav ul li a:hover {
   font-size: 2em;
   color: black;
   text-transform: uppercase;
-  max-width: 61%;
+  width: 70%;
   flex-wrap: nowrap;
+  left: 9%;
+  position: relative;
 }
 
-.container {
+.container-btnMoreNames {
   display: flex;
-  max-height: 20%;
-  align-items: center;
+  max-height: 100px;
   justify-content: center;
+  align-items: center;
 }
-.container .btnMoreNames {
+.container-btnMoreNames .btnMoreNames {
   display: flex;
-  min-width: 9em;
+  width: 9em;
   min-height: 75px;
   background-color: #FB9300;
   color: white;
@@ -382,7 +597,7 @@ header nav ul li a:hover {
   cursor: pointer;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
-.container .btnMoreNames:hover {
+.container-btnMoreNames .btnMoreNames:hover {
   background-color: #c87500;
   transition: 0.3s ease;
 }
@@ -510,29 +725,81 @@ header nav ul li a:hover {
   transition: 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-  .intro-home {
+@media screen and (max-width: 1500px) {
+  .artists-list {
+    width: 65%;
+    left: 19%;
+  }
+  .more {
+    left: 10%;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .artists-list {
+    width: 65%;
+    left: 18%;
+  }
+  .more {
+    left: 12%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .artists-list {
+    width: 65%;
+    left: 12%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .intro-home .image-background {
     height: auto;
   }
+  .intro-home .image-background .infos {
+    position: relative;
+    left: 60%;
+  }
+  .artists-list {
+    font-size: 3.4em;
+    width: 80%;
+    left: 11%;
+  }
+  .more {
+    font-size: 1.5em;
+    max-width: 70%;
+    position: relative;
+    left: -4%;
+  }
+  .container-btnMoreNames .btnMoreNames {
+    font-size: 2.3em;
+  }
+}
+@media screen and (max-width: 800px) {
   .intro-home .image-background {
-    height: 70vh;
-    width: 100vw;
-    background-size: cover;
+    height: auto;
   }
   .intro-home .image-background .infos {
-    top: 55%;
-    left: 50%;
+    align-items: center;
     text-align: center;
-    transform: translate(-50%, -50%);
+    padding-right: 20%;
+    white-space: nowrap;
   }
   .intro-home .image-background .infos .title-card {
-    font-size: 20px;
+    font-size: 2em;
   }
-  .intro-home .image-background .infos p, .intro-home .image-background .infos a {
-    font-size: 16px;
+  .intro-home .image-background .infos p {
+    font-size: 1.7em;
   }
   .intro-home .image-background .infos a {
-    padding: 8px 16px;
+    font-size: 1.5em;
+    padding: 10px 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    left: 5%;
+  }
+  .intro-home .image-background {
+    height: auto;
+    background-position: center center;
   }
   .intro-home .image-background .purple-band {
     height: 50px;
@@ -562,6 +829,10 @@ header nav ul li a:hover {
   .intro-home .image-background .purple-band .wrapperSlogan .slogan6 {
     animation-delay: 0s;
   }
+  .line-up {
+    position: relative;
+    top: 0;
+  }
   .line-up .line-up-date {
     font-size: 1.5rem;
   }
@@ -570,20 +841,25 @@ header nav ul li a:hover {
     left: 0;
   }
   .artists-list {
-    font-size: 2em;
-    max-width: 80%;
+    font-size: 2.2em;
+    width: 80%;
+    left: 10%;
   }
   .more {
     font-size: 1em;
-    max-width: 80%;
+    max-width: 76%;
+    left: -1%;
   }
-  .container .btnMoreNames {
-    min-width: 10em;
+  .container-btnMoreNames .btnMoreNames {
     min-height: 60px;
-    font-size: 2em;
+    font-size: 1.8em;
+  }
+  .contact .formExplanation {
+    font-size: 1em;
   }
   .contact .formContact form .grid-container {
     grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
   }
   .contact .formContact .btnSend {
     min-width: 7em;
@@ -605,15 +881,18 @@ header nav ul li a:hover {
     font-size: 1.2rem;
   }
   .artists-list {
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
   .more {
     font-size: 0.75em;
+    left: -0.5%;
   }
-  .container .btnMoreNames {
-    min-width: 10em;
+  .container-btnMoreNames .btnMoreNames {
     min-height: 50px;
     font-size: 1.5em;
+  }
+  .contact .formExplanation {
+    font-size: 0.8em;
   }
   .contact .formContact form .form-group input, .contact .formContact form .form-group textarea {
     font-size: 14px;
@@ -624,16 +903,46 @@ header nav ul li a:hover {
     font-size: 1.2em;
   }
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 519px) {
+  .intro .image-background {
+    margin-top: 25px;
+  }
+  .line-up .line-up-date {
+    font-size: 1em;
+  }
   .artists-list {
-    font-size: 3em;
-    max-width: 75%;
+    font-size: 1.5em;
   }
   .more {
-    font-size: 1.5em;
-    max-width: 70%;
-    position: relative;
-    left: -2.2%;
+    font-size: 0.6em;
+  }
+  .container-btnMoreNames .btnMoreNames {
+    min-height: 45px;
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .intro .intro-home .image-background .infos .title-card {
+    font-size: 23px;
+  }
+  .intro .intro-home .image-background .infos p, .intro .intro-home .image-background .infos a {
+    font-size: 18px;
+  }
+  .intro .intro-home .image-background .infos a {
+    padding: 6px 8px;
+  }
+  .line-up .line-up-date {
+    font-size: 0.9em;
+  }
+  .artists-list {
+    font-size: 1.2em;
+  }
+  .more {
+    font-size: 0.5em;
+  }
+  .container-btnMoreNames .btnMoreNames {
+    min-height: 40px;
+    font-size: 1em;
   }
 }
 footer {
@@ -649,7 +958,7 @@ footer {
 header {
   display: flex;
   position: relative;
-  width: 100%;
+  min-width: 100%;
 }
 header nav {
   position: absolute;
@@ -712,29 +1021,43 @@ header nav ul li a {
   color: white;
   font-size: 22px;
   font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
 }
 header nav ul li a:hover {
   color: #FB9300;
-  transition: 0.4s ease;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
-@media screen and (max-width: 1230px) {
-  header {
-    width: 100%;
-  }
-  header nav {
-    justify-content: space-between;
-  }
+@media screen and (max-width: 1220px) {
   header nav ul li {
-    margin: 0 10px;
+    margin: 0 15px;
+    flex-wrap: nowrap;
   }
 }
-@media screen and (max-width: 1045px) {
+@media screen and (max-width: 1120px) {
   header {
-    width: 100%;
+    min-width: 100%;
   }
   header nav {
     justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
   }
   header nav .menu-classique {
     position: fixed;
@@ -757,48 +1080,54 @@ header nav ul li a:hover {
     display: none;
   }
   header nav .menu-dates {
-    justify-content: center;
+    margin-left: 30px;
   }
   header nav .menu-burger {
     display: block;
     position: relative;
     top: 0;
-    margin-right: 70px;
+    margin-right: 5%;
     font-size: 2em;
     cursor: pointer;
   }
 }
-@media screen and (max-width: 630px) {
-  header {
-    width: 100%;
-  }
+@media screen and (max-width: 600px) {
   header nav {
-    height: 160px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
   }
   header nav .menu-dates {
-    position: absolute;
-    bottom: 0;
-    left: -30%;
-    width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-    flex-wrap: wrap;
-    margin-left: 70px;
+    font-size: 20px;
+    white-space: nowrap;
   }
   header nav .menu-dates img {
     width: 15px;
-    height: 15px;
+    height: 25px;
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 500px) {
-  header {
-    width: 100%;
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
   }
-  header nav .logo {
-    margin-left: 5%;
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
   }
   header nav .infos {
     margin-top: 10%;
@@ -949,7 +1278,7 @@ section .cards .artist-card .info .details .chevron:hover {
 header {
   display: flex;
   position: relative;
-  width: 100%;
+  min-width: 100%;
 }
 header nav {
   position: absolute;
@@ -1012,29 +1341,43 @@ header nav ul li a {
   color: white;
   font-size: 22px;
   font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
 }
 header nav ul li a:hover {
   color: #FB9300;
-  transition: 0.4s ease;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
-@media screen and (max-width: 1230px) {
-  header {
-    width: 100%;
-  }
-  header nav {
-    justify-content: space-between;
-  }
+@media screen and (max-width: 1220px) {
   header nav ul li {
-    margin: 0 10px;
+    margin: 0 15px;
+    flex-wrap: nowrap;
   }
 }
-@media screen and (max-width: 1045px) {
+@media screen and (max-width: 1120px) {
   header {
-    width: 100%;
+    min-width: 100%;
   }
   header nav {
     justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
   }
   header nav .menu-classique {
     position: fixed;
@@ -1057,48 +1400,54 @@ header nav ul li a:hover {
     display: none;
   }
   header nav .menu-dates {
-    justify-content: center;
+    margin-left: 30px;
   }
   header nav .menu-burger {
     display: block;
     position: relative;
     top: 0;
-    margin-right: 70px;
+    margin-right: 5%;
     font-size: 2em;
     cursor: pointer;
   }
 }
-@media screen and (max-width: 630px) {
-  header {
-    width: 100%;
-  }
+@media screen and (max-width: 600px) {
   header nav {
-    height: 160px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
   }
   header nav .menu-dates {
-    position: absolute;
-    bottom: 0;
-    left: -30%;
-    width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-    flex-wrap: wrap;
-    margin-left: 70px;
+    font-size: 20px;
+    white-space: nowrap;
   }
   header nav .menu-dates img {
     width: 15px;
-    height: 15px;
+    height: 25px;
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 500px) {
-  header {
-    width: 100%;
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
   }
-  header nav .logo {
-    margin-left: 5%;
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
   }
   header nav .infos {
     margin-top: 10%;
@@ -1305,6 +1654,333 @@ footer {
 .bio-container .bio-content p mark {
   font-weight: 700;
   background: none;
+}
+
+header {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+}
+header nav {
+  position: absolute;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+}
+header nav .menu-burger {
+  display: none;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  header nav ul li {
+    margin: 0 15px;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 1120px) {
+  header {
+    min-width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    margin-left: 30px;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
+  }
+  header nav .menu-dates {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 25px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
+  }
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+main .tickets {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: pink;
+}
+main .tickets .image-background-tickets {
+  background-image: url("../images/photos/tickets/tickets-resized-compressed.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 125vh;
+  width: 100%;
+  position: relative;
+  margin-top: 7%;
+}
+main .tickets .image-background-tickets .background-opacity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  background-color: rgba(218, 218, 218, 0.8);
+  display: flex;
+  flex-direction: column;
+  color: black;
+  z-index: 10;
+  border-radius: 10px;
+}
+main .tickets .image-background-tickets .background-opacity .title {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  letter-spacing: 2%;
+  font-size: 3em;
+  font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .tickets .image-background-tickets .background-opacity .intro-tickets {
+  font-size: 1em;
+  width: 100%;
+  margin-top: 1%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival {
+  display: flex;
+  position: relative;
+  left: 5%;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2%;
+  gap: 10px;
+  font-weight: 600;
+  width: 90%;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .location {
+  width: 35%;
+  display: flex;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .location img {
+  height: 25px;
+  width: 20px;
+  margin-right: 12px;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .location p {
+  margin-top: 4px;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .calendar {
+  width: 35%;
+  display: flex;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .calendar img {
+  height: 20px;
+  width: 20px;
+  margin-right: 12px;
+}
+main .tickets .image-background-tickets .background-opacity .infos-festival .calendar p {
+  margin-top: 2px;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards {
+  display: flex;
+  flex-direction: column;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard {
+  font-weight: 700;
+  font-size: 2em;
+  width: 30%;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  left: 5%;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day {
+  grid-column: 1/2;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date {
+  grid-column: 1/2;
+  font-size: 1.1em;
+  margin-top: 4px;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price {
+  grid-column: 2/3;
+  justify-self: end;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .quantity-controls {
+  grid-column: 2/3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .quantity-controls button {
+  background: #FFA500;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .quantity-controls button:hover {
+  background: #ff7f00;
 }
 
 * {

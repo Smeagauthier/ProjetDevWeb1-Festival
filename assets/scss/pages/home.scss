@@ -1,10 +1,16 @@
 @import "../base/mixins.scss"; 
+@import "../layout/header.scss"; 
 
+
+.intro{
+    overflow: hidden; 
+}
 .intro-home {
     position: relative;
-    height: 90vh;
+    min-height: 95vh;
     width: 100%;
     display:flex;
+    // background: pink;
     
     .image-background {
         background-image: url('../images/photos/home/home-no-logo.jpg');
@@ -16,13 +22,15 @@
         position: relative;
         
         .infos {
+            // width:130%; 
+            // background:yellow;
             position: absolute;
             top: 55%;
-            left: 35%;
+            left: 25%;
             transform: translate(-50%, -50%);
             color: white;
             font-family: 'Inter';
-            flex-wrap: nowrap;
+            white-space: nowrap;
             
             .title-card {
                 font-weight: 900;
@@ -120,7 +128,7 @@
         &:after {
             content: '';
             position: absolute;
-            bottom: -7.5%;
+            bottom: -8%;
             left: -5vw;
             width: 120vw;
             height: 100px;
@@ -148,17 +156,16 @@
         text-transform: uppercase;
         min-width: 77.4%;
         padding: 0 2%;
-        box-sizing: border-box;
-    
+        white-space: nowrap;        
         .day, .date {
             flex: 1;
         }
-    
+        
         .day {
             position:relative; 
             left:-2%; 
         }
-    
+        
         .date {
             text-align: right;
             position: static;
@@ -181,53 +188,69 @@
     display: flex;
     position: relative;
     align-items: center;
+    justify-content: flex-start;
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 3.6em;
     list-style: none;
     gap: 5px;
     font-family: 'Inter';
     font-weight: 800;
     min-height: 100%;
     flex-wrap: wrap;
-    left: 0;
+    left: 20%;
     padding-top: 2%;
-    max-width: 61%;
+    width: 60%;
+    // background:yellow; 
     
-    .artist {
-        cursor: pointer;
-        
-        &.stroke {
-            color: $bgColor;
-            background-color: transparent;
-            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-        }
-        
-        &:hover {
-            color: $purple;
-            transition: 0.5s ease;
+    a{
+        text-decoration: none;
+        color:black;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        // background-color: aqua;
+        // // width:100%;
+        .artist {
+            cursor: pointer;
+            
+            &.stroke {
+                color: $bgColor;
+                background-color: transparent;
+                text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+            }
+            
+            &:hover {
+                color: $purple;
+                transition: 0.5s ease;
+            }
         }
     }
+    
 }
+
 
 .more {
     font-size: 2em;
     color: black;
     text-transform: uppercase;
-    max-width: 61%;
+    width: 70%;
     flex-wrap: nowrap;
+    left:9%;
+    position:relative; 
 }
 
-.container {
+.container-btnMoreNames {
     display: flex;
-    // max-width: 20%;
-    max-height:20%;
-    align-items: center;
+    // width:100%; 
+    max-height: 100px;
     justify-content: center;
-    // background:pink;
+    align-items: center;
+    // background: pink;
+    // box-sizing: content-box;
     
     .btnMoreNames {
         display: flex;
-        min-width: 9em;
+        width: 9em;
         min-height: 75px;
         background-color: $btnOrange;
         color: white;
@@ -248,12 +271,14 @@
     }
 }
 
+
 .playlist {
     padding: 5% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width:100%; 
+    max-width:100%;
+    // height: 10vh; 
 }
 
 .contact {
@@ -377,34 +402,108 @@
     }
 }
 
+//------------------------------- MEDIA QUERIES ----------------------
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1500px) {
+    .artists-list{
+        width:65%;
+        left:19%; 
+    }
+    .more{
+        left: 10%; 
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .artists-list{
+        width:65%;
+        left: 18%; 
+    }
+
+    .more{
+        left: 12%; 
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .artists-list{
+        width:65%;
+        left: 12%; 
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    
     .intro-home {
-        height: auto;
-        
         .image-background {
-            height: 70vh;
-            width: 100vw;
-            background-size: cover;
+            height:auto;
             
+            .infos{
+                position:relative;
+                left: 60%; 
+            }
+        }
+    }
+    
+    .artists-list{
+        font-size:3.4em;
+        width:80%;
+        left:11%; 
+    }
+    .more{
+        font-size: 1.5em; 
+        max-width:70%;
+        position:relative;
+        left: -4%; 
+    }
+
+    .container-btnMoreNames{
+        .btnMoreNames{
+            font-size: 2.3em;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .intro-home{
+        .image-background{
+            height: auto;
             .infos {
-                top: 55%;
-                left: 50%;
+              
+                align-items: center;
                 text-align: center;
-                transform: translate(-50%, -50%);
+                padding-right:20%; 
+                white-space: nowrap;
                 
                 .title-card {
-                    font-size: 20px;
+                    font-size: 2em;
                 }
                 
-                p, a {
-                    font-size: 16px;
+                p{
+                    font-size: 1.7em;
                 }
                 
                 a {
-                    padding: 8px 16px;
+                    font-size: 1.5em;
+                    padding: 10px 15px;
                 }
             }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .logo{
+        left: 5%; 
+    }
+    .intro-home {
+        
+        .image-background {
+            height: auto;
+            background-position: center center;
             
             .purple-band{
                 height:50px;
@@ -428,6 +527,8 @@
     }
     
     .line-up {
+        position:relative; 
+        top: 0;
         .line-up-date {
             font-size: 1.5rem;
         }
@@ -439,26 +540,34 @@
     }
     
     .artists-list {
-        font-size: 2em;
-        max-width: 80%;
+        font-size: 2.2em;
+        width: 80%;
+        left:10%;
     }
     
     .more {
         font-size: 1em;
-        max-width: 80%;
+        max-width: 76%;
+        left: -1%;
     }
     
-    .container .btnMoreNames {
-        min-width: 10em;
-        min-height: 60px;
-        font-size: 2em;
+    .container-btnMoreNames{
+        .btnMoreNames{
+            min-height:60px; 
+            font-size: 1.8em;
+        }
     }
+    
     
     .contact {
+        .formExplanation{
+            font-size : 1em; 
+        }
         .formContact {
             form {
                 .grid-container {
                     grid-template-columns: repeat(1, 1fr);
+                    gap:10px; 
                 }
             }
             
@@ -470,9 +579,9 @@
         }
     }
 }
-
 @media screen and (max-width: 576px) {
     .intro-home {
+        // min-width:100%;
         .image-background {
             .infos {
                 .title-card {
@@ -497,20 +606,26 @@
     }
     
     .artists-list {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
     
     .more {
         font-size: 0.75em;
+        left:-0.5%; 
     }
     
-    .container .btnMoreNames {
-        min-width: 10em;
-        min-height: 50px;
-        font-size: 1.5em;
+    .container-btnMoreNames{
+        .btnMoreNames{
+            min-height:50px;
+            font-size: 1.5em;
+        }
     }
+    
     
     .contact {
+        .formExplanation{
+            font-size : 0.8em; 
+        }
         .formContact {
             form {
                 .form-group input, .form-group textarea {
@@ -527,15 +642,77 @@
     }
 }
 
-@media screen and (max-width: 999px) {
-    .artists-list{
-        font-size:3em;
-        max-width:75%;  
+@media screen and (max-width: 519px) {
+    .intro{
+        .image-background{
+            margin-top: 25px; 
+        }
     }
-    .more{
-        font-size: 1.5em; 
-        max-width:70%;
-        position:relative;
-        left:-2.2%; 
+    
+    .line-up {
+        .line-up-date {
+            font-size: 1em;
+        }
+    }
+
+    .artists-list {
+        font-size: 1.5em;
+    }
+    
+    .more {
+        font-size: 0.60em;
+    }
+
+    .container-btnMoreNames{
+        .btnMoreNames{
+            min-height:45px; 
+            font-size: 1.3em;
+        }
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    
+    .intro{
+        .intro-home{
+            .image-background{
+                .infos{
+                    .title-card{
+                        font-size: 23px;
+                        // justify-content: center; 
+                    }
+                    
+                    p,a{
+                        font-size: 18px;
+                    }
+                    a{
+                        padding:6px 8px; 
+                    }
+                }
+            }
+        }
+    }
+    
+    .line-up {
+        .line-up-date {
+            font-size: 0.9em;
+        }
+    }
+
+    .artists-list {
+        font-size: 1.2em;
+    }
+    
+    .more {
+        font-size: 0.5em;
+    }
+
+    .container-btnMoreNames{
+        .btnMoreNames{
+            min-height:40px; 
+            font-size: 1em;
+        }
     }
 }
+
