@@ -46,48 +46,73 @@
                         <div class="calendar"><img src="./assets/images/icons/calendar.svg" alt="icône de calendrier"><p>26, 27, 28 juillet 2024</p></div>
                     </div>
                     <div class="tickets-standards">
-                        <div class="title-standard">Tickets Standards</div>
+                        <div class="title-standard">Tickets Standards </div>
+                        <div class="ticket-price">Prix unitaire : €54.00</div>
                         <div class="day-pass">
                             <div class="day">Pass vendredi</div>
                             <div class="date">26 juillet</div>
-                            <div class="price">€ 54,00</div>
-                            <div class="quantity-controls">
-                                <button class="decrease">-</button>
-                                <span class="quantity">0</span>
-                                <button class="increase">+</button>
+                            <div class="price" data-price="54">€ 0.00</div>
+                            <div class="spinner">
+                                <button class="minus">-</button>
+                                <span class="number">0</span>
+                                <button class="plus">+</button>
                             </div>
+                            <div class="border-pass"></div>
                         </div>
+                        <div class="day-pass samedi">
+                            <div class="day">Pass samedi</div>
+                            <div class="date">27 juillet</div>
+                            <div class="price" data-price="54">€ 0.00</div>
+                            <div class="spinner">
+                                <button class="minus">-</button>
+                                <span class="number">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="border-pass"></div>
+                        </div>
+                        <div class="day-pass">
+                            <div class="day">Pass dimanche</div>
+                            <div class="date">28 juillet</div>
+                            <div class="price" data-price="54">€ 0.00</div>
+                            <div class="spinner">
+                                <button class="minus">-</button>
+                                <span class="number">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="border-pass"></div>
+                        </div>
+                    </div>
+                    <div class="tickets-camping">
+                        <div class="title-camping">Tickets Camping </div>
+                        <div class="ticket-price">Prix unitaire : €356.00</div>
+                        <div class="day-pass">
+                            <div class="day">Pass 3 jours + camping</div>
+                            <div class="date">26, 27, 28 juillet</div>
+                            <div class="price" data-price="356">€ 0.00</div>
+                            <div class="spinner">
+                                <button class="minus">-</button>
+                                <span class="number">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="border-pass"></div>
+                        </div>
+                    </div>
+                    <div class="container-btnContinue">
+                        <div class="btnContinue">Poursuivre</div>
                     </div>
                 </div>
             </div>
         </div>
+        <section class="section-newsletter">
+            <div class="content">
+                <div class="title">Newsletter</div>
+                <div class="description">Tu veux être le premier au courant des nouvelles annonces ? 
+                <br>Inscris-toi dès maintenant à la newsletter !</div>
+                <input type="text" id="newsletter" placeholder="Ton adresse e-mail"><div class="send"><img src="./assets/images/icons/paper-plane.svg" alt="logo envoyer"></div>
+            </div>
+        </section> 
     </main>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-    // Sélectionner tous les contrôles de quantité
-    const quantityControls = document.querySelectorAll('.quantity-controls');
-
-    quantityControls.forEach(control => {
-        // Sélectionner les boutons et le span de quantité
-        const decreaseButton = control.querySelector('.decrease');
-        const increaseButton = control.querySelector('.increase');
-        const quantitySpan = control.querySelector('.quantity');
-
-        // Ajouter des événements de clic pour les boutons
-        decreaseButton.addEventListener('click', function () {
-            let currentQuantity = parseInt(quantitySpan.textContent);
-            if (currentQuantity > 0) {
-                quantitySpan.textContent = currentQuantity - 1;
-            }
-        });
-
-        increaseButton.addEventListener('click', function () {
-            let currentQuantity = parseInt(quantitySpan.textContent);
-            quantitySpan.textContent = currentQuantity + 1;
-        });
-    });
-});
-
-    </script>
+    <footer>Site réalisé dans le cadre d'un travail scolaire</footer>
+    <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

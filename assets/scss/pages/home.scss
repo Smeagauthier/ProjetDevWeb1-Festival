@@ -1,5 +1,6 @@
 @import "../base/mixins.scss"; 
 @import "../layout/header.scss"; 
+@import "../layout/footer.scss"; 
 
 
 .intro{
@@ -84,6 +85,11 @@
                 position: relative;
                 height: 100%;
                 overflow: hidden;
+                align-items: center;
+                // background-color: yellow;
+                // padding-top: 1%; 
+                display:flex; 
+                justify-content: center;
                 mask-image: linear-gradient(
                 to right,
                 rgba(0, 0, 0, 0),
@@ -95,6 +101,7 @@
             
             .slogan {
                 display: flex;
+                // background:yellow; 
                 white-space: nowrap;
                 font-size: 3.2em;
                 color: white;
@@ -131,7 +138,7 @@
             bottom: -8%;
             left: -5vw;
             width: 120vw;
-            height: 100px;
+            height: 120px;
             background-color: $bgColor;
             transform: rotate(-4deg);
         }
@@ -139,7 +146,7 @@
 }
 
 .line-up {
-    padding-top: 4%;
+    padding-top: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,9 +204,9 @@
     font-weight: 800;
     min-height: 100%;
     flex-wrap: wrap;
-    left: 20%;
+    left: 26%;
     padding-top: 2%;
-    width: 60%;
+    width: 50%;
     // background:yellow; 
     
     a{
@@ -235,7 +242,7 @@
     text-transform: uppercase;
     width: 70%;
     flex-wrap: nowrap;
-    left:9%;
+    left:7.2%;
     position:relative; 
 }
 
@@ -278,14 +285,14 @@
     justify-content: center;
     align-items: center;
     max-width:100%;
-    // height: 10vh; 
+    
 }
 
 .contact {
     display:flex;
     min-height: 500px;
     width: 100%;
-    background-color: rgba(166, 120, 177, 0.3);
+    background-color: $purple-light; 
     
     .formContact {
         display: flex;
@@ -419,7 +426,7 @@
         width:65%;
         left: 18%; 
     }
-
+    
     .more{
         left: 12%; 
     }
@@ -456,7 +463,7 @@
         position:relative;
         left: -4%; 
     }
-
+    
     .container-btnMoreNames{
         .btnMoreNames{
             font-size: 2.3em;
@@ -464,13 +471,19 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+//iPad - corrigé
+@media screen and (max-width: 821px) {
+    
+    .intro {
+        max-height: 57vh;
+    }
     
     .intro-home{
+        // height: 50vh; 
         .image-background{
-            height: auto;
+            height: 54vh;
             .infos {
-              
+                
                 align-items: center;
                 text-align: center;
                 padding-right:20%; 
@@ -488,43 +501,35 @@
                     font-size: 1.5em;
                     padding: 10px 15px;
                 }
+            } 
+        }
+    }
+    
+    .container-btnMoreNames .btnMoreNames{
+        font-size: 2.3em;
+    }
+    .contact {
+        .formExplanation{
+            font-size : 1em; 
+        }
+        .formContact {
+            form {
+                .grid-container {
+                    grid-template-columns: repeat(1, 1fr);
+                    gap:10px; 
+                }
             }
             
+            .btnSend {
+                min-width: 7em;
+                min-height: 60px;
+                font-size: 1.5em;
+            }
         }
     }
 }
 
 @media screen and (max-width: 768px) {
-    
-    .logo{
-        left: 5%; 
-    }
-    .intro-home {
-        
-        .image-background {
-            height: auto;
-            background-position: center center;
-            
-            .purple-band{
-                height:50px;
-                .wrapperSlogan{
-                    .slogan{
-                        font-size: 2em; 
-                        padding:1% 0;
-                        animation-duration: 20s;
-                        left: max(calc(10em * 6), 100%);
-                        width:10em;
-                    }
-                    .slogan1 { animation-delay: calc(20s / 6 * (6 - 1) * -1); }
-                    .slogan2 { animation-delay: calc(20s / 6 * (6 - 2) * -1); }
-                    .slogan3 { animation-delay: calc(20s / 6 * (6 - 3) * -1); }
-                    .slogan4 { animation-delay: calc(20s / 6 * (6 - 4) * -1); }
-                    .slogan5 { animation-delay: calc(20s / 6 * (6 - 5) * -1); }
-                    .slogan6 { animation-delay: calc(20s / 6 * (6 - 6) * -1); }
-                }
-            }
-        }
-    }
     
     .line-up {
         position:relative; 
@@ -559,25 +564,25 @@
     }
     
     
-    .contact {
-        .formExplanation{
-            font-size : 1em; 
-        }
-        .formContact {
-            form {
-                .grid-container {
-                    grid-template-columns: repeat(1, 1fr);
-                    gap:10px; 
-                }
-            }
-            
-            .btnSend {
-                min-width: 7em;
-                min-height: 60px;
-                font-size: 1.5em;
-            }
-        }
-    }
+    // .contact {
+    //     .formExplanation{
+    //         font-size : 1em; 
+    //     }
+    //     .formContact {
+    //         form {
+    //             .grid-container {
+    //                 grid-template-columns: repeat(1, 1fr);
+    //                 gap:10px; 
+    //             }
+    //         }
+    
+    //         .btnSend {
+    //             min-width: 7em;
+    //             min-height: 60px;
+    //             font-size: 1.5em;
+    //         }
+    //     }
+    // }
 }
 @media screen and (max-width: 576px) {
     .intro-home {
@@ -654,7 +659,7 @@
             font-size: 1em;
         }
     }
-
+    
     .artists-list {
         font-size: 1.5em;
     }
@@ -662,14 +667,14 @@
     .more {
         font-size: 0.60em;
     }
-
+    
     .container-btnMoreNames{
         .btnMoreNames{
             min-height:45px; 
             font-size: 1.3em;
         }
     }
-
+    
 }
 
 @media screen and (max-width: 450px) {
@@ -699,7 +704,7 @@
             font-size: 0.9em;
         }
     }
-
+    
     .artists-list {
         font-size: 1.2em;
     }
@@ -707,12 +712,102 @@
     .more {
         font-size: 0.5em;
     }
-
+    
     .container-btnMoreNames{
         .btnMoreNames{
             min-height:40px; 
             font-size: 1em;
         }
+    }
+}
+
+
+//iPhone 13 pro max 
+@media screen and (max-width: 428px) {
+    .intro {
+        max-height: 53vh;
+    }
+    
+    .intro-home {
+        .image-background {
+            height:50vh; 
+            .infos {
+                text-align: center;
+                
+                .title-card {
+                    font-size: 20px;
+                }
+                
+                p, a {
+                    font-size: 16px;
+                }
+                
+                a {
+                    padding: 6px 10px;
+                }
+            }
+            
+            .purple-band{
+                height:40px;
+                margin-bottom:7%; 
+                .wrapperSlogan {
+                    .slogan {
+                        // font-size: 10px;
+                        font-size: 1.15em; 
+                        padding: 2% 0;
+                        // width: 8em;
+                        left: max(calc(8em * 6), 100%);
+                    }
+                    
+                    .slogan1 { animation-delay: calc(30s / 6 * (6 - 1) * -1); }
+                    .slogan2 { animation-delay: calc(30s / 6 * (6 - 2) * -1); }
+                    .slogan3 { animation-delay: calc(30s / 6 * (6 - 3) * -1); }
+                    .slogan4 { animation-delay: calc(30s / 6 * (6 - 4) * -1); }
+                    .slogan5 { animation-delay: calc(30s / 6 * (6 - 5) * -1); }
+                    .slogan6 { animation-delay: calc(30s / 6 * (6 - 6) * -1); }
+                    
+                } 
+            } 
+        }
+    }
+    
+    section{
+        .line-up{
+            margin-top: 5%;
+        }
+        
+        .artists-list{
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+
+        .border-bottom-date{
+            right: 20%; 
+        }
+
+        .more {
+            font-size: 0.8em;
+            left:-2%;
+        }
+    }
+    
+    
+    .contact{
+        .formContact{
+            .formExplanation{
+                font-size : 1em;
+            }
+            
+            form{
+                font-size:1em; 
+                
+                .btnSend{
+                    font-size:1.3em;
+                    min-height: 45px;  
+                }
+            }
+        } 
+        
     }
 }
 
