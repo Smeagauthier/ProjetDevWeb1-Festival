@@ -460,7 +460,7 @@
         font-size:3.4em;
         width:80%;
         left:11%;
-        background-color: yellow; 
+        // background-color: yellow; 
     }
     .more{
         font-size: 1.5em; 
@@ -478,6 +478,8 @@
 
 //iPad - corrigé
 @media screen and (max-width: 821px) {
+    
+    
     .intro {
         max-height: 57vh;
     }
@@ -486,39 +488,58 @@
         // height: 50vh; 
         .image-background{
             height: 54vh;
-            
-            .purple-band{
-                width:130vw;
+            .slogan {
+                
+                font-size: 2.5em; 
+                left: calc(100% + 2em); 
+                animation: scrollLeft 8s linear infinite;
             }
             
-            .infos {
-                
-                align-items: center;
-                text-align: center;
-                padding-right:20%; 
-                white-space: nowrap;
-                
-                .title-card {
-                    font-size: 2em;
+            @keyframes scrollLeft {
+                from {
+                    left: calc(100% + 2em);
                 }
-                
-                p{
-                    font-size: 1.7em;
+                to {
+                    left: -100%;
                 }
-                
-                a {
-                    font-size: 1.5em;
-                    padding: 10px 15px;
-                }
-            } 
+            }
         }
         
-        
+        .infos {
+            
+            align-items: center;
+            text-align: center;
+            padding-right:20%; 
+            white-space: nowrap;
+            
+            .title-card {
+                font-size: 2em;
+            }
+            
+            p{
+                font-size: 1.7em;
+            }
+            
+            a {
+                font-size: 1.5em;
+                padding: 10px 15px;
+            }
+        } 
+    }  
+    
+    .artists-list{
+        margin-left: -9%;
+        min-width:80vw; 
+        font-size: 2.8em;
     }
     
-    .container-btnMoreNames .btnMoreNames{
-        font-size: 2.3em;
+    .more {
+        max-width: 80vw;
+        position: relative;
+        margin-top: 2%; 
+        transform: translateX(-10%); 
     }
+    
     .contact {
         .formExplanation{
             font-size : 1em; 
@@ -712,7 +733,6 @@
     }
 }
 
-
 //iPhone 13 pro max 
 @media screen and (max-width: 428px) {
     .intro {
@@ -740,11 +760,10 @@
             
             .purple-band{
                 height:40px;
-                margin-bottom:7%; 
+                margin-bottom:9%; 
                 .wrapperSlogan {
                     .slogan {
-                        // font-size: 10px;
-                        font-size: 1.15em; 
+                        font-size: 1.3em; 
                         padding: 2% 0;
                         // width: 8em;
                         left: max(calc(8em * 6), 100%);
@@ -764,7 +783,7 @@
     
     section{
         .line-up{
-            margin-top: 5%;
+            margin-top: 1%;
         }
         
         .artists-list{
@@ -778,29 +797,32 @@
         
         .more {
             font-size: 0.8em;
-            left:-2%;
+            // left:-4%;
+            position:relative;
+            // background-color: yellow;
+            width: 80vw;
+            transform: translateX(-13%);  
         }
-    }
-    
-    
-    .contact{
-        margin-bottom: -8%; 
-        .formContact{
-            .formExplanation{
-                font-size : 1em;
-            }
-            
-            form{
-                font-size:1em; 
-                
-                .btnSend{
-                    font-size:1.3em;
-                    min-height: 45px;  
+
+        .contact{
+            margin-bottom: -8%; 
+            .formContact{
+                .formExplanation{
+                    font-size : 1em;
                 }
-            }
-        } 
-        
-    }
+                
+                form{
+                    font-size:1em; 
+                    
+                    .btnSend{
+                        font-size:1.3em;
+                        min-height: 45px;  
+                    }
+                }
+            } 
+            
+        }
+    }  
 }
 
 //Média petit écran 
@@ -812,8 +834,22 @@
             // background-color: green;
         }
         .more{
-            left: 9%; 
+            left: 9.4%; 
             margin-bottom: 2%; 
         }
     }
+}
+
+//iPhone 11 
+@media screen and (max-width: 415px) {
+    
+    section{
+        &.contact{
+            .formContact{
+                .formExplanation{
+                    font-size : 1em;
+                }
+            }  
+        }
+    }  
 }

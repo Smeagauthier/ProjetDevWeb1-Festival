@@ -15,18 +15,21 @@ main{
         
         .sortByDay {
             display: flex;
-            justify-content: flex-start;
             font-size: 15px;
+            justify-content: flex-start;
+            margin-left: 5%; 
             text-transform: uppercase;
             padding-top: 30px;
             font-weight: 700; 
-            width: 60%;
+            width: 100%;
             // background: red;
             gap: 50px;
-            margin: 0 auto;
+
             
-            div {
+            span {
                 cursor: pointer;
+                transition: transform 0.3s ease;
+
                 
                 &:hover {
                     transform: scale(1.1);
@@ -38,7 +41,7 @@ main{
         
         .border-bottom {
             border-bottom: rgba(230, 191, 151, 0.50) 3px solid;
-            width: 62%;
+            min-width: 95%;
             position: relative;
             left: 0;
             padding-top: 5px;  
@@ -66,88 +69,106 @@ main{
                     position: relative;
                     align-items: center; 
                     
-                    .image {
-                        width: 100%;
-                        height: 22em;
-                        display: flex;
-                        justify-content: center;
-                        overflow: hidden; 
-                        object-position: center;
-                        
-                        img {
+                    a {
+                        display: block;
+                        height: 100%;
+                        width:100%;
+                        color: inherit;
+                        text-decoration: none;
+
+                        .image {
                             width: 100%;
-                            height: 95%;
-                            object-fit: cover;
-                        }
-                    }
-                    
-                    .info {
-                        color: white;
-                        padding: 12px;
-                        text-align: left;
-                        width: 100%;
-                        position: absolute;
-                        bottom: 0;
-                        height: 20%;
-                        flex-wrap: nowrap; 
-                        
-                        h2 {
-                            width: 72%;
-                            font-size: 1.5em;
-                            margin: 0;
-                            letter-spacing: 1px; 
-                            font-weight: 900;
-                            text-transform: uppercase;
-                            cursor: pointer;
-                            position: relative;
-                            background: linear-gradient(to left, white 50%, $orangeLight 50%) right;
-                            background-size: 200% 100%;
-                            background-position: 100%;
-                            background-clip: text;
-                            color: transparent;
-                            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
-                            white-space: nowrap;
-                            transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out; 
-                            
-                            &:hover {
-                                transform: scale(1.03);
-                                background-position: 0;
-                                filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
-                            }
-                        }
-                        
-                        .details {
+                            height: 22em;
+                            filter: grayscale(80%);
                             display: flex;
-                            justify-content: space-between;
-                            font-size: 0.9em;
-                            align-items: center;
-                            
-                            span {
-                                display: block;
-                                margin-right: 25%;
-                                white-space: nowrap; //flex-wrap pour le conteneur, white-space pour contenu
-                                padding-left: 1%;
-                            }
+                            justify-content: center;
+                            overflow: hidden; 
+                            object-position: center;
+                            transition: filter 0.6s ease;
                             
                             img {
-                                width: 100px;
-                                height: 100px;
+                                width: 100%;
+                                height: 95%;
+                                object-fit: cover;
+                                object-position: 50% 5%;
                             }
+
+                            &:hover {
+                                filter: grayscale(0%);
+                                transition: all 0.6s ease;
+        
+                            }
+                        }
+
+                        .info {
+                            color: white;
+                            padding: 12px;
+                            text-align: left;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            height: 20%;
+                            flex-wrap: nowrap; 
                             
-                            .chevron {
-                                width: 2em;
-                                height: auto;
-                                transform: rotate(-90deg);
+                            h2 {
+                                width: 100%;
+                                font-size: 1.5em;
+                                margin: 0;
+                                letter-spacing: 1px; 
+                                font-weight: 900;
+                                text-transform: uppercase;
                                 cursor: pointer;
                                 position: relative;
-                                animation-direction: reverse;
-                                transition: 0.5s ease;
+                                background: linear-gradient(to left, white 50%, $orangeLight 50%) right;
+                                background-size: 200% 100%;
+                                background-position: 100%;
+                                background-clip: text;
+                                color: transparent;
+                                filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+                                white-space: nowrap;
+                                transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out; 
+                            
+                            }
+                            
+                            .details {
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 0.9em;
+                                align-items: center;
                                 
-                                &:hover {
-                                    transform: scale(1.2);
+                                p {
+                                    display: block;
+                                    margin-right: 25%;
+                                    white-space: nowrap; //flex-wrap pour le conteneur, white-space pour contenu
+                                    padding-left: 1%;
+                                }
+                                
+                                img {
+                                    width: 100px;
+                                    height: 100px;
+                                }
+                                
+                                .chevron {
+                                    width: 2em;
+                                    height: auto;
+                                    transform: rotate(-90deg);
+                                    cursor: pointer;
+                                    position: relative;
+                                    animation-direction: reverse;
                                     transition: 0.5s ease;
+                                    
                                 }
                             }
+                        }
+                        &:hover h2{
+                            transform: scale(1.03);
+                            background-position: 0;
+                            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
+                        }
+
+                        &:hover .details .chevron{
+                            transform: scale(1.2);
+                            transition: 0.5s ease;
                         }
                     }
                 }
@@ -165,16 +186,86 @@ main{
             .title{
                 padding-top: 10%;
             }
+        }
+    }
+}
 
-            section{
-                .sortByDay{
-                    position:relative;
-                    left:-6%; 
-                }
-                .border-bottom{
-                    width:75%;
-                }
+@media  screen and (max-width: 1400px) {
+    main {
+        &.main-line-up {
+            .cards {
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
     }
 }
+
+@media  screen and (max-width: 700px) {
+    main {
+        &.main-line-up {
+            .cards {
+                grid-template-columns: repeat(1, 1fr) !important;
+            }
+        }
+    }
+}
+
+//iPad
+@media screen and (max-width:821px) {
+    main{
+        &.main-line-up{
+            top:5%;
+            margin-bottom: 50px; 
+            position:relative; 
+            section .cards .artist-card a .image{
+                filter: none; 
+            }
+        }
+    }
+}
+
+//iPhone 13
+@media screen and (max-width:429px) {
+    main{
+        &.main-line-up{
+            top: 12%;
+            margin-bottom: 100px;
+
+            section{
+                .sortByDay{
+                    span{
+                        font-size: 12px; 
+                        white-space: nowrap;
+                        margin-left: -2.5%; 
+                        gap: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//iPhone 11
+@media screen and (max-width:415px) {
+    main{
+        &.main-line-up{
+            top: 12%;
+            margin-bottom: 100px;
+
+            section{
+                .sortByDay{
+                    span{
+                        font-size: 11px; 
+                        white-space: nowrap;
+                        margin-left: -2%;
+                        gap: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+

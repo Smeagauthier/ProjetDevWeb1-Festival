@@ -37,7 +37,8 @@ header {
         position: relative;
         justify-content: center;
         align-items: center;
-        left:-20%; 
+        left: 0;
+        margin-left: -3vw;
         top:100%;
 
       }
@@ -189,6 +190,7 @@ header {
       }
       
       .menu-classique{
+        top: 0 !important;
         position:fixed; 
         left:-100; 
         top:135px;

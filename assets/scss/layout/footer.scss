@@ -1,9 +1,188 @@
-footer{
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    height: 30vh;
-    background-color: black;
-    color:yellow; 
-    font-size: 2em; 
+@import url("../base/variables.scss");
+
+footer {
+    background-color: #0a0a0a;
+    padding: 20px;
+    color: white;
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+        grid-template-areas: 
+        "about follow-us partners"; 
+
+        .footer-about{
+            grid-area: about;
+        }
+    
+        .footer-follow-us{
+            grid-area: follow-us; 
+        }
+    
+        .footer-partners{
+            grid-area: partners;
+        }
+    }
+
+    
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        a{
+            color: white; 
+            text-transform: uppercase;
+            text-decoration: none;
+            line-height: 1.9;
+            text-align: start;
+            transition: transform 0.4s ease;
+
+            &:hover{
+                transform: scale(1.03); 
+                font-weight: 700; 
+                color: $orangeLight; 
+            }
+
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+
+            a {
+                color: white;
+                font-size: 1.5em;
+                transition: color 0.3s;
+
+                img{
+                    width: 30px; 
+                    height:30px;
+                    filter: invert(1);
+                    transition: transform 0.4s ease; 
+
+                    &:hover{
+                        filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+                        transform: scale(1.2); 
+                    }
+                }
+            }
+        }
+
+        .partners-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+            align-items: center;
+            // background-color: yellow;
+            // z-index:999; 
+
+            img {
+                max-width: 80px;
+                height: auto;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .footer-note {
+        text-align: center;
+        font-size: 1.4em;
+        color: $orangeLight;
+        margin-top: 20px;
+        font-weight:700;
+    }
+}
+
+//-------------------------- MEDIA QUERIES ---------------------
+
+//iPad
+@media screen and (max-width: 821px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr; // Deux colonnes
+        grid-template-areas: 
+            "about follow-us"
+            "partners partners"; 
+
+        .about{
+            position:relative;
+            left: 35%;  
+            justify-content: start;
+            align-items: start;
+
+        }
+
+        .follow-us{
+            display:flex; 
+            align-items: flex-end;
+            position: relative;
+            left: 75%;
+
+            h2{
+                text-align: left;
+                right:8%; 
+                position: relative;
+                align-items: start;
+                justify-content: flex-start;
+            }
+        }
+
+        .partners {
+            grid-column: 1 /  -1;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+
+            .partners-logos {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                gap: 20px;
+            }
+        } 
+    }
+    .footer-section {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+//iPhone 11
+@media screen and (max-width: 415px) {
+    .footer-container {
+
+        .footer-section {
+
+            h2{
+                font-size: 1em; 
+            }
+            .partners-logos {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+
+                img{
+                    width: 70px; 
+                    height: auto; 
+                }
+            }
+        }
+        
+    }
+
+    
 }

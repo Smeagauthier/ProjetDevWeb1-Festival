@@ -128,7 +128,7 @@ main {
                         
                         .day-pass {
                             display: grid;
-                            grid-template-columns: 2fr 1fr 1fr;
+                            grid-template-columns: 2fr 1fr 2fr;
                             // grid-template-rows: auto;
                             align-items: center;
                             position: relative;
@@ -242,9 +242,9 @@ main {
                         font-size: 1.2em;
                         font-weight: 900;
                         border-radius: 50px;
-                        cursor: pointer;
                         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
                         padding: 10px 20px;
+                        border:none; 
                         
                         &:hover {
                             background-color: darken($btnOrange, 10%);
@@ -305,9 +305,9 @@ main {
                         border-radius: 5px;
                         background-color: black;
                         color: white;
+                        text-decoration:none;  
                         text-transform: uppercase;
                         font-weight: 700;
-                        cursor: pointer;
                     }
                 }
                 
@@ -429,8 +429,8 @@ main {
         }
         
         .section-newsletter {
-            height:20vh;
-            margin-bottom: 13%;
+            height:24vh;
+            // margin-bottom: 13%;
             
             .content {
                 .title {
@@ -438,12 +438,12 @@ main {
                 }
                 
                 .description {
-                    margin: 5% 0;  // Ajustement des marges du texte descriptif
-                    width: 100%;  // Assurez-vous que le texte occupe toute la largeur
+                    margin: 5% 0;  
+                    width: 100%; 
                 }
                 
                 input {
-                    margin-top: 10%;  // Ajustement de la marge supérieure de l'input
+                    margin-top: 10%;
                 }
             }
         }
@@ -520,7 +520,7 @@ main {
             max-height: 76vh; 
             // margin-top:-1%; 
             .background-opacity{
-                margin-top: -1%;
+                margin-top: 0%;
                 min-width: 95vw; 
                 max-height: 70vh;
                 

@@ -1,4 +1,11 @@
 @charset "UTF-8";
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
+@import url("../base/variables.scss");
 header {
   display: flex;
   position: relative;
@@ -32,7 +39,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -142,6 +150,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -251,7 +260,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -361,6 +371,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -438,15 +449,145 @@ header nav ul li a:hover::after {
   }
 }
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 .intro {
   overflow: hidden;
 }
@@ -854,7 +995,6 @@ footer {
     font-size: 3.4em;
     width: 80%;
     left: 11%;
-    background-color: yellow;
   }
   .more {
     font-size: 1.5em;
@@ -873,27 +1013,45 @@ footer {
   .intro-home .image-background {
     height: 54vh;
   }
-  .intro-home .image-background .purple-band {
-    width: 130vw;
+  .intro-home .image-background .slogan {
+    font-size: 2.5em;
+    left: calc(100% + 2em);
+    animation: scrollLeft 8s linear infinite;
   }
-  .intro-home .image-background .infos {
+  @keyframes scrollLeft {
+    from {
+      left: calc(100% + 2em);
+    }
+    to {
+      left: -100%;
+    }
+  }
+  .intro-home .infos {
     align-items: center;
     text-align: center;
     padding-right: 20%;
     white-space: nowrap;
   }
-  .intro-home .image-background .infos .title-card {
+  .intro-home .infos .title-card {
     font-size: 2em;
   }
-  .intro-home .image-background .infos p {
+  .intro-home .infos p {
     font-size: 1.7em;
   }
-  .intro-home .image-background .infos a {
+  .intro-home .infos a {
     font-size: 1.5em;
     padding: 10px 15px;
   }
-  .container-btnMoreNames .btnMoreNames {
-    font-size: 2.3em;
+  .artists-list {
+    margin-left: -9%;
+    min-width: 80vw;
+    font-size: 2.8em;
+  }
+  .more {
+    max-width: 80vw;
+    position: relative;
+    margin-top: 2%;
+    transform: translateX(-10%);
   }
   .contact .formExplanation {
     font-size: 1em;
@@ -1034,10 +1192,10 @@ footer {
   }
   .intro-home .image-background .purple-band {
     height: 40px;
-    margin-bottom: 7%;
+    margin-bottom: 9%;
   }
   .intro-home .image-background .purple-band .wrapperSlogan .slogan {
-    font-size: 1.15em;
+    font-size: 1.3em;
     padding: 2% 0;
     left: max(48em, 100%);
   }
@@ -1060,7 +1218,7 @@ footer {
     animation-delay: 0s;
   }
   section .line-up {
-    margin-top: 5%;
+    margin-top: 1%;
   }
   section .artists-list {
     font-size: 1.8em;
@@ -1071,18 +1229,20 @@ footer {
   }
   section .more {
     font-size: 0.8em;
-    left: -2%;
+    position: relative;
+    width: 80vw;
+    transform: translateX(-13%);
   }
-  .contact {
+  section .contact {
     margin-bottom: -8%;
   }
-  .contact .formContact .formExplanation {
+  section .contact .formContact .formExplanation {
     font-size: 1em;
   }
-  .contact .formContact form {
+  section .contact .formContact form {
     font-size: 1em;
   }
-  .contact .formContact form .btnSend {
+  section .contact .formContact form .btnSend {
     font-size: 1.3em;
     min-height: 45px;
   }
@@ -1093,30 +1253,295 @@ footer {
     width: 60%;
   }
   section .more {
-    left: 9%;
+    left: 9.4%;
     margin-bottom: 2%;
   }
 }
+@media screen and (max-width: 415px) {
+  section.contact .formContact .formExplanation {
+    font-size: 1em;
+  }
+}
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 header {
   display: flex;
   position: relative;
@@ -1150,7 +1575,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -1260,6 +1686,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -1352,26 +1779,27 @@ main.main-line-up .title {
 }
 main.main-line-up .sortByDay {
   display: flex;
-  justify-content: flex-start;
   font-size: 15px;
+  justify-content: flex-start;
+  margin-left: 5%;
   text-transform: uppercase;
   padding-top: 30px;
   font-weight: 700;
-  width: 60%;
+  width: 100%;
   gap: 50px;
-  margin: 0 auto;
 }
-main.main-line-up .sortByDay div {
+main.main-line-up .sortByDay span {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
-main.main-line-up .sortByDay div:hover {
+main.main-line-up .sortByDay span:hover {
   transform: scale(1.1);
   color: #FB9300;
   transition: 0.3s ease-in-out;
 }
 main.main-line-up .border-bottom {
   border-bottom: rgba(230, 191, 151, 0.5) 3px solid;
-  width: 62%;
+  min-width: 95%;
   position: relative;
   left: 0;
   padding-top: 5px;
@@ -1396,20 +1824,34 @@ main.main-line-up section .cards .artist-card {
   position: relative;
   align-items: center;
 }
-main.main-line-up section .cards .artist-card .image {
+main.main-line-up section .cards .artist-card a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+main.main-line-up section .cards .artist-card a .image {
   width: 100%;
   height: 22em;
+  filter: grayscale(80%);
   display: flex;
   justify-content: center;
   overflow: hidden;
   object-position: center;
+  transition: filter 0.6s ease;
 }
-main.main-line-up section .cards .artist-card .image img {
+main.main-line-up section .cards .artist-card a .image img {
   width: 100%;
   height: 95%;
   object-fit: cover;
+  object-position: 50% 5%;
 }
-main.main-line-up section .cards .artist-card .info {
+main.main-line-up section .cards .artist-card a .image:hover {
+  filter: grayscale(0%);
+  transition: all 0.6s ease;
+}
+main.main-line-up section .cards .artist-card a .info {
   color: white;
   padding: 12px;
   text-align: left;
@@ -1419,8 +1861,8 @@ main.main-line-up section .cards .artist-card .info {
   height: 20%;
   flex-wrap: nowrap;
 }
-main.main-line-up section .cards .artist-card .info h2 {
-  width: 72%;
+main.main-line-up section .cards .artist-card a .info h2 {
+  width: 100%;
   font-size: 1.5em;
   margin: 0;
   letter-spacing: 1px;
@@ -1437,28 +1879,23 @@ main.main-line-up section .cards .artist-card .info h2 {
   white-space: nowrap;
   transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out;
 }
-main.main-line-up section .cards .artist-card .info h2:hover {
-  transform: scale(1.03);
-  background-position: 0;
-  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
-}
-main.main-line-up section .cards .artist-card .info .details {
+main.main-line-up section .cards .artist-card a .info .details {
   display: flex;
   justify-content: space-between;
   font-size: 0.9em;
   align-items: center;
 }
-main.main-line-up section .cards .artist-card .info .details span {
+main.main-line-up section .cards .artist-card a .info .details p {
   display: block;
   margin-right: 25%;
   white-space: nowrap;
   padding-left: 1%;
 }
-main.main-line-up section .cards .artist-card .info .details img {
+main.main-line-up section .cards .artist-card a .info .details img {
   width: 100px;
   height: 100px;
 }
-main.main-line-up section .cards .artist-card .info .details .chevron {
+main.main-line-up section .cards .artist-card a .info .details .chevron {
   width: 2em;
   height: auto;
   transform: rotate(-90deg);
@@ -1467,7 +1904,12 @@ main.main-line-up section .cards .artist-card .info .details .chevron {
   animation-direction: reverse;
   transition: 0.5s ease;
 }
-main.main-line-up section .cards .artist-card .info .details .chevron:hover {
+main.main-line-up section .cards .artist-card a:hover h2 {
+  transform: scale(1.03);
+  background-position: 0;
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
+}
+main.main-line-up section .cards .artist-card a:hover .details .chevron {
   transform: scale(1.2);
   transition: 0.5s ease;
 }
@@ -1476,12 +1918,49 @@ main.main-line-up section .cards .artist-card .info .details .chevron:hover {
   main.main-line-up .title {
     padding-top: 10%;
   }
-  main.main-line-up section .sortByDay {
-    position: relative;
-    left: -6%;
+}
+@media screen and (max-width: 1400px) {
+  main.main-line-up .cards {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  main.main-line-up section .border-bottom {
-    width: 75%;
+}
+@media screen and (max-width: 700px) {
+  main.main-line-up .cards {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+@media screen and (max-width: 821px) {
+  main.main-line-up {
+    top: 5%;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  main.main-line-up section .cards .artist-card a .image {
+    filter: none;
+  }
+}
+@media screen and (max-width: 429px) {
+  main.main-line-up {
+    top: 12%;
+    margin-bottom: 100px;
+  }
+  main.main-line-up section .sortByDay span {
+    font-size: 12px;
+    white-space: nowrap;
+    margin-left: -2.5%;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 415px) {
+  main.main-line-up {
+    top: 12%;
+    margin-bottom: 100px;
+  }
+  main.main-line-up section .sortByDay span {
+    font-size: 11px;
+    white-space: nowrap;
+    margin-left: -2%;
+    gap: 0;
   }
 }
 header {
@@ -1517,7 +1996,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -1627,6 +2107,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -1704,15 +2185,145 @@ header nav ul li a:hover::after {
   }
 }
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 .purple-band2 {
   background-color: #A678B1;
   position: absolute;
@@ -1798,6 +2409,7 @@ footer {
 .container .photo-artiste img {
   width: 550px;
   height: 550px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
 }
 .container .infos {
   display: flex;
@@ -1880,7 +2492,7 @@ footer {
 }
 
 .bio-container {
-  top: -25%;
+  top: -18%;
   display: flex;
   position: relative;
   max-width: 100vw;
@@ -1909,12 +2521,12 @@ footer {
   .purple-band2 {
     height: 50px;
     max-width: 105vw;
-    top: 20%;
+    top: 17%;
   }
   .purple-band2 .slogan2 {
     font-size: 3em;
     white-space: nowrap;
-    animation: scrollLeft 10s linear infinite;
+    animation: scrollLeft 8s linear infinite;
     left: 100%;
     position: absolute;
     top: 50%;
@@ -1928,14 +2540,11 @@ footer {
       left: -100%;
     }
   }
-  .purple-band2 .slogan2:nth-child(2) {
-    animation-delay: 0s;
-  }
-  .purple-band2 .slogan2:nth-child(3) {
-    animation-delay: -3s;
-  }
   .container {
     display: grid;
+    max-width: 85vw;
+    overflow: hidden;
+    width: 85vw;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "photo-artiste infos";
@@ -1943,11 +2552,10 @@ footer {
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    min-height: 100%;
+    height: 50vh;
     top: 13%;
-    left: 8%;
+    right: 0%;
+    left: 3%;
   }
   .container .photo-artiste {
     grid-area: photo-artiste;
@@ -1957,7 +2565,7 @@ footer {
   }
   .container .photo-artiste img {
     max-width: 420px;
-    height: 420px;
+    height: 440px;
   }
   .container .infos {
     grid-area: infos;
@@ -1966,7 +2574,7 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 100%;
-    margin-top: 37%;
+    margin-top: 60%;
   }
   .container .infos .day {
     font-size: 1.3em;
@@ -1998,14 +2606,14 @@ footer {
     padding-top: 5px;
   }
   .bio-container {
-    position: absolute;
-    top: 52%;
-    left: 8%;
-    width: 100%;
-    height: auto;
+    max-width: 90vw;
+    overflow: hidden;
+    position: relative;
+    padding-left: 1.5%;
+    width: 100vw;
   }
   .bio-container .bio-content {
-    margin-top: 2%;
+    margin-top: 3%;
     width: 420px;
     max-width: 100%;
     padding: 0;
@@ -2023,7 +2631,7 @@ footer {
     justify-content: center;
     max-width: 100%;
     min-height: 100%;
-    top: 7%;
+    top: 15%;
     left: 0%;
   }
   .container .photo-artiste {
@@ -2042,7 +2650,7 @@ footer {
     align-items: center;
     text-align: center;
     max-width: 100%;
-    margin-top: 2%;
+    margin-top: 12%;
   }
   .container .infos .day {
     left: -3%;
@@ -2061,12 +2669,12 @@ footer {
     max-width: 100%;
   }
   .container .infos .introducing {
-    margin-top: 20px;
     justify-content: center;
     position: relative;
     align-items: center;
     max-width: 100%;
     left: -4.5%;
+    top: -10%;
   }
   .container .infos .introducing .intro-title {
     font-size: 1.2em;
@@ -2079,10 +2687,9 @@ footer {
   .bio-container {
     position: relative;
     top: 2%;
-    left: 0;
-    max-width: 100%;
+    width: 100vw;
     height: auto;
-    padding: 0 3%;
+    padding-right: 8%;
   }
   .bio-container .bio-content {
     width: 100%;
@@ -2118,11 +2725,20 @@ footer {
   }
 }
 @media screen and (max-width: 1600px) {
+  .container .infos {
+    top: -6%;
+    position: relative;
+  }
   .bio-container {
     top: 0%;
     left: 4%;
     position: relative;
     padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 811px) {
+  .bio-container .bio-content {
+    margin-top: 7%;
   }
 }
 header {
@@ -2158,7 +2774,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -2268,6 +2885,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -2345,15 +2963,145 @@ header nav ul li a:hover::after {
   }
 }
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 main.main-tickets .tickets {
   position: relative;
   width: 100%;
@@ -2469,7 +3217,7 @@ main.main-tickets .tickets .image-background-tickets .background-opacity .ticket
 }
 main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
   position: relative;
   padding-top: 10px;
@@ -2563,9 +3311,9 @@ main.main-tickets .tickets .image-background-tickets .container-btnContinue .btn
   font-size: 1.2em;
   font-weight: 900;
   border-radius: 50px;
-  cursor: pointer;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
   padding: 10px 20px;
+  border: none;
 }
 main.main-tickets .tickets .image-background-tickets .container-btnContinue .btnContinue:hover {
   background-color: #c87500;
@@ -2625,9 +3373,9 @@ main.main-tickets .section-newsletter .content form button {
   border-radius: 5px;
   background-color: black;
   color: white;
+  text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 428px) {
@@ -2710,8 +3458,7 @@ main.main-tickets .section-newsletter .content form button {
     margin-bottom: 20%;
   }
   main .section-newsletter {
-    height: 20vh;
-    margin-bottom: 13%;
+    height: 24vh;
   }
   main .section-newsletter .content .title {
     margin-top: 35%;
@@ -2779,7 +3526,7 @@ main.main-tickets .section-newsletter .content form button {
     max-height: 76vh;
   }
   main .tickets .image-background-tickets .background-opacity {
-    margin-top: -1%;
+    margin-top: 0%;
     min-width: 95vw;
     max-height: 70vh;
   }
@@ -2835,15 +3582,145 @@ main.main-tickets .section-newsletter .content form button {
   }
 }
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 header {
   display: flex;
   position: relative;
@@ -2877,7 +3754,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -2987,6 +3865,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -3147,6 +4026,7 @@ main.main-camping .section-infos ul li, main.main-camping .section-chill ul li, 
   position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 main.main-camping .section-infos small, main.main-camping .section-chill small, main.main-camping .section-security small, main.main-camping .section-rules small {
   display: block;
@@ -3198,75 +4078,255 @@ main.main-camping .section-infos, main.main-camping .section-chill, main.main-ca
 }
 
 @media screen and (max-width: 821px) {
-  main {
+  main.main-camping {
     top: 10%;
     justify-content: center;
+    overflow-x: hidden;
+    max-width: 100vw;
+    padding: 0% 3%;
+    margin-bottom: 15%;
   }
-  main .section-header {
-    background: pink;
+  main.main-camping .section-header {
     max-width: 100vw;
   }
-  main .section-header h1 {
-    font-size: 2em;
+  main.main-camping .section-header .image-intro img {
+    width: 100%;
+    height: 320px;
+    max-width: 100vw;
   }
-  main .section-header p {
-    background: yellow;
+  main.main-camping .section-chill {
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+  }
+  main.main-camping .section-chill .image-camping img {
+    max-width: 40vw;
+    height: auto;
+  }
+  main.main-camping .section-infos, main.main-camping .section-security, main.main-camping .section-rules {
+    max-width: 100vw;
+  }
+}
+@media screen and (max-width: 429px) {
+  main.main-camping {
+    top: 15%;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    max-width: 100vw;
+    padding: 0;
+    margin-bottom: 140px;
+  }
+  main.main-camping .section-header {
+    text-align: center;
+    max-width: 100vw;
+    padding: 0;
+  }
+  main.main-camping .section-header p {
     font-size: 1em;
     width: 90%;
+    margin: 0 auto;
   }
-  main .section-header .image-intro img {
-    height: auto;
-    max-width: 20vw;
+  main.main-camping .section-header .image-intro img {
+    width: 100%;
+    height: 200px;
+    max-width: 100vw;
+    object-fit: cover;
   }
-  main .section-infos {
+  main.main-camping .section-infos {
+    padding: 5% 3%;
     max-width: 100vw;
   }
-  main .section-infos .info-item {
-    background: yellow;
+  main.main-camping .section-infos .info-item {
+    gap: 4px;
   }
-  main .section-infos .info-item img {
+  main.main-camping .section-infos .info-item img {
     width: 18px;
     height: 18px;
   }
-  main .section-infos .info-item p {
+  main.main-camping .section-infos .info-item p {
     font-size: 0.9em;
+    padding-left: 0;
   }
-  main .section-chill {
-    grid-template-columns: 1fr;
-    background-color: aqua;
+  main.main-camping .section-chill {
+    display: flex;
+    flex-direction: column;
     max-width: 100vw;
+    padding: 5% 3%;
   }
-  main .section-chill .chill-content {
-    background: yellow;
+  main.main-camping .section-chill .chill-content {
+    margin-top: -10px;
     font-size: 0.9em;
   }
-  main .section-chill .image-camping img {
-    max-width: 30%;
-    display: block;
-    height: auto;
+  main.main-camping .section-chill .chill-content ul {
+    margin-top: 5px;
+    padding-left: 20px;
   }
-  main .section-security, main .section-rules {
+  main.main-camping .section-chill .image-camping {
+    width: 100%;
+  }
+  main.main-camping .section-chill .image-camping img {
+    min-width: 110vw;
+    height: 240px;
+  }
+  main.main-camping .section-security, main.main-camping .section-rules {
     max-width: 100vw;
-    background: green;
+    padding: 5% 3%;
   }
-  main .section-security p, main .section-rules p {
+  main.main-camping .section-security p, main.main-camping .section-rules p {
     font-size: 0.9em;
+    margin-bottom: 5px;
   }
-  main .section-security h2, main .section-rules h2 {
-    text-align: center;
-    font-size: 1.8em;
+  main.main-camping .section-security ul li, main.main-camping .section-rules ul li {
+    font-size: 0.9em;
+    padding-left: 15px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 415px) {
+  main.main-camping {
+    top: 17%;
+    margin-bottom: 150px;
   }
 }
 footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
   display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 30vh;
-  background-color: black;
-  color: yellow;
-  font-size: 2em;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
 }
 
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
+  }
+}
 header {
   display: flex;
   position: relative;
@@ -3300,7 +4360,8 @@ header nav.menuOpened .menu-classique {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: -20%;
+  left: 0;
+  margin-left: -3vw;
   top: 100%;
 }
 header nav.menuOpened .menu-dates {
@@ -3410,6 +4471,7 @@ header nav ul li a:hover::after {
     margin-left: 5%;
   }
   header nav .menu-classique {
+    top: 0 !important;
     position: fixed;
     left: -100;
     top: 135px;
@@ -3629,6 +4691,61 @@ main.main-acces .section-velo, main.main-acces .section-train {
   border-bottom: 1px solid black;
 }
 
+@media screen and (max-width: 821px) {
+  main.main-acces {
+    top: 10%;
+    justify-content: center;
+    overflow-x: hidden;
+    max-width: 100vw;
+    padding: 0% 3%;
+    margin-bottom: 15%;
+  }
+  main.main-acces .section-navettes .content .image-navette img,
+  main.main-acces .section-navettes .content .image-train img,
+  main.main-acces .section-navettes .content .image-voiture img,
+  main.main-acces .section-train .content .image-navette img,
+  main.main-acces .section-train .content .image-train img,
+  main.main-acces .section-train .content .image-voiture img,
+  main.main-acces .section-voiture .content .image-navette img,
+  main.main-acces .section-voiture .content .image-train img,
+  main.main-acces .section-voiture .content .image-voiture img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  main.main-acces .section-covoiturage {
+    max-width: 100vw;
+    left: 50%;
+  }
+}
+@media screen and (max-width: 428px) {
+  main.main-acces {
+    top: 17%;
+    justify-content: center;
+    overflow-x: hidden;
+    max-width: 100vw;
+    padding: 0% 3%;
+    margin-bottom: 10%;
+  }
+  main.main-acces .section-acces {
+    font-size: 0.8em;
+  }
+  main.main-acces .section-train .content .image-train img,
+  main.main-acces .section-train .content .image-voiture img,
+  main.main-acces .section-voiture .content .image-train img,
+  main.main-acces .section-voiture .content .image-voiture img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+  main.main-acces .section-navettes .content .image-navette img {
+    height: 60%;
+    width: 100%;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+}
 * {
   margin: 0;
   padding: 0;
