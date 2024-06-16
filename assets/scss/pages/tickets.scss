@@ -4,329 +4,604 @@
 @import "../base/variables.scss";
 
 main {
-    .tickets {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        // top:7%; 
-        display: flex;
-        // background: pink;
-        
-        .image-background-tickets {
-            background-image: url('../images/photos/tickets/tickets-resized-compressed.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 120vh;
-            width: 100%;
+    
+    &.main-tickets{
+
+        .tickets {
             position: relative;
-            // margin-top: 0%;
+            width: 100%;
+            height: 100vh;
+            display: flex;
             
-            .background-opacity {
-                position: absolute;
-                top: 55%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 80%;
-                height: 80%;
-                background-color: rgba(218, 218, 218, 0.85);
-                display: flex;
-                justify-content: center;
-                // align-items: center;
-                flex-direction: column;
-                color: black;
-                z-index: 10;
-                border-radius: 10px;                
-
+            .image-background-tickets {
+                background-image: url('../images/photos/tickets/tickets-resized-compressed.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 110vh;
+                width: 100%;
+                position: relative;
+                top:6%;
+                // margin-top: 0%;
                 
-                .title {
-                    @include title(0%);
-                    justify-content: center;
-                    align-items: flex-start;
-                }
-                
-                .intro-tickets {
-                    font-size: 1em;
-                    width: 100%;
-                    margin-top: 1%;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                }
-                
-                .infos-festival {
+                .background-opacity {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    height: 80%;
+                    background-color: rgba(218, 218, 218, 0.85);
                     display: flex;
-                    position: relative;
-                    padding-left: 5%;
-                    flex-direction: column;
-                    width: 100%;
-                    margin-top: 2%;
-                    gap: 10px;
-                    font-weight: 300;
-                    width: 90%;
                     justify-content: center;
-                    
-                    .location {
-                        width: 100%;
-                        display: flex;
-                        
-                        img {
-                            height: 25px;
-                            width: 20px;
-                            margin-right: 12px;
-                        }
-                        
-                        p {
-                            margin-top: 4px;
-                        }
-                    }
-                    
-                    .calendar {
-                        width: 100%;
-                        display: flex;
-                        
-                        img {
-                            height: 20px;
-                            width: 20px;
-                            margin-right: 12px;
-                        }
-                        
-                        p {
-                            margin-top: 2px;
-                        }
-                    }
-                }
-                
-                .tickets-standards, .tickets-camping {
-                    display: flex;
+                    // align-items: center;
                     flex-direction: column;
-                    width: 100%;
-                    padding: 2%;
-                    // margin-top: 1%;
-
-                    .ticket-price{
-                        font-size: 1.3em; 
-                        font-weight: 600;
-                        font-style: italic; 
-                        width:100%; 
-                        position:relative; 
-                        left: 5%;
-                        top:1%; 
-                        color:rgb(36, 36, 36) ;
+                    color: black;
+                    z-index: 10;
+                    border-radius: 10px;                
+                    
+                    
+                    .title {
+                        @include title(0%);
+                        justify-content: center;
+                        align-items: flex-start;
                     }
                     
-                    .title-standard, .title-camping {
-                        font-weight: 700;
-                        font-size: 2em;
+                    .intro-tickets {
+                        font-size: 1em;
                         width: 100%;
-                        text-transform: uppercase;
-                        white-space: nowrap;
-                        padding-left: 3%;
-                    }
-                    
-                    .day-pass {
-                        display: grid;
-                        grid-template-columns: 2fr 1fr 1fr;
-                        // grid-template-rows: auto;
+                        margin-top: 1%;
                         align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                    
+                    .infos-festival {
+                        display: flex;
                         position: relative;
-                        padding-top: 10px;
-                        padding-left:5%; 
-                        padding-right:5%; 
-                        // border-radius: 8px;
-                        margin-top: 10px;
-                        margin-bottom:0; 
-                        // border-bottom: 1px solid black;
-                        // background:red;
-                        width:100%;  
+                        padding-left: 5%;
+                        flex-direction: column;
+                        width: 100%;
+                        margin-top: 2%;
+                        gap: 10px;
+                        font-weight: 300;
+                        width: 90%;
+                        justify-content: center;
                         
-                        .day {
-                            grid-column: 1 / 2;
-                            font-size: 1.2em;
-                            font-weight: 600;
-                            text-transform: uppercase;
-                            // background: green;
-                            margin-bottom: -7px; 
-                        }
-                        
-                        .date {
-                            grid-column: 1 / 2;
-                            font-size: 1em;
-                            // background: red;
-                            margin-top: -10px;
-                        }
-                        
-                        .price {
-                            grid-column: 2 / 3;
-                            justify-self: flex-end;
-                            font-size: 1.4em;
-                            font-weight: 700;
-                            // background: blue;
-                            // width: 100%;
-                            position: relative;
-                            top: -12px; 
-                            left: 30%; 
-                        }
-                        
-                        .spinner {
-                            grid-column: 3 / 4;
-                            justify-self: end;
+                        .location {
+                            width: 100%;
                             display: flex;
-                            position: relative;
-                            top: -15px;
-                            margin-right: 7%;
-                            background: $btnOrange;
-                            height: 40px;
-                            border-radius: 50px;
-                            font-size: 1em;
-                            width: 140px;
-                            text-align: center;
-                            align-items: center;
-                            justify-content: space-between;
-                            padding: 3px 8px;
-                            color: white;
-                            font-weight: 600;
-                            //ajoute moi une box-shadow
-                            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
                             
-                            button {
-                                background: $btnOrange;
-                                color: white;
-                                border: none;
-                                padding: 5px 12px;
-                                border-radius: 50px;
-                                cursor: pointer;
-                                font-weight: 600;
-                                font-size: 1em;
-                                
-                                &:hover {
-                                    background: #cb7700;
-                                }
+                            img {
+                                height: 25px;
+                                width: 20px;
+                                margin-right: 12px;
+                            }
+                            
+                            p {
+                                margin-top: 4px;
                             }
                         }
-                        .border-pass {
-                            grid-column: 1 / 4;
-                            height: 1px;
-                            background-color: black;
-                            // margin-top: -0.1%;
-                            width: 98%; 
-                            z-index:10; 
+                        
+                        .calendar {
+                            width: 100%;
+                            display: flex;
+                            
+                            img {
+                                height: 20px;
+                                width: 20px;
+                                margin-right: 12px;
+                            }
+                            
+                            p {
+                                margin-top: 2px;
+                            }
                         }
                     }
+                    
+                    .tickets-standards, .tickets-camping {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        padding: 2%;
+                        // margin-top: 1%;
+                        
+                        .ticket-price{
+                            font-size: 1.3em; 
+                            font-weight: 600;
+                            font-style: italic; 
+                            width:100%; 
+                            position:relative; 
+                            left: 5%;
+                            top:1%; 
+                            color:rgb(36, 36, 36) ;
+                        }
+                        
+                        .title-standard, .title-camping {
+                            font-weight: 700;
+                            font-size: 2em;
+                            width: 100%;
+                            text-transform: uppercase;
+                            white-space: nowrap;
+                            padding-left: 3%;
+                        }
+                        
+                        .day-pass {
+                            display: grid;
+                            grid-template-columns: 2fr 1fr 1fr;
+                            // grid-template-rows: auto;
+                            align-items: center;
+                            position: relative;
+                            padding-top: 10px;
+                            padding-left:5%; 
+                            padding-right:5%; 
+                            // border-radius: 8px;
+                            margin-top: 10px;
+                            margin-bottom:0; 
+                            // border-bottom: 1px solid black;
+                            // background:red;
+                            width:100%;  
+                            
+                            .day {
+                                grid-column: 1 / 2;
+                                font-size: 1.2em;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                // background: green;
+                                margin-bottom: -7px; 
+                            }
+                            
+                            .date {
+                                grid-column: 1 / 2;
+                                font-size: 1em;
+                                // background: red;
+                                margin-top: -10px;
+                                width: 60%; 
+                                white-space: nowrap;
+                            }
+                            
+                            .price {
+                                grid-column: 2 / 3;
+                                justify-self: flex-end;
+                                font-size: 1.4em;
+                                font-weight: 700;
+                                // background: blue;
+                                // width: 100%;
+                                position: relative;
+                                top: -12px; 
+                                left: 30%; 
+                            }
+                            
+                            .spinner {
+                                grid-column: 3 / 4;
+                                justify-self: end;
+                                display: flex;
+                                position: relative;
+                                top: -15px;
+                                margin-right: 7%;
+                                background: $btnOrange;
+                                height: 40px;
+                                border-radius: 50px;
+                                font-size: 1em;
+                                width: 140px;
+                                text-align: center;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 3px 8px;
+                                color: white;
+                                font-weight: 600;
+                                //ajoute moi une box-shadow
+                                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+                                
+                                button {
+                                    background: $btnOrange;
+                                    color: white;
+                                    border: none;
+                                    padding: 5px 12px;
+                                    border-radius: 50px;
+                                    cursor: pointer;
+                                    font-weight: 600;
+                                    font-size: 1em;
+                                    
+                                    &:hover {
+                                        background: #cb7700;
+                                    }
+                                }
+                            }
+                            .border-pass {
+                                grid-column: 1 / 4;
+                                height: 1px;
+                                background-color: black;
+                                // margin-top: -0.1%;
+                                width: 98%; 
+                                z-index:10; 
+                            }
+                        }
+                    }
+                    
+                    .tickets-camping {
+                        margin-top: -3%;
+                    }
                 }
-
-                .tickets-camping {
-                    margin-top: -3%;
-                }
-            }
-
-            .container-btnContinue {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 1%;
-        
-                .btnContinue {
+                
+                .container-btnContinue {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 12em;
-                    min-height: 50px;
-                    background-color: $btnOrange;
-                    color: white;
-                    text-transform: uppercase;
-                    font-size: 1.2em;
-                    font-weight: 900;
-                    border-radius: 50px;
-                    cursor: pointer;
-                    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
-                    padding: 10px 20px;
-        
-                    &:hover {
-                        background-color: darken($btnOrange, 10%);
-                        transition: 0.3s ease;
+                    margin-top: 1%;
+                    
+                    .btnContinue {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 12em;
+                        min-height: 50px;
+                        background-color: $btnOrange;
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 1.2em;
+                        font-weight: 900;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+                        padding: 10px 20px;
+                        
+                        &:hover {
+                            background-color: darken($btnOrange, 10%);
+                            transition: 0.3s ease;
+                        }
                     }
                 }
             }
         }
-    }
-
-    .section-newsletter {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height:80vh;
-        width: 100%;
-        background-color: $purple-light; 
         
-        .content {
+        .section-newsletter {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            text-align: center;
-            width: 80%;
-            // background:red; 
-            // justify-content: center;
-            // max-width: 1200px;
-
-
-            .title {
-                @include title(20%);
-                // background: yellow; 
-            }
-
-            .description {
-                padding-top: 1%;
-                font-size: 1.2em;  
-            }
-
-            input{
-                margin-top: 2%; 
-
-                &#newsletter{
-                    border: 3px solid black; 
-                    width: 300px; 
-                    height: 30px;
-                    font-size: 1em; 
-
-                    .send{
-                        background-color: black;
-                        height:30px; 
-                        width:30px; 
-                        img{
-                            width: 20px;
-                            height:20px;
+            height:50vh;
+            width: 100%;
+            background-color: $purple-light; 
+            // margin-bottom: 7%; 
+            
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 80%;
+                
+                
+                .title {
+                    @include title(10%);
+                    // background: yellow; 
+                }
+                
+                .description {
+                    padding-top: 1%;
+                    font-size: 1.2em;  
+                }
+                
+                form {
+                    margin-top: 1%;
+                    display: flex;
+                    justify-content: center;
+                    input[type="email"] {
+                        padding: 3%;
+                        margin-right: 2%;
+                        border: 2px solid black;
+                        border-radius: 5px;
+                        width:250px;
+                        
+                        &:focus{
+                            outline: none;
+                            box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
                         }
                     }
-    
-                    &::placeholder{
-                        font-style: italic;
-                        margin-left: 10px;
-                        width:100%;  
-                    }
-
-                    &:focus {
-                        // border: none;
-                        outline: none;
-                        box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+                    button {
+                        padding: 1% 1%;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: black;
+                        color: white;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        cursor: pointer;
                     }
                 }
-
+                
             }
-
         }
     }
 }
 
 //--------------------------- MEDIA QUERIES -----------------------
 
-//iPhone 13 pro Max (811px)
-@media screen and (max-width:811px){
-
-    .tickets .image-background-tickets .background-opacity{
-        padding-top: 10%;
+//iPhone 13 pro Max (428px)
+@media screen and (max-width:428px){
+    
+    main{
+        overflow:hidden;
+        .tickets .image-background-tickets{
+            min-height: 110vh;
+            
+            .background-opacity {
+                margin-top: 4%;
+                width: 100vw;
+                min-height: calc(100vh - 4%);
+                max-height: calc(105vh - 4%); 
+                
+                
+                .title{
+                    top: -2%;
+                    position: relative;
+                    margin-bottom: -5%;
+                }
+                
+                .infos-festival{
+                    padding: 3% 3%;  
+                }
+                
+                .tickets-camping, .tickets-standards{
+                    position: relative;
+                    left: -3%;
+                    
+                    .title-camping, .title-standard{
+                        font-size: 1.6em;
+                        
+                    }
+                    
+                    .ticket-price{
+                        font-size: 1em;
+                    }
+                    
+                    .day-pass{
+                        .day{
+                            white-space: nowrap;
+                            width:100%; 
+                            font-size: 1.2em;
+                        }
+                        .date{
+                            font-size: 0.9em;
+                            width:250px;
+                            // background:yellow; 
+                        }
+                        
+                        .price{
+                            // background-color: aqua;
+                            // top: 0; 
+                            margin-top: 20px;
+                            min-width: 100%;
+                            padding-left: 25%;
+                            padding-right:0;
+                            position: relative;
+                            white-space: nowrap; 
+                            font-size: 1.2em; 
+                        }
+                        
+                        .spinner{
+                            max-width: 110px;
+                            margin-top:20px; 
+                            left: 25%; 
+                            right:0; 
+                            position: relative;
+                        }
+                        
+                        .border-pass{
+                            min-width: 100%;
+                            width: 105%; 
+                        }
+                        
+                    }
+                }
+                
+                .tickets-camping .title-camping{
+                    margin-top: 3%; 
+                }
+                
+                .container-btnContinue .btnContinue{
+                    margin-top: 5%;
+                    width: 180px; 
+                }
+            } 
+        }
         
+        
+        .section-newsletter{
+            padding-top: 40%;
+            min-height:60vh; 
+        }
     }
+}
 
+//iPhone 11
+@media screen and (max-width: 415px) {
+    main {
+        .tickets .image-background-tickets .background-opacity {
+            .title {
+                margin-top: 5%;
+            }
+            
+            .container-btnContinue .btnContinue {
+                margin-bottom: 20%;
+            }
+        }
+        
+        .section-newsletter {
+            height:20vh;
+            margin-bottom: 13%;
+            
+            .content {
+                .title {
+                    margin-top: 35%;
+                }
+                
+                .description {
+                    margin: 5% 0;  // Ajustement des marges du texte descriptif
+                    width: 100%;  // Assurez-vous que le texte occupe toute la largeur
+                }
+                
+                input {
+                    margin-top: 10%;  // Ajustement de la marge supérieure de l'input
+                }
+            }
+        }
+    }
+    footer{
+        position: relative;
+    }
+}
+
+//iPad 
+@media screen and (max-width: 821px){
+    main{
+        overflow:hidden;
+        .tickets .image-background-tickets{
+            max-height: 76vh; 
+            // margin-top:-1%; 
+            .background-opacity{
+                margin-top: -1%;
+                min-width: 95vw; 
+                max-height: 70vh;
+                
+                .title{
+                    margin-top: -15%;
+                }
+                
+                .intro-tickets{
+                    margin: 2% 0; 
+                }
+                
+                .infos-festival{
+                    margin: 2% 0;
+                }
+                
+                .tickets-standards .day-pass, .tickets-camping .day-pass{
+                    .price{
+                        margin-right: 30%;
+                        // background-color: aqua;
+                    }
+                }
+                
+                .tickets-camping{
+                    margin-top: 1%;
+                }
+                
+                .container-btnContinue .btnContinue{
+                    margin-bottom: -13%;
+                }
+            }
+        }
+        
+        .section-newsletter{
+            max-height: 40vh;
+            margin-top: -80%;
+            // height:auto; 
+            // margin-bottom: 14%;
+        
+            .content{
+                margin-top: 10%;
+                .title{
+                    margin-top: 10%; 
+                }
+                .description{
+                    margin: 3% 0; 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 810px){
+    main{
+        overflow:hidden;
+        .tickets .image-background-tickets{
+            max-height: 76vh; 
+            // margin-top:-1%; 
+            .background-opacity{
+                margin-top: -1%;
+                min-width: 95vw; 
+                max-height: 70vh;
+                
+                .title{
+                    margin-top: -2%;
+                }
+                
+                .intro-tickets{
+                    margin: 2% 0; 
+                }
+                
+                .infos-festival{
+                    margin: 2% 0;
+                }
+                
+                .tickets-standards .day-pass, .tickets-camping .day-pass{
+                    .price{
+                        margin-right: 30%;
+                        // background-color: aqua;
+                    }
+                }
+                
+                .tickets-camping{
+                    margin-top: 1%;
+                }
+                
+                .container-btnContinue .btnContinue{
+                    margin-bottom: -1%;
+                }
+            }
+        }
+        
+        .section-newsletter{
+            max-height: 40vh;
+            margin-top: -80%;
+            // height:auto; 
+            // margin-bottom: 14%;
+        
+            .content{
+                margin-top: 10%;
+                .title{
+                    margin-top: 10%; 
+                }
+                .description{
+                    margin: 3% 0; 
+                }
+            }
+        }
+    }
+}
+
+//média petit écran
+@media screen and (max-width:1600px) {
+    main{
+        &.main-tickets{
+            .tickets{
+                height:130vh; 
+                .image-background-tickets{
+                    height:130vh ; 
+                    .background-opacity{
+                        top: 52%; 
+                        position:relative;
+                        height:110vh; 
+                    }
+
+                   
+                }
+            }
+
+            .section-newsletter{
+                .content{
+                    .title{
+                        margin-top: -8%; 
+                    }
+                    form{
+                        
+                        margin-top: 3% ;
+                    }
+                }
+            }
+         }
+    } 
+    
 }

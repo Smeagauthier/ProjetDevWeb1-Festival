@@ -22,7 +22,6 @@ header nav.menuOpened {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 100%;
-  transition: transform 0.3s ease;
 }
 header nav.menuOpened .menu-classique {
   display: flex;
@@ -242,7 +241,6 @@ header nav.menuOpened {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 100%;
-  transition: transform 0.3s ease;
 }
 header nav.menuOpened .menu-classique {
   display: flex;
@@ -443,7 +441,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 30vh;
   background-color: black;
   color: yellow;
   font-size: 2em;
@@ -678,7 +676,6 @@ footer {
   width: 9em;
   min-height: 75px;
   background-color: #FB9300;
-  color: white;
   text-transform: uppercase;
   font-size: 2.5em;
   font-weight: 900;
@@ -692,6 +689,10 @@ footer {
 .container-btnMoreNames .btnMoreNames:hover {
   background-color: #c87500;
   transition: 0.3s ease;
+}
+.container-btnMoreNames .btnMoreNames a {
+  text-decoration: none;
+  color: white;
 }
 
 .playlist {
@@ -853,6 +854,7 @@ footer {
     font-size: 3.4em;
     width: 80%;
     left: 11%;
+    background-color: yellow;
   }
   .more {
     font-size: 1.5em;
@@ -870,6 +872,9 @@ footer {
   }
   .intro-home .image-background {
     height: 54vh;
+  }
+  .intro-home .image-background .purple-band {
+    width: 130vw;
   }
   .intro-home .image-background .infos {
     align-items: center;
@@ -1068,6 +1073,9 @@ footer {
     font-size: 0.8em;
     left: -2%;
   }
+  .contact {
+    margin-bottom: -8%;
+  }
   .contact .formContact .formExplanation {
     font-size: 1em;
   }
@@ -1079,11 +1087,21 @@ footer {
     min-height: 45px;
   }
 }
+@media screen and (max-width: 1600px) {
+  section .artists-list {
+    left: 20%;
+    width: 60%;
+  }
+  section .more {
+    left: 9%;
+    margin-bottom: 2%;
+  }
+}
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 30vh;
   background-color: black;
   color: yellow;
   font-size: 2em;
@@ -1093,7 +1111,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 30vh;
   background-color: black;
   color: yellow;
   font-size: 2em;
@@ -1122,7 +1140,6 @@ header nav.menuOpened {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 100%;
-  transition: transform 0.3s ease;
 }
 header nav.menuOpened .menu-classique {
   display: flex;
@@ -1319,10 +1336,10 @@ header nav ul li a:hover::after {
     margin-right: 5%;
   }
 }
-.title {
+main.main-line-up .title {
   width: 100%;
   display: flex;
-  padding-top: 11%;
+  padding-top: 8%;
   width: 100%;
   display: flex;
   letter-spacing: 2%;
@@ -1333,8 +1350,7 @@ header nav ul li a:hover::after {
   justify-content: center;
   align-items: center;
 }
-
-.sortByDay {
+main.main-line-up .sortByDay {
   display: flex;
   justify-content: flex-start;
   font-size: 15px;
@@ -1345,24 +1361,22 @@ header nav ul li a:hover::after {
   gap: 50px;
   margin: 0 auto;
 }
-.sortByDay div {
+main.main-line-up .sortByDay div {
   cursor: pointer;
 }
-.sortByDay div:hover {
+main.main-line-up .sortByDay div:hover {
   transform: scale(1.1);
   color: #FB9300;
   transition: 0.3s ease-in-out;
 }
-
-.border-bottom {
+main.main-line-up .border-bottom {
   border-bottom: rgba(230, 191, 151, 0.5) 3px solid;
-  width: 100%;
+  width: 62%;
   position: relative;
   left: 0;
   padding-top: 5px;
 }
-
-section .cards {
+main.main-line-up section .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
@@ -1371,7 +1385,7 @@ section .cards {
   justify-content: center;
   align-items: center;
 }
-section .cards .artist-card {
+main.main-line-up section .cards .artist-card {
   background-color: #A678B1;
   height: 23.75em;
   display: flex;
@@ -1382,7 +1396,7 @@ section .cards .artist-card {
   position: relative;
   align-items: center;
 }
-section .cards .artist-card .image {
+main.main-line-up section .cards .artist-card .image {
   width: 100%;
   height: 22em;
   display: flex;
@@ -1390,12 +1404,12 @@ section .cards .artist-card .image {
   overflow: hidden;
   object-position: center;
 }
-section .cards .artist-card .image img {
+main.main-line-up section .cards .artist-card .image img {
   width: 100%;
   height: 95%;
   object-fit: cover;
 }
-section .cards .artist-card .info {
+main.main-line-up section .cards .artist-card .info {
   color: white;
   padding: 12px;
   text-align: left;
@@ -1405,7 +1419,7 @@ section .cards .artist-card .info {
   height: 20%;
   flex-wrap: nowrap;
 }
-section .cards .artist-card .info h2 {
+main.main-line-up section .cards .artist-card .info h2 {
   width: 72%;
   font-size: 1.5em;
   margin: 0;
@@ -1423,28 +1437,28 @@ section .cards .artist-card .info h2 {
   white-space: nowrap;
   transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out;
 }
-section .cards .artist-card .info h2:hover {
+main.main-line-up section .cards .artist-card .info h2:hover {
   transform: scale(1.03);
   background-position: 0;
   filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
 }
-section .cards .artist-card .info .details {
+main.main-line-up section .cards .artist-card .info .details {
   display: flex;
   justify-content: space-between;
   font-size: 0.9em;
   align-items: center;
 }
-section .cards .artist-card .info .details span {
+main.main-line-up section .cards .artist-card .info .details span {
   display: block;
   margin-right: 25%;
   white-space: nowrap;
   padding-left: 1%;
 }
-section .cards .artist-card .info .details img {
+main.main-line-up section .cards .artist-card .info .details img {
   width: 100px;
   height: 100px;
 }
-section .cards .artist-card .info .details .chevron {
+main.main-line-up section .cards .artist-card .info .details .chevron {
   width: 2em;
   height: auto;
   transform: rotate(-90deg);
@@ -1453,11 +1467,23 @@ section .cards .artist-card .info .details .chevron {
   animation-direction: reverse;
   transition: 0.5s ease;
 }
-section .cards .artist-card .info .details .chevron:hover {
+main.main-line-up section .cards .artist-card .info .details .chevron:hover {
   transform: scale(1.2);
   transition: 0.5s ease;
 }
 
+@media screen and (max-width: 1600px) {
+  main.main-line-up .title {
+    padding-top: 10%;
+  }
+  main.main-line-up section .sortByDay {
+    position: relative;
+    left: -6%;
+  }
+  main.main-line-up section .border-bottom {
+    width: 75%;
+  }
+}
 header {
   display: flex;
   position: relative;
@@ -1481,7 +1507,6 @@ header nav.menuOpened {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 100%;
-  transition: transform 0.3s ease;
 }
 header nav.menuOpened .menu-classique {
   display: flex;
@@ -1682,7 +1707,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 30vh;
   background-color: black;
   color: yellow;
   font-size: 2em;
@@ -1781,7 +1806,7 @@ footer {
   justify-content: start;
   height: 100%;
   padding-left: 8%;
-  margin-top: 27%;
+  margin-top: 30%;
   flex-direction: column;
 }
 .container .infos .day {
@@ -1855,7 +1880,7 @@ footer {
 }
 
 .bio-container {
-  top: -18%;
+  top: -25%;
   display: flex;
   position: relative;
   max-width: 100vw;
@@ -2004,6 +2029,7 @@ footer {
   .container .photo-artiste {
     max-width: 100%;
     margin-bottom: 20px;
+    margin-top: 4%;
   }
   .container .photo-artiste img {
     max-width: 100%;
@@ -2017,6 +2043,10 @@ footer {
     text-align: center;
     max-width: 100%;
     margin-top: 2%;
+  }
+  .container .infos .day {
+    left: -3%;
+    position: relative;
   }
   .container .infos .programmation {
     position: relative;
@@ -2087,6 +2117,14 @@ footer {
     animation-delay: -15s;
   }
 }
+@media screen and (max-width: 1600px) {
+  .bio-container {
+    top: 0%;
+    left: 4%;
+    position: relative;
+    padding-bottom: 20px;
+  }
+}
 header {
   display: flex;
   position: relative;
@@ -2110,7 +2148,6 @@ header nav.menuOpened {
   align-items: flex-start;
   justify-content: flex-start;
   min-width: 100%;
-  transition: transform 0.3s ease;
 }
 header nav.menuOpened .menu-classique {
   display: flex;
@@ -2311,30 +2348,31 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  height: 30vh;
   background-color: black;
   color: yellow;
   font-size: 2em;
 }
 
-main .tickets {
+main.main-tickets .tickets {
   position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
 }
-main .tickets .image-background-tickets {
+main.main-tickets .tickets .image-background-tickets {
   background-image: url("../images/photos/tickets/tickets-resized-compressed.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 120vh;
+  height: 110vh;
   width: 100%;
   position: relative;
+  top: 6%;
 }
-main .tickets .image-background-tickets .background-opacity {
+main.main-tickets .tickets .image-background-tickets .background-opacity {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -2347,7 +2385,7 @@ main .tickets .image-background-tickets .background-opacity {
   z-index: 10;
   border-radius: 10px;
 }
-main .tickets .image-background-tickets .background-opacity .title {
+main.main-tickets .tickets .image-background-tickets .background-opacity .title {
   padding-top: 0%;
   width: 100%;
   display: flex;
@@ -2361,7 +2399,7 @@ main .tickets .image-background-tickets .background-opacity .title {
   justify-content: center;
   align-items: flex-start;
 }
-main .tickets .image-background-tickets .background-opacity .intro-tickets {
+main.main-tickets .tickets .image-background-tickets .background-opacity .intro-tickets {
   font-size: 1em;
   width: 100%;
   margin-top: 1%;
@@ -2369,7 +2407,7 @@ main .tickets .image-background-tickets .background-opacity .intro-tickets {
   justify-content: center;
   text-align: center;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival {
   display: flex;
   position: relative;
   padding-left: 5%;
@@ -2381,37 +2419,37 @@ main .tickets .image-background-tickets .background-opacity .infos-festival {
   width: 90%;
   justify-content: center;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .location {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .location {
   width: 100%;
   display: flex;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .location img {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .location img {
   height: 25px;
   width: 20px;
   margin-right: 12px;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .location p {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .location p {
   margin-top: 4px;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .calendar {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .calendar {
   width: 100%;
   display: flex;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .calendar img {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .calendar img {
   height: 20px;
   width: 20px;
   margin-right: 12px;
 }
-main .tickets .image-background-tickets .background-opacity .infos-festival .calendar p {
+main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival .calendar p {
   margin-top: 2px;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards, main .tickets .image-background-tickets .background-opacity .tickets-camping {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 2%;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .ticket-price, main .tickets .image-background-tickets .background-opacity .tickets-camping .ticket-price {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .ticket-price, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .ticket-price {
   font-size: 1.3em;
   font-weight: 600;
   font-style: italic;
@@ -2421,7 +2459,7 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   top: 1%;
   color: rgb(36, 36, 36);
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard, main .tickets .image-background-tickets .background-opacity .tickets-standards .title-camping, main .tickets .image-background-tickets .background-opacity .tickets-camping .title-standard, main .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .title-camping, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .title-standard, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping {
   font-weight: 700;
   font-size: 2em;
   width: 100%;
@@ -2429,7 +2467,7 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   white-space: nowrap;
   padding-left: 3%;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
@@ -2441,19 +2479,21 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   margin-bottom: 0;
   width: 100%;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .day {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .day {
   grid-column: 1/2;
   font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: -7px;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .date {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .date {
   grid-column: 1/2;
   font-size: 1em;
   margin-top: -10px;
+  width: 60%;
+  white-space: nowrap;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price {
   grid-column: 2/3;
   justify-self: flex-end;
   font-size: 1.4em;
@@ -2462,7 +2502,7 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   top: -12px;
   left: 30%;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner {
   grid-column: 3/4;
   justify-self: end;
   display: flex;
@@ -2482,7 +2522,7 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   font-weight: 600;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner button, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner button {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner button, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner button {
   background: #FB9300;
   color: white;
   border: none;
@@ -2492,26 +2532,26 @@ main .tickets .image-background-tickets .background-opacity .tickets-standards .
   font-weight: 600;
   font-size: 1em;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner button:hover, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner button:hover {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner button:hover, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner button:hover {
   background: #cb7700;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .border-pass, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .border-pass {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .border-pass, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .border-pass {
   grid-column: 1/4;
   height: 1px;
   background-color: black;
   width: 98%;
   z-index: 10;
 }
-main .tickets .image-background-tickets .background-opacity .tickets-camping {
+main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping {
   margin-top: -3%;
 }
-main .tickets .image-background-tickets .container-btnContinue {
+main.main-tickets .tickets .image-background-tickets .container-btnContinue {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1%;
 }
-main .tickets .image-background-tickets .container-btnContinue .btnContinue {
+main.main-tickets .tickets .image-background-tickets .container-btnContinue .btnContinue {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2527,28 +2567,28 @@ main .tickets .image-background-tickets .container-btnContinue .btnContinue {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
   padding: 10px 20px;
 }
-main .tickets .image-background-tickets .container-btnContinue .btnContinue:hover {
+main.main-tickets .tickets .image-background-tickets .container-btnContinue .btnContinue:hover {
   background-color: #c87500;
   transition: 0.3s ease;
 }
-main .section-newsletter {
+main.main-tickets .section-newsletter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  height: 50vh;
   width: 100%;
   background-color: rgba(166, 120, 177, 0.3);
 }
-main .section-newsletter .content {
+main.main-tickets .section-newsletter .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 80%;
 }
-main .section-newsletter .content .title {
-  padding-top: 20%;
+main.main-tickets .section-newsletter .content .title {
+  padding-top: 10%;
   width: 100%;
   display: flex;
   letter-spacing: 2%;
@@ -2559,43 +2599,1036 @@ main .section-newsletter .content .title {
   justify-content: center;
   align-items: center;
 }
-main .section-newsletter .content .description {
+main.main-tickets .section-newsletter .content .description {
   padding-top: 1%;
   font-size: 1.2em;
 }
-main .section-newsletter .content input {
-  margin-top: 2%;
+main.main-tickets .section-newsletter .content form {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
 }
-main .section-newsletter .content input#newsletter {
-  border: 3px solid black;
-  width: 300px;
-  height: 30px;
-  font-size: 1em;
+main.main-tickets .section-newsletter .content form input[type=email] {
+  padding: 3%;
+  margin-right: 2%;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 250px;
 }
-main .section-newsletter .content input#newsletter .send {
-  background-color: black;
-  height: 30px;
-  width: 30px;
-}
-main .section-newsletter .content input#newsletter .send img {
-  width: 20px;
-  height: 20px;
-}
-main .section-newsletter .content input#newsletter::placeholder {
-  font-style: italic;
-  margin-left: 10px;
-  width: 100%;
-}
-main .section-newsletter .content input#newsletter:focus {
+main.main-tickets .section-newsletter .content form input[type=email]:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
 }
+main.main-tickets .section-newsletter .content form button {
+  padding: 1% 1%;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-@media screen and (max-width: 811px) {
-  .tickets .image-background-tickets .background-opacity {
-    padding-top: 10%;
+@media screen and (max-width: 428px) {
+  main {
+    overflow: hidden;
+  }
+  main .tickets .image-background-tickets {
+    min-height: 110vh;
+  }
+  main .tickets .image-background-tickets .background-opacity {
+    margin-top: 4%;
+    width: 100vw;
+    min-height: calc(100vh - 4%);
+    max-height: calc(105vh - 4%);
+  }
+  main .tickets .image-background-tickets .background-opacity .title {
+    top: -2%;
+    position: relative;
+    margin-bottom: -5%;
+  }
+  main .tickets .image-background-tickets .background-opacity .infos-festival {
+    padding: 3% 3%;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping, main .tickets .image-background-tickets .background-opacity .tickets-standards {
+    position: relative;
+    left: -3%;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping, main .tickets .image-background-tickets .background-opacity .tickets-camping .title-standard, main .tickets .image-background-tickets .background-opacity .tickets-standards .title-camping, main .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard {
+    font-size: 1.6em;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .ticket-price, main .tickets .image-background-tickets .background-opacity .tickets-standards .ticket-price {
+    font-size: 1em;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .day, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day {
+    white-space: nowrap;
+    width: 100%;
+    font-size: 1.2em;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .date, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date {
+    font-size: 0.9em;
+    width: 250px;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price {
+    margin-top: 20px;
+    min-width: 100%;
+    padding-left: 25%;
+    padding-right: 0;
+    position: relative;
+    white-space: nowrap;
+    font-size: 1.2em;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner {
+    max-width: 110px;
+    margin-top: 20px;
+    left: 25%;
+    right: 0;
+    position: relative;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .border-pass, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .border-pass {
+    min-width: 100%;
+    width: 105%;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping {
+    margin-top: 3%;
+  }
+  main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
+    margin-top: 5%;
+    width: 180px;
+  }
+  main .section-newsletter {
+    padding-top: 40%;
+    min-height: 60vh;
   }
 }
+@media screen and (max-width: 415px) {
+  main .tickets .image-background-tickets .background-opacity .title {
+    margin-top: 5%;
+  }
+  main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
+    margin-bottom: 20%;
+  }
+  main .section-newsletter {
+    height: 20vh;
+    margin-bottom: 13%;
+  }
+  main .section-newsletter .content .title {
+    margin-top: 35%;
+  }
+  main .section-newsletter .content .description {
+    margin: 5% 0;
+    width: 100%;
+  }
+  main .section-newsletter .content input {
+    margin-top: 10%;
+  }
+  footer {
+    position: relative;
+  }
+}
+@media screen and (max-width: 821px) {
+  main {
+    overflow: hidden;
+  }
+  main .tickets .image-background-tickets {
+    max-height: 76vh;
+  }
+  main .tickets .image-background-tickets .background-opacity {
+    margin-top: -1%;
+    min-width: 95vw;
+    max-height: 70vh;
+  }
+  main .tickets .image-background-tickets .background-opacity .title {
+    margin-top: -15%;
+  }
+  main .tickets .image-background-tickets .background-opacity .intro-tickets {
+    margin: 2% 0;
+  }
+  main .tickets .image-background-tickets .background-opacity .infos-festival {
+    margin: 2% 0;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price {
+    margin-right: 30%;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping {
+    margin-top: 1%;
+  }
+  main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
+    margin-bottom: -13%;
+  }
+  main .section-newsletter {
+    max-height: 40vh;
+    margin-top: -80%;
+  }
+  main .section-newsletter .content {
+    margin-top: 10%;
+  }
+  main .section-newsletter .content .title {
+    margin-top: 10%;
+  }
+  main .section-newsletter .content .description {
+    margin: 3% 0;
+  }
+}
+@media screen and (max-width: 810px) {
+  main {
+    overflow: hidden;
+  }
+  main .tickets .image-background-tickets {
+    max-height: 76vh;
+  }
+  main .tickets .image-background-tickets .background-opacity {
+    margin-top: -1%;
+    min-width: 95vw;
+    max-height: 70vh;
+  }
+  main .tickets .image-background-tickets .background-opacity .title {
+    margin-top: -2%;
+  }
+  main .tickets .image-background-tickets .background-opacity .intro-tickets {
+    margin: 2% 0;
+  }
+  main .tickets .image-background-tickets .background-opacity .infos-festival {
+    margin: 2% 0;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price {
+    margin-right: 30%;
+  }
+  main .tickets .image-background-tickets .background-opacity .tickets-camping {
+    margin-top: 1%;
+  }
+  main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
+    margin-bottom: -1%;
+  }
+  main .section-newsletter {
+    max-height: 40vh;
+    margin-top: -80%;
+  }
+  main .section-newsletter .content {
+    margin-top: 10%;
+  }
+  main .section-newsletter .content .title {
+    margin-top: 10%;
+  }
+  main .section-newsletter .content .description {
+    margin: 3% 0;
+  }
+}
+@media screen and (max-width: 1600px) {
+  main.main-tickets .tickets {
+    height: 130vh;
+  }
+  main.main-tickets .tickets .image-background-tickets {
+    height: 130vh;
+  }
+  main.main-tickets .tickets .image-background-tickets .background-opacity {
+    top: 52%;
+    position: relative;
+    height: 110vh;
+  }
+  main.main-tickets .section-newsletter .content .title {
+    margin-top: -8%;
+  }
+  main.main-tickets .section-newsletter .content form {
+    margin-top: 3%;
+  }
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  background-color: black;
+  color: yellow;
+  font-size: 2em;
+}
+
+header {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+}
+header nav {
+  position: fixed;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav.menuOpened {
+  flex-direction: column;
+  left: 0;
+  background-color: black;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 100%;
+}
+header nav.menuOpened .menu-classique {
+  display: flex;
+  background: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  min-width: 105vw;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: -20%;
+  top: 100%;
+}
+header nav.menuOpened .menu-dates {
+  display: none;
+}
+header nav.menuOpened .menu-burger {
+  top: 40%;
+  right: 6%;
+  display: block;
+  position: absolute;
+  z-index: 110;
+}
+header nav.menuOpened .logo {
+  left: 4.2%;
+  position: relative;
+  top: 3.5%;
+}
+header nav .menu-burger {
+  display: none;
+  right: 0;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: 70px;
+  justify-content: flex-end;
+  margin-right: 70px;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  header nav ul li {
+    margin: 0 15px;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 1120px) {
+  header {
+    min-width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    margin-left: 30px;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
+  }
+  header nav .menu-dates {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 25px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
+  }
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+main.main-camping {
+  position: relative;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 130px;
+}
+main.main-camping section {
+  margin-bottom: 0;
+  padding: 10px;
+}
+main.main-camping .section-header {
+  text-align: center;
+  height: auto;
+  justify-content: center;
+}
+main.main-camping .section-header h1 {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  letter-spacing: 2%;
+  font-size: 3em;
+  font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+main.main-camping .section-header p {
+  font-size: 1.1em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+main.main-camping .section-header .image-intro img {
+  margin-top: 2%;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+main.main-camping .section-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main.main-camping .section-infos .info-item {
+  display: flex;
+  gap: 6px;
+}
+main.main-camping .section-infos .info-item img {
+  width: 20px;
+  height: 20px;
+}
+main.main-camping .section-infos .info-item img.location-dot {
+  width: 15px;
+  height: 20px;
+}
+main.main-camping .section-infos .info-item p {
+  margin: 0;
+  padding-left: 1%;
+}
+main.main-camping .section-infos h2, main.main-camping .section-chill h2, main.main-camping .section-security h2, main.main-camping .section-rules h2 {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FB9300;
+  text-transform: uppercase;
+}
+main.main-camping .section-infos p, main.main-camping .section-chill p, main.main-camping .section-security p, main.main-camping .section-rules p {
+  margin-top: 10px;
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  text-align: justify;
+  max-width: 100%;
+}
+main.main-camping .section-infos p mark, main.main-camping .section-chill p mark, main.main-camping .section-security p mark, main.main-camping .section-rules p mark {
+  font-weight: 700;
+  background: none;
+}
+main.main-camping .section-infos ul li, main.main-camping .section-chill ul li, main.main-camping .section-security ul li, main.main-camping .section-rules ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+main.main-camping .section-infos small, main.main-camping .section-chill small, main.main-camping .section-security small, main.main-camping .section-rules small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+main.main-camping .section-chill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  padding: 20px;
+}
+main.main-camping .section-chill h2 {
+  grid-column: span 2;
+  font-size: 2em;
+  color: #FB9300;
+  margin-bottom: 10px;
+}
+main.main-camping .section-chill .chill-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  font-size: 1em;
+}
+main.main-camping .section-chill .chill-content ul {
+  margin-top: 10px;
+  padding-left: 25px;
+}
+main.main-camping .section-chill .chill-content small {
+  font-size: 0.8em;
+  margin-left: 8%;
+  color: rgba(0, 0, 0, 0.5647058824);
+}
+main.main-camping .section-chill .image-camping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.main-camping .section-chill .image-camping img {
+  width: 90%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 15px;
+}
+main.main-camping .section-infos, main.main-camping .section-chill, main.main-camping .section-security {
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 821px) {
+  main {
+    top: 10%;
+    justify-content: center;
+  }
+  main .section-header {
+    background: pink;
+    max-width: 100vw;
+  }
+  main .section-header h1 {
+    font-size: 2em;
+  }
+  main .section-header p {
+    background: yellow;
+    font-size: 1em;
+    width: 90%;
+  }
+  main .section-header .image-intro img {
+    height: auto;
+    max-width: 20vw;
+  }
+  main .section-infos {
+    max-width: 100vw;
+  }
+  main .section-infos .info-item {
+    background: yellow;
+  }
+  main .section-infos .info-item img {
+    width: 18px;
+    height: 18px;
+  }
+  main .section-infos .info-item p {
+    font-size: 0.9em;
+  }
+  main .section-chill {
+    grid-template-columns: 1fr;
+    background-color: aqua;
+    max-width: 100vw;
+  }
+  main .section-chill .chill-content {
+    background: yellow;
+    font-size: 0.9em;
+  }
+  main .section-chill .image-camping img {
+    max-width: 30%;
+    display: block;
+    height: auto;
+  }
+  main .section-security, main .section-rules {
+    max-width: 100vw;
+    background: green;
+  }
+  main .section-security p, main .section-rules p {
+    font-size: 0.9em;
+  }
+  main .section-security h2, main .section-rules h2 {
+    text-align: center;
+    font-size: 1.8em;
+  }
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  background-color: black;
+  color: yellow;
+  font-size: 2em;
+}
+
+header {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+}
+header nav {
+  position: fixed;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav.menuOpened {
+  flex-direction: column;
+  left: 0;
+  background-color: black;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 100%;
+}
+header nav.menuOpened .menu-classique {
+  display: flex;
+  background: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  min-width: 105vw;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: -20%;
+  top: 100%;
+}
+header nav.menuOpened .menu-dates {
+  display: none;
+}
+header nav.menuOpened .menu-burger {
+  top: 40%;
+  right: 6%;
+  display: block;
+  position: absolute;
+  z-index: 110;
+}
+header nav.menuOpened .logo {
+  left: 4.2%;
+  position: relative;
+  top: 3.5%;
+}
+header nav .menu-burger {
+  display: none;
+  right: 0;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: 70px;
+  justify-content: flex-end;
+  margin-right: 70px;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  header nav ul li {
+    margin: 0 15px;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 1120px) {
+  header {
+    min-width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .menu-classique {
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    margin-left: 30px;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
+  }
+  header nav .menu-dates {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 25px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 520px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
+  }
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+main.main-acces {
+  position: relative;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+}
+main.main-acces section {
+  margin-bottom: 0;
+  padding: 10px;
+}
+main.main-acces .section-acces h1 {
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+  letter-spacing: 2%;
+  font-size: 3em;
+  font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main.main-acces .section-acces p {
+  margin: 2% 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+main.main-acces .section-acces .highlight {
+  color: #FB9300;
+}
+main.main-acces .section-voiture, main.main-acces .section-velo, main.main-acces .section-train, main.main-acces .section-navettes {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  text-align: left;
+}
+main.main-acces .section-voiture h2, main.main-acces .section-velo h2, main.main-acces .section-train h2, main.main-acces .section-navettes h2 {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #FB9300;
+  text-transform: uppercase;
+}
+main.main-acces .section-voiture ul, main.main-acces .section-velo ul, main.main-acces .section-train ul, main.main-acces .section-navettes ul {
+  padding: 20px;
+}
+main.main-acces .section-voiture ul li, main.main-acces .section-velo ul li, main.main-acces .section-train ul li, main.main-acces .section-navettes ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+main.main-acces .section-voiture ul li .country, main.main-acces .section-velo ul li .country, main.main-acces .section-train ul li .country, main.main-acces .section-navettes ul li .country {
+  color: rgba(239, 63, 15, 0.8);
+  font-size: 1.1em;
+}
+main.main-acces .section-voiture p, main.main-acces .section-velo p, main.main-acces .section-train p, main.main-acces .section-navettes p {
+  text-align: justify;
+  line-height: 1.3;
+}
+main.main-acces .section-voiture p mark, main.main-acces .section-velo p mark, main.main-acces .section-train p mark, main.main-acces .section-navettes p mark {
+  font-weight: 700;
+  background: none;
+}
+main.main-acces .section-navettes .content, main.main-acces .section-train .content, main.main-acces .section-voiture .content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+@media (max-width: 768px) {
+  main.main-acces .section-navettes .content, main.main-acces .section-train .content, main.main-acces .section-voiture .content {
+    flex-direction: column;
+  }
+}
+main.main-acces .section-navettes .content .text, main.main-acces .section-train .content .text, main.main-acces .section-voiture .content .text {
+  flex: 1;
+  padding-right: 2%;
+}
+main.main-acces .section-navettes .content .image-navette, main.main-acces .section-navettes .content .image-train, main.main-acces .section-navettes .content .image-voiture, main.main-acces .section-train .content .image-navette, main.main-acces .section-train .content .image-train, main.main-acces .section-train .content .image-voiture, main.main-acces .section-voiture .content .image-navette, main.main-acces .section-voiture .content .image-train, main.main-acces .section-voiture .content .image-voiture {
+  flex: 1;
+}
+main.main-acces .section-navettes .content .image-navette img, main.main-acces .section-navettes .content .image-train img, main.main-acces .section-navettes .content .image-voiture img, main.main-acces .section-train .content .image-navette img, main.main-acces .section-train .content .image-train img, main.main-acces .section-train .content .image-voiture img, main.main-acces .section-voiture .content .image-navette img, main.main-acces .section-voiture .content .image-train img, main.main-acces .section-voiture .content .image-voiture img {
+  width: 500px;
+  height: 300px;
+  margin-top: -1px;
+  object-fit: cover;
+}
+main.main-acces .section-covoiturage {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: rgba(166, 120, 177, 0.3);
+  display: flex;
+  height: 35vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main.main-acces .section-covoiturage .covoiturage h3 {
+  text-align: center;
+  padding-top: -1%;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 1%;
+  text-transform: uppercase;
+}
+main.main-acces .section-covoiturage .covoiturage form {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+main.main-acces .section-covoiturage .covoiturage form input[type=email] {
+  padding: 1%;
+  margin-right: 2%;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 250px;
+}
+main.main-acces .section-covoiturage .covoiturage form input[type=email]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(251, 147, 0, 0.8);
+}
+main.main-acces .section-covoiturage .covoiturage form button {
+  padding: 1% 1%;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+main.main-acces .section-velo, main.main-acces .section-train {
+  border-bottom: 1px solid black;
+}
+
 * {
   margin: 0;
   padding: 0;

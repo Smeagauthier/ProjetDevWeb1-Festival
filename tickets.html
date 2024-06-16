@@ -21,9 +21,9 @@
             <ul class="menu-classique">
                 <li><a href="index.html" class="underline">Accueil</a></li>
                 <li><a href="lineUp.html" class="underline">Line-up</a></li>
-                <li><a href="#">Tickets</a></li>
-                <li><a href="#">Camping</a></li>
-                <li><a href="#">Accès</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="camping.html">Camping</a></li>
+                <li><a href="acces.html">Accès</a></li>
             </ul>
             <div class="menu-burger">
                 <span class="bar"></span>
@@ -32,7 +32,7 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="main-tickets">
         <div class="tickets">
             <div class="image-background-tickets">
                 <div class="background-opacity">
@@ -108,7 +108,10 @@
                 <div class="title">Newsletter</div>
                 <div class="description">Tu veux être le premier au courant des nouvelles annonces ? 
                 <br>Inscris-toi dès maintenant à la newsletter !</div>
-                <input type="text" id="newsletter" placeholder="Ton adresse e-mail"><div class="send"><img src="./assets/images/icons/paper-plane.svg" alt="logo envoyer"></div>
+                <form>
+                    <input type="email" placeholder="Ton adresse mail" required>
+                    <button type="submit">Envoyer</button>
+                </form>
             </div>
         </section> 
     </main>
