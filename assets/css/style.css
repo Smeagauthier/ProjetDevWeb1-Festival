@@ -42,6 +42,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -52,6 +53,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -64,7 +66,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -76,6 +78,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -205,10 +210,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -263,6 +287,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -273,6 +298,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -285,7 +311,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -297,6 +323,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -426,10 +455,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -476,6 +524,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -1013,14 +1062,29 @@ footer .footer-note {
   .intro-home .image-background {
     height: 54vh;
   }
-  .intro-home .image-background .slogan {
-    font-size: 2.5em;
-    left: calc(100% + 2em);
-    animation: scrollLeft 8s linear infinite;
+  .intro-home .image-background .purple-band {
+    height: 50px;
+    max-width: 110vw;
+    left: -5vw;
+  }
+  .intro-home .image-background .purple-band .slogan {
+    font-size: 2.7em;
+    white-space: nowrap;
+    animation: scrollLeft 15s linear infinite;
+    left: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .intro-home .image-background .purple-band .slogan:nth-child(2) {
+    animation-delay: -5s;
+  }
+  .intro-home .image-background .purple-band .slogan:nth-child(3) {
+    animation-delay: -10s;
   }
   @keyframes scrollLeft {
     from {
-      left: calc(100% + 2em);
+      left: 100%;
     }
     to {
       left: -100%;
@@ -1053,6 +1117,10 @@ footer .footer-note {
     margin-top: 2%;
     transform: translateX(-10%);
   }
+  .container-btnMoreNames .btnMoreNames {
+    min-height: 60px;
+    font-size: 1.8em;
+  }
   .contact .formExplanation {
     font-size: 1em;
   }
@@ -1060,10 +1128,9 @@ footer .footer-note {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
-  .contact .formContact .btnSend {
-    min-width: 7em;
+  .contact .formContact form .btnSend {
     min-height: 60px;
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1087,10 +1154,6 @@ footer .footer-note {
     font-size: 1em;
     max-width: 76%;
     left: -1%;
-  }
-  .container-btnMoreNames .btnMoreNames {
-    min-height: 60px;
-    font-size: 1.8em;
   }
 }
 @media screen and (max-width: 576px) {
@@ -1244,7 +1307,8 @@ footer .footer-note {
   }
   section .contact .formContact form .btnSend {
     font-size: 1.3em;
-    min-height: 45px;
+    min-height: 30px;
+    width: 200px;
   }
 }
 @media screen and (max-width: 1600px) {
@@ -1253,7 +1317,7 @@ footer .footer-note {
     width: 60%;
   }
   section .more {
-    left: 9.4%;
+    left: 9.3%;
     margin-bottom: 2%;
   }
 }
@@ -1290,6 +1354,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -1430,6 +1495,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -1578,6 +1644,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -1588,6 +1655,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -1600,7 +1668,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -1612,6 +1680,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -1741,10 +1812,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -1766,6 +1856,8 @@ header nav ul li a:hover::after {
 main.main-line-up .title {
   width: 100%;
   display: flex;
+}
+main.main-line-up .title h1 {
   padding-top: 8%;
   width: 100%;
   display: flex;
@@ -1916,7 +2008,7 @@ main.main-line-up section .cards .artist-card a:hover .details .chevron {
 
 @media screen and (max-width: 1600px) {
   main.main-line-up .title {
-    padding-top: 10%;
+    margin-top: 3%;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -1942,24 +2034,24 @@ main.main-line-up section .cards .artist-card a:hover .details .chevron {
 @media screen and (max-width: 429px) {
   main.main-line-up {
     top: 12%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
   }
   main.main-line-up section .sortByDay span {
-    font-size: 12px;
+    font-size: 11px;
     white-space: nowrap;
-    margin-left: -2.5%;
+    margin-left: -1.6%;
     gap: 0;
   }
 }
 @media screen and (max-width: 415px) {
   main.main-line-up {
     top: 12%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
   }
   main.main-line-up section .sortByDay span {
     font-size: 11px;
     white-space: nowrap;
-    margin-left: -2%;
+    margin-left: -2.2%;
     gap: 0;
   }
 }
@@ -1999,6 +2091,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -2009,6 +2102,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -2021,7 +2115,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -2033,6 +2127,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -2162,10 +2259,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -2212,6 +2328,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -2526,11 +2643,35 @@ footer .footer-note {
   .purple-band2 .slogan2 {
     font-size: 3em;
     white-space: nowrap;
-    animation: scrollLeft 8s linear infinite;
+    animation: scrollLeft 30s linear infinite;
     left: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+  }
+  .purple-band2 .slogan1 {
+    animation-delay: -1.5s;
+  }
+  .purple-band2 .slogan2 {
+    animation-delay: -s;
+  }
+  .purple-band2 .slogan3 {
+    animation-delay: -4.5s;
+  }
+  .purple-band2 .slogan4 {
+    animation-delay: -6s;
+  }
+  .purple-band2 .slogan5 {
+    animation-delay: -7.5s;
+  }
+  .purple-band2 .slogan6 {
+    animation-delay: -9s;
+  }
+  .purple-band2 .slogan7 {
+    animation-delay: -10.5s;
+  }
+  .purple-band2 .slogan8 {
+    animation-delay: -12s;
   }
   @keyframes scrollLeft {
     from {
@@ -2631,13 +2772,13 @@ footer .footer-note {
     justify-content: center;
     max-width: 100%;
     min-height: 100%;
-    top: 15%;
+    top: 14%;
     left: 0%;
   }
   .container .photo-artiste {
     max-width: 100%;
     margin-bottom: 20px;
-    margin-top: 4%;
+    margin-top: 5%;
   }
   .container .photo-artiste img {
     max-width: 100%;
@@ -2650,7 +2791,7 @@ footer .footer-note {
     align-items: center;
     text-align: center;
     max-width: 100%;
-    margin-top: 12%;
+    margin-top: 14%;
   }
   .container .infos .day {
     left: -3%;
@@ -2777,6 +2918,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -2787,6 +2929,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -2799,7 +2942,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -2811,6 +2954,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -2940,10 +3086,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -2990,6 +3155,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -3378,74 +3544,71 @@ main.main-tickets .section-newsletter .content form button {
   font-weight: 700;
 }
 
-@media screen and (max-width: 428px) {
-  main {
+@media screen and (max-width: 429px) {
+  main.main-tickets {
     overflow: hidden;
   }
-  main .tickets .image-background-tickets {
+  main.main-tickets .tickets .image-background-tickets {
     min-height: 110vh;
   }
-  main .tickets .image-background-tickets .background-opacity {
-    margin-top: 4%;
+  main.main-tickets .tickets .image-background-tickets .background-opacity {
+    margin-top: 2%;
     width: 100vw;
     min-height: calc(100vh - 4%);
-    max-height: calc(105vh - 4%);
+    max-height: calc(105vh - 6%);
   }
-  main .tickets .image-background-tickets .background-opacity .title {
-    top: -2%;
+  main.main-tickets .tickets .image-background-tickets .background-opacity .title {
+    top: -4%;
     position: relative;
     margin-bottom: -5%;
   }
-  main .tickets .image-background-tickets .background-opacity .infos-festival {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .infos-festival {
     padding: 3% 3%;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping, main .tickets .image-background-tickets .background-opacity .tickets-standards {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards {
     position: relative;
     left: -3%;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping, main .tickets .image-background-tickets .background-opacity .tickets-camping .title-standard, main .tickets .image-background-tickets .background-opacity .tickets-standards .title-camping, main .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard {
-    font-size: 1.6em;
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .title-standard, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .title-camping, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .title-standard {
+    font-size: 1.4em;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .ticket-price, main .tickets .image-background-tickets .background-opacity .tickets-standards .ticket-price {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .ticket-price, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .ticket-price {
     font-size: 1em;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .day, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .day, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .day {
     white-space: nowrap;
     width: 100%;
     font-size: 1.2em;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .date, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .date, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .date {
     font-size: 0.9em;
     width: 250px;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price {
     margin-top: 20px;
-    min-width: 100%;
-    padding-left: 25%;
-    padding-right: 0;
+    left: -50%;
     position: relative;
     white-space: nowrap;
     font-size: 1.2em;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .spinner, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .spinner {
     max-width: 110px;
     margin-top: 20px;
-    left: 25%;
-    right: 0;
+    left: -90%;
     position: relative;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .border-pass, main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .border-pass {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .border-pass, main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .border-pass {
     min-width: 100%;
     width: 105%;
   }
-  main .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .tickets-camping .title-camping {
     margin-top: 3%;
   }
-  main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
+  main.main-tickets .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
     margin-top: 5%;
     width: 180px;
   }
-  main .section-newsletter {
+  main.main-tickets .section-newsletter {
     padding-top: 40%;
     min-height: 60vh;
   }
@@ -3487,7 +3650,7 @@ main.main-tickets .section-newsletter .content form button {
     max-height: 70vh;
   }
   main .tickets .image-background-tickets .background-opacity .title {
-    margin-top: -15%;
+    margin-top: 0%;
   }
   main .tickets .image-background-tickets .background-opacity .intro-tickets {
     margin: 2% 0;
@@ -3497,12 +3660,14 @@ main.main-tickets .section-newsletter .content form button {
   }
   main .tickets .image-background-tickets .background-opacity .tickets-standards .day-pass .price, main .tickets .image-background-tickets .background-opacity .tickets-camping .day-pass .price {
     margin-right: 30%;
+    width: 140px;
+    text-align: right;
   }
   main .tickets .image-background-tickets .background-opacity .tickets-camping {
     margin-top: 1%;
   }
   main .tickets .image-background-tickets .background-opacity .container-btnContinue .btnContinue {
-    margin-bottom: -13%;
+    margin-bottom: 0%;
   }
   main .section-newsletter {
     max-height: 40vh;
@@ -3526,7 +3691,7 @@ main.main-tickets .section-newsletter .content form button {
     max-height: 76vh;
   }
   main .tickets .image-background-tickets .background-opacity {
-    margin-top: 0%;
+    margin-top: -1%;
     min-width: 95vw;
     max-height: 70vh;
   }
@@ -3609,6 +3774,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -3757,6 +3923,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -3767,6 +3934,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -3779,7 +3947,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -3791,6 +3959,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -3920,10 +4091,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -3947,7 +4137,7 @@ main.main-camping {
   top: 15%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 130px;
+  padding-bottom: 10%;
 }
 main.main-camping section {
   margin-bottom: 0;
@@ -4084,7 +4274,7 @@ main.main-camping .section-infos, main.main-camping .section-chill, main.main-ca
     overflow-x: hidden;
     max-width: 100vw;
     padding: 0% 3%;
-    margin-bottom: 15%;
+    padding-bottom: 20%;
   }
   main.main-camping .section-header {
     max-width: 100vw;
@@ -4108,12 +4298,12 @@ main.main-camping .section-infos, main.main-camping .section-chill, main.main-ca
 }
 @media screen and (max-width: 429px) {
   main.main-camping {
-    top: 15%;
+    top: 18%;
     justify-content: flex-start;
     overflow-x: hidden;
     max-width: 100vw;
     padding: 0;
-    margin-bottom: 140px;
+    padding-bottom: 50%;
   }
   main.main-camping .section-header {
     text-align: center;
@@ -4183,8 +4373,7 @@ main.main-camping .section-infos, main.main-camping .section-chill, main.main-ca
 }
 @media screen and (max-width: 415px) {
   main.main-camping {
-    top: 17%;
-    margin-bottom: 150px;
+    top: 18%;
   }
 }
 footer {
@@ -4215,6 +4404,7 @@ footer .footer-section {
   flex-direction: column;
 }
 footer .footer-section h2 {
+  white-space: nowrap;
   margin-bottom: 10px;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -4363,6 +4553,7 @@ header nav.menuOpened .menu-classique {
   left: 0;
   margin-left: -3vw;
   top: 100%;
+  font-size: 3em;
 }
 header nav.menuOpened .menu-dates {
   display: none;
@@ -4373,6 +4564,7 @@ header nav.menuOpened .menu-burger {
   display: block;
   position: absolute;
   z-index: 110;
+  position: absolute;
 }
 header nav.menuOpened .logo {
   left: 4.2%;
@@ -4385,7 +4577,7 @@ header nav .menu-burger {
 }
 header nav .menu-burger .bar {
   display: block;
-  width: 25px;
+  width: 30px;
   height: 3px;
   margin: 5px auto;
   background-color: white;
@@ -4397,6 +4589,9 @@ header nav .menu-dates {
   color: white;
   text-transform: uppercase;
   flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
 }
 header nav .menu-dates img {
   width: 15px;
@@ -4526,10 +4721,29 @@ header nav ul li a:hover::after {
     margin-top: 2px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
   header nav {
     justify-content: space-around;
     height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
   }
   header nav .menu-dates {
     top: 45%;
@@ -4553,7 +4767,7 @@ main.main-acces {
   top: 15%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 150px;
+  padding-bottom: 12%;
 }
 main.main-acces section {
   margin-bottom: 0;

@@ -10,7 +10,9 @@ main{
         .title {
             width: 100%; 
             display: flex;
-            @include title(8%);
+            h1{ 
+                @include title(8%);
+            } 
         }
         
         .sortByDay {
@@ -184,7 +186,7 @@ main{
         &.main-line-up{
             // background-color: pink; 
             .title{
-                padding-top: 10%;
+                margin-top: 3%;
             }
         }
     }
@@ -229,14 +231,14 @@ main{
     main{
         &.main-line-up{
             top: 12%;
-            margin-bottom: 100px;
+            margin-bottom: 130px;
 
             section{
                 .sortByDay{
                     span{
-                        font-size: 12px; 
+                        font-size: 11px; 
                         white-space: nowrap;
-                        margin-left: -2.5%; 
+                        margin-left: -1.6%; 
                         gap: 0;
                     }
                 }
@@ -251,14 +253,14 @@ main{
     main{
         &.main-line-up{
             top: 12%;
-            margin-bottom: 100px;
+            margin-bottom: 130px;
 
             section{
                 .sortByDay{
                     span{
                         font-size: 11px; 
                         white-space: nowrap;
-                        margin-left: -2%;
+                        margin-left: -2.2%;
                         gap: 0;
                     }
                 }

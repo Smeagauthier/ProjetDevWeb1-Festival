@@ -26,7 +26,7 @@ header {
       background-color: black;
       align-items: flex-start;
       justify-content: flex-start;
-      min-width: 100%;
+      min-width: 100%; 
 
       .menu-classique {
         display: flex;
@@ -40,6 +40,7 @@ header {
         left: 0;
         margin-left: -3vw;
         top:100%;
+        font-size: 3em; 
 
       }
 
@@ -61,6 +62,7 @@ header {
         display: block;
         position: absolute; 
         z-index: 110;
+        position:absolute; 
       }
 
       .logo{
@@ -76,7 +78,7 @@ header {
       
       .bar{
         display:block; 
-        width:25px; 
+        width:30px; 
         height:3px; 
         margin: 5px auto; 
         background-color: white;
@@ -91,6 +93,10 @@ header {
       color: white;
       text-transform: uppercase;
       flex-wrap: nowrap;
+
+      &#dates-home{
+        visibility: hidden;
+      }
       
       img {
         width: 15px;
@@ -269,11 +275,48 @@ header {
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width:821px) {
+
+  header{
+    nav{
+      &.menuOpened{
+        .menu-burger{
+            left: 90.2%;
+            top: 37.8%;  
+            
+        }
+
+        .logo{
+          left: 0; 
+          top:0; 
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 429px) {
   header {
     nav {
+
       justify-content: space-around;
       height: 140px; 
+
+      &.menuOpened{
+
+        .menu-burger{
+          left: 82%;
+          top: 39% ; 
+          position:absolute; 
+
+        }
+
+        .logo{
+          left: 4%; 
+          top: 3%; 
+        }
+      }
+      
       
       .menu-dates{
         top:45%;
@@ -300,12 +343,3 @@ header {
   }
 }
 
-@media screen and (max-width:821px) {
-
-  // .nav {
-  //   &.menuOpened{
-  //     min-width: 160vh; 
-  //     background-color: pink;
-  //   }
-  // }
-}

@@ -6,7 +6,7 @@
 main {
     
     &.main-tickets{
-
+        
         .tickets {
             position: relative;
             width: 100%;
@@ -319,98 +319,101 @@ main {
 //--------------------------- MEDIA QUERIES -----------------------
 
 //iPhone 13 pro Max (428px)
-@media screen and (max-width:428px){
+@media screen and (max-width:429px){
     
     main{
-        overflow:hidden;
-        .tickets .image-background-tickets{
-            min-height: 110vh;
+        
+        &.main-tickets{
             
-            .background-opacity {
-                margin-top: 4%;
-                width: 100vw;
-                min-height: calc(100vh - 4%);
-                max-height: calc(105vh - 4%); 
+            
+            overflow:hidden;
+            .tickets .image-background-tickets{
+                min-height: 110vh;
                 
-                
-                .title{
-                    top: -2%;
-                    position: relative;
-                    margin-bottom: -5%;
-                }
-                
-                .infos-festival{
-                    padding: 3% 3%;  
-                }
-                
-                .tickets-camping, .tickets-standards{
-                    position: relative;
-                    left: -3%;
+                .background-opacity {
+                    margin-top: 2%;
+                    width: 100vw;
+                    min-height: calc(100vh - 4%);
+                    max-height: calc(105vh - 6%); 
                     
-                    .title-camping, .title-standard{
-                        font-size: 1.6em;
-                        
+                    
+                    .title{
+                        top: -4%;
+                        position: relative;
+                        margin-bottom: -5%;
                     }
                     
-                    .ticket-price{
-                        font-size: 1em;
+                    .infos-festival{
+                        padding: 3% 3%;  
                     }
                     
-                    .day-pass{
-                        .day{
-                            white-space: nowrap;
-                            width:100%; 
-                            font-size: 1.2em;
-                        }
-                        .date{
-                            font-size: 0.9em;
-                            width:250px;
-                            // background:yellow; 
+                    .tickets-camping, .tickets-standards{
+                        position: relative;
+                        left: -3%;
+                        
+                        .title-camping, .title-standard{
+                            font-size: 1.4em;
+                            
                         }
                         
-                        .price{
-                            // background-color: aqua;
-                            // top: 0; 
-                            margin-top: 20px;
-                            min-width: 100%;
-                            padding-left: 25%;
-                            padding-right:0;
-                            position: relative;
-                            white-space: nowrap; 
-                            font-size: 1.2em; 
+                        .ticket-price{
+                            font-size: 1em;
                         }
                         
-                        .spinner{
-                            max-width: 110px;
-                            margin-top:20px; 
-                            left: 25%; 
-                            right:0; 
-                            position: relative;
+                        .day-pass{
+                            .day{
+                                white-space: nowrap;
+                                width:100%; 
+                                font-size: 1.2em;
+                            }
+                            .date{
+                                font-size: 0.9em;
+                                width:250px;
+                                // background:yellow; 
+                            }
+                            
+                            .price{
+                                // background-color: aqua;
+                                // top: 0; 
+                                margin-top: 20px;
+                                left: -50%; 
+                                position: relative;
+                                white-space: nowrap; 
+                                font-size: 1.2em; 
+                            }
+                            
+                            .spinner{
+                                max-width: 110px;
+                                margin-top:20px; 
+                                left: -90%; 
+                                // right:20%; 
+                                position: relative;
+                            }
+                            
+                            .border-pass{
+                                min-width: 100%;
+                                width: 105%; 
+                            }
+                            
                         }
-                        
-                        .border-pass{
-                            min-width: 100%;
-                            width: 105%; 
-                        }
-                        
                     }
-                }
-                
-                .tickets-camping .title-camping{
-                    margin-top: 3%; 
-                }
-                
-                .container-btnContinue .btnContinue{
-                    margin-top: 5%;
-                    width: 180px; 
-                }
-            } 
-        }
-        
-        
-        .section-newsletter{
-            padding-top: 40%;
-            min-height:60vh; 
+                    
+                    .tickets-camping .title-camping{
+                        margin-top: 3%; 
+                    }
+                    
+                    .container-btnContinue .btnContinue{
+                        margin-top: 5%;
+                        width: 180px; 
+                    }
+                } 
+            }
+            
+            
+            .section-newsletter{
+                padding-top: 40%;
+                min-height:60vh; 
+            }
         }
     }
 }
@@ -466,7 +469,7 @@ main {
                 max-height: 70vh;
                 
                 .title{
-                    margin-top: -15%;
+                    margin-top: 0%;
                 }
                 
                 .intro-tickets{
@@ -481,6 +484,8 @@ main {
                     .price{
                         margin-right: 30%;
                         // background-color: aqua;
+                        width: 140px; 
+                        text-align: right;
                     }
                 }
                 
@@ -489,7 +494,7 @@ main {
                 }
                 
                 .container-btnContinue .btnContinue{
-                    margin-bottom: -13%;
+                    margin-bottom: 0%;
                 }
             }
         }
@@ -499,7 +504,7 @@ main {
             margin-top: -80%;
             // height:auto; 
             // margin-bottom: 14%;
-        
+            
             .content{
                 margin-top: 10%;
                 .title{
@@ -513,6 +518,7 @@ main {
     }
 }
 
+//iPad petit
 @media screen and (max-width: 810px){
     main{
         overflow:hidden;
@@ -520,7 +526,7 @@ main {
             max-height: 76vh; 
             // margin-top:-1%; 
             .background-opacity{
-                margin-top: 0%;
+                margin-top: -1%;
                 min-width: 95vw; 
                 max-height: 70vh;
                 
@@ -558,7 +564,7 @@ main {
             margin-top: -80%;
             // height:auto; 
             // margin-bottom: 14%;
-        
+            
             .content{
                 margin-top: 10%;
                 .title{
@@ -585,11 +591,11 @@ main {
                         position:relative;
                         height:110vh; 
                     }
-
-                   
+                    
+                    
                 }
             }
-
+            
             .section-newsletter{
                 .content{
                     .title{
@@ -601,7 +607,7 @@ main {
                     }
                 }
             }
-         }
+        }
     } 
     
 }

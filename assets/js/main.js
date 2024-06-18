@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
         
         //A chaque click, mettre à jour le prix +
         plus.addEventListener('click', () => {
-            ticketCount++;
-            number.innerHTML = ticketCount;
-            updatePrice();
+            if(ticketCount < 100){
+                ticketCount++;
+                number.innerHTML = ticketCount;
+                updatePrice();
+            }
         });
     });
 });
