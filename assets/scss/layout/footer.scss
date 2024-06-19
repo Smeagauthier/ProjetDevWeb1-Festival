@@ -70,10 +70,12 @@ footer {
                 img{
                     width: 30px; 
                     height:30px;
+                    //icones noires de base
                     filter: invert(1);
                     transition: transform 0.4s ease; 
 
                     &:hover{
+                        //changement de couleur pour les icones quand hover
                         filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
                         transform: scale(1.2); 
                     }
@@ -81,13 +83,12 @@ footer {
             }
         }
 
+
         .partners-logos {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
             gap: 10px;
             align-items: center;
-            // background-color: yellow;
-            // z-index:999; 
 
             img {
                 max-width: 80px;
@@ -101,6 +102,7 @@ footer {
         }
     }
 
+    //disclaimer
     .footer-note {
         text-align: center;
         font-size: 1.4em;
@@ -115,7 +117,8 @@ footer {
 //iPad
 @media screen and (max-width: 821px) {
     .footer-container {
-        grid-template-columns: 1fr 1fr; // Deux colonnes
+        grid-template-columns: 1fr 1fr;
+        //partenaires doit descendre et prendre la largeur du footer
         grid-template-areas: 
             "about follow-us"
             "partners partners"; 
@@ -144,6 +147,7 @@ footer {
         }
 
         .partners {
+            //commencer à premiere colonne et terminer à la dernière -> toute la largeur du footer
             grid-column: 1 /  -1;
             display: flex;
             justify-content: center; 
@@ -174,6 +178,7 @@ footer {
                 font-size: 1em; 
             }
             .partners-logos {
+                //aligner les logos par colonnes de 60px en utilisant tout l'espace
                 grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
 
                 img{

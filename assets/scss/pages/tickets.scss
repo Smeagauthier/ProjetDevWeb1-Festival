@@ -1,3 +1,8 @@
+@import "../base/variables.scss";
+@import "../base/mixins.scss";
+@import "../layout/header.scss"; 
+@import "../layout/footer.scss";
+
 main {
     &.main-tickets {
         .tickets {
@@ -6,6 +11,7 @@ main {
             display: flex;
             padding-top: 110px;
 
+            //image de fond 
             .image-background-tickets {
                 background-image: url('../images/photos/tickets/tickets-resized-compressed.png');
                 background-repeat: no-repeat;
@@ -15,6 +21,7 @@ main {
                 width: 100%;
                 position: relative;
 
+                //voil blanc en overlay pour afficher les informations
                 .background-opacity {
                     position: absolute;
                     top: 50%;
@@ -45,6 +52,7 @@ main {
                         text-align: center;
                     }
 
+                    //localisation et calendrier du festival
                     .infos-festival {
                         display: flex;
                         position: relative;
@@ -137,6 +145,7 @@ main {
                                 left: 30%;
                             }
 
+                            //bouton + - 
                             .spinner {
                                 grid-column: 3 / 4;
                                 justify-self: end;
@@ -173,6 +182,7 @@ main {
                                 }
                             }
 
+                            //bordure soulignement
                             .border-pass {
                                 grid-column: 1 / 4;
                                 height: 1px;
@@ -188,6 +198,7 @@ main {
                     }
                 }
 
+                //container du bouton poursuivre
                 .container-btnContinue {
                     display: flex;
                     justify-content: center;
@@ -301,9 +312,9 @@ main {
             .section-newsletter {
                 min-height: 45vh; 
                 .content {
-                    .title {
-                        // margin-top: -8%;
-                    }
+                    // .title {
+                    //     // margin-top: -8%;
+                    // }
                     form {
                         margin-top: 3%;
                     }
@@ -377,8 +388,8 @@ main {
 // iPad petit
 @media screen and (max-width: 810px) {
     .section-newsletter {
-        min-height: 20vh; //40
-        max-height: 30vh; //pas du tout
+        min-height: 20vh; 
+        max-height: 30vh; 
         margin-top: 0;
         display: flex;
         flex-direction: column;
@@ -391,7 +402,7 @@ main {
             text-align: center;
 
             .title {
-                margin-top: 0; // Remettez à zéro les marges pour voir l'effet
+                margin-top: 0;
             }
 
             .description {
@@ -410,10 +421,7 @@ main {
 
             .tickets .image-background-tickets {
                 .background-opacity {
-                    // margin-top: 2%;
                     width: 100vw;
-                    // min-height: calc(100vh - 4%);
-                    // max-height: calc(105vh - 6%);
 
                     .title {
                         top: 0;
@@ -489,6 +497,8 @@ main {
 @media screen and (max-width: 415px) {
     main {
         &.main-tickets {
+            //double clic sur téléphone = zoomer l'écran --> problématique avec le bouton + - 
+            //balise pour empecher le zoom au double clic
             touch-action: manipulation;
 
             .tickets {
@@ -518,7 +528,6 @@ main {
             }
 
             .section-newsletter {
-                // min-height: 35vh;
                 margin-top: 0; 
 
                 .content {

@@ -11,8 +11,9 @@
     min-height: 95vh;
     width: 100%;
     display:flex;
-    // background: pink;
-    
+
+
+    //Image de fond 
     .image-background {
         background-image: url('../images/photos/home/home-no-logo.jpg');
         background-repeat: no-repeat;
@@ -22,9 +23,8 @@
         width: 100%;
         position: relative;
         
+        //Explications en ovelray au dessus du background
         .infos {
-            // width:130%; 
-            // background:yellow;
             position: absolute;
             top: 55%;
             left: 25%;
@@ -70,6 +70,7 @@
             }
         }
         
+        //Bande mauve défilante (issu d'un tuto youtube : https://www.youtube.com/watch?v=Reu0hHbis5w&t=982s) 
         .purple-band {
             background-color: $purple;
             position: absolute;
@@ -81,13 +82,12 @@
             z-index: 3;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
             
+            //contenant de mes slogans
             .wrapperSlogan {
                 position: relative;
                 height: 100%;
                 overflow: hidden;
                 align-items: center;
-                // background-color: yellow;
-                // padding-top: 1%; 
                 display:flex; 
                 justify-content: center;
                 mask-image: linear-gradient(
@@ -99,9 +99,9 @@
                 );
             }
             
+            //slogans défilés
             .slogan {
                 display: flex;
-                // background:yellow; 
                 white-space: nowrap;
                 font-size: 3.2em;
                 color: white;
@@ -117,7 +117,7 @@
                 letter-spacing: 1px;
             }
             
-            // Handle the timing of the slogans
+            //Timing de chacun de mes slogans pour qu'ils défilent à la même allure mais en décallé les uns des autres
             .slogan1 { animation-delay: calc(30s / 6 * (6 - 1) * -1); }
             .slogan2 { animation-delay: calc(30s / 6 * (6 - 2) * -1); }
             .slogan3 { animation-delay: calc(30s / 6 * (6 - 3) * -1); }
@@ -125,6 +125,7 @@
             .slogan5 { animation-delay: calc(30s / 6 * (6 - 5) * -1); }
             .slogan6 { animation-delay: calc(30s / 6 * (6 - 6) * -1); }
             
+            //Keyframe jusqu'à -550 pour que le slogan disparaisse totalement de l'écran à gauche avant de se repositionner
             @keyframes scrollLeft {
                 to {
                     left: -550px;
@@ -132,6 +133,7 @@
             }
         }
         
+        //Vu que la bande défilante est rotate, &:after pour cacher le bord inférieur droit de l'image background qui dépassait
         &:after {
             content: '';
             position: absolute;
@@ -181,7 +183,7 @@
         }
     }
     
-    
+    //souslignement du jour et date de la line up
     .border-bottom-date {
         border-bottom: rgba(230, 191, 151, 0.50) 3px solid;
         width: 61%;
@@ -207,19 +209,19 @@
     left: 26%;
     padding-top: 2%;
     width: 50%;
-    // background:yellow; 
     
+    //Lien cliquable de artist qui renvoit vers la carte
     a{
         text-decoration: none;
         color:black;
         display: flex;
         align-items: center;
         white-space: nowrap;
-        // background-color: aqua;
-        // // width:100%;
+
         .artist {
             cursor: pointer;
             
+            //Effet de contour d'1 nom d'artiste sur 2 pour aérer la line-up
             &.stroke {
                 color: $bgColor;
                 background-color: transparent;
@@ -235,7 +237,7 @@
     
 }
 
-
+//"Et beaucoup plus" en dessous des noms d'artiste
 .more {
     font-size: 2em;
     color: black;
@@ -246,14 +248,12 @@
     position:relative; 
 }
 
+//container du bouton "plus de noms"
 .container-btnMoreNames {
     display: flex;
-    // width:100%; 
     max-height: 100px;
     justify-content: center;
     align-items: center;
-    // background: pink;
-    // box-sizing: content-box;
     
     .btnMoreNames {
         display: flex;
@@ -282,16 +282,16 @@
     }
 }
 
-
+//playlist Spotify (iframe)
 .playlist {
     padding: 5% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width:100%;
-    
 }
 
+//formulaire de contact
 .contact {
     display:flex;
     min-height: 500px;

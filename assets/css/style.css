@@ -4,6 +4,7 @@
 @import url("../base/variables.scss");
 @import url("../base/variables.scss");
 @import url("../base/variables.scss");
+@import url("../base/variables.scss");
 header {
   display: flex;
   position: relative;
@@ -2445,7 +2446,7 @@ footer .footer-note {
   height: 7vh;
   width: 110%;
   left: -5%;
-  margin-top: 0%;
+  margin-top: 13%;
   transform: rotate(-4deg);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
@@ -2866,6 +2867,392 @@ footer .footer-note {
   .bio-container {
     margin-top: 20%;
     margin-bottom: 40%;
+  }
+}
+header {
+  display: flex;
+  position: relative;
+  min-width: 100%;
+}
+header nav {
+  position: fixed;
+  height: 115px;
+  background-color: black;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav.menuOpened {
+  flex-direction: column;
+  left: 0;
+  background-color: black;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 100%;
+}
+header nav.menuOpened .menu-classique {
+  display: flex;
+  background: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  min-width: 105vw;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  margin-left: -3vw;
+  top: 100%;
+  font-size: 3em;
+}
+header nav.menuOpened .menu-dates {
+  display: none;
+}
+header nav.menuOpened .menu-burger {
+  top: 40%;
+  right: 6%;
+  display: block;
+  position: absolute;
+  z-index: 110;
+  position: absolute;
+}
+header nav.menuOpened .logo {
+  left: 4.2%;
+  position: relative;
+  top: 3.5%;
+}
+header nav .menu-burger {
+  display: none;
+  right: 0;
+}
+header nav .menu-burger .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+header nav .menu-dates {
+  display: flex;
+  font-weight: 600;
+  font-size: 21px;
+  color: white;
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+}
+header nav .menu-dates#dates-home {
+  visibility: hidden;
+}
+header nav .menu-dates img {
+  width: 15px;
+  height: 25px;
+  transform: rotate(90deg);
+  margin: 0 10px;
+}
+header nav .logo {
+  cursor: pointer;
+  margin-left: 70px;
+  width: 15%;
+  flex-shrink: 0;
+}
+header nav .logo img {
+  height: 90px;
+  width: 138px;
+  transform: rotate(-9deg);
+  padding: 5px;
+}
+header nav ul {
+  display: flex;
+  margin-left: 70px;
+  justify-content: flex-end;
+  margin-right: 70px;
+}
+header nav ul li {
+  margin: 0 25px;
+  list-style-type: none;
+}
+header nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+header nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #FB9300;
+  transition: width 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+header nav ul li a:hover {
+  color: #FB9300;
+  transition: color 0.4s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  header nav ul li {
+    margin: 0 15px;
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 1120px) {
+  header {
+    min-width: 100%;
+  }
+  header nav {
+    justify-content: space-between;
+  }
+  header nav .logo {
+    margin-left: 5%;
+  }
+  header nav .menu-classique {
+    top: 0 !important;
+    position: fixed;
+    left: -100;
+    top: 135px;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  header nav .menu-classique li a {
+    margin: 16px 0;
+  }
+  header nav .menu-classique .active {
+    left: 0;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav .menu-dates {
+    margin-left: 30px;
+  }
+  header nav .menu-burger {
+    display: block;
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  header nav .logo img {
+    position: absolute;
+    top: 10%;
+  }
+  header nav .menu-dates {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    width: 15px;
+    height: 25px;
+    margin-top: 2px;
+  }
+}
+@media screen and (max-width: 821px) {
+  header nav.menuOpened .menu-burger {
+    left: 90.2%;
+    top: 37.8%;
+  }
+  header nav.menuOpened .logo {
+    left: 0;
+    top: 0;
+  }
+}
+@media screen and (max-width: 429px) {
+  header nav {
+    justify-content: space-around;
+    height: 140px;
+  }
+  header nav.menuOpened .menu-burger {
+    left: 82%;
+    top: 39%;
+    position: absolute;
+  }
+  header nav.menuOpened .logo {
+    left: 4%;
+    top: 3%;
+  }
+  header nav .menu-dates {
+    top: 45%;
+    left: -30%;
+    font-size: 12px;
+    top: 43%;
+    white-space: nowrap;
+  }
+  header nav .menu-dates img {
+    height: 15px;
+  }
+  header nav .infos {
+    margin-top: 10%;
+  }
+  header nav .menu-burger {
+    margin-right: 5%;
+  }
+}
+footer {
+  background-color: #0a0a0a;
+  padding: 20px;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  grid-template-areas: "about follow-us partners";
+}
+footer .footer-container .footer-about {
+  grid-area: about;
+}
+footer .footer-container .footer-follow-us {
+  grid-area: follow-us;
+}
+footer .footer-container .footer-partners {
+  grid-area: partners;
+}
+footer .footer-section {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-section h2 {
+  white-space: nowrap;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .footer-section a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.9;
+  text-align: start;
+  transition: transform 0.4s ease;
+}
+footer .footer-section a:hover {
+  transform: scale(1.03);
+  font-weight: 700;
+  color: rgb(255, 163, 34);
+}
+footer .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-section .social-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+footer .footer-section .social-icons a img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+  transition: transform 0.4s ease;
+}
+footer .footer-section .social-icons a img:hover {
+  filter: invert(71%) sepia(84%) saturate(1796%) hue-rotate(341deg) brightness(101%) contrast(101%);
+  transform: scale(1.2);
+}
+footer .footer-section .partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  align-items: center;
+}
+footer .footer-section .partners-logos img {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s;
+}
+footer .footer-section .partners-logos img:hover {
+  transform: scale(1.1);
+}
+footer .footer-note {
+  text-align: center;
+  font-size: 1.4em;
+  color: rgb(255, 163, 34);
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 821px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about follow-us" "partners partners";
+  }
+  .footer-container .about {
+    position: relative;
+    left: 35%;
+    justify-content: start;
+    align-items: start;
+  }
+  .footer-container .follow-us {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    left: 75%;
+  }
+  .footer-container .follow-us h2 {
+    text-align: left;
+    right: 8%;
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .footer-container .partners {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-container .partners .partners-logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .footer-section {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 415px) {
+  .footer-container .footer-section h2 {
+    font-size: 1em;
+  }
+  .footer-container .footer-section .partners-logos {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .footer-container .footer-section .partners-logos img {
+    width: 70px;
+    height: auto;
   }
 }
 main.main-tickets .tickets {
@@ -3814,11 +4201,6 @@ main.main-camping .section-chill .chill-content ul {
   margin-top: 10px;
   padding-left: 25px;
 }
-main.main-camping .section-chill .chill-content small {
-  font-size: 0.8em;
-  margin-left: 8%;
-  color: rgba(0, 0, 0, 0.5647058824);
-}
 main.main-camping .section-chill .image-camping {
   display: flex;
   justify-content: center;
@@ -4401,11 +4783,6 @@ main.main-acces .section-navettes .content, main.main-acces .section-train .cont
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
-@media (max-width: 768px) {
-  main.main-acces .section-navettes .content, main.main-acces .section-train .content, main.main-acces .section-voiture .content {
-    flex-direction: column;
-  }
 }
 main.main-acces .section-navettes .content .text, main.main-acces .section-train .content .text, main.main-acces .section-voiture .content .text {
   flex: 1;

@@ -15,6 +15,7 @@ main{
             } 
         }
         
+        //Jours pour trier par jour
         .sortByDay {
             display: flex;
             font-size: 15px;
@@ -24,14 +25,12 @@ main{
             padding-top: 30px;
             font-weight: 700; 
             width: 100%;
-            // background: red;
             gap: 50px;
 
-            
+            //nom d'un jour -> span
             span {
                 cursor: pointer;
                 transition: transform 0.3s ease;
-
                 
                 &:hover {
                     transform: scale(1.1);
@@ -41,6 +40,7 @@ main{
             }
         }
         
+        //bordure soulignante
         .border-bottom {
             border-bottom: rgba(230, 191, 151, 0.50) 3px solid;
             min-width: 95%;
@@ -49,6 +49,7 @@ main{
             padding-top: 5px;  
         }
         
+        //Toutes les cartes des artistes en grid
         section {
             .cards {
                 display: grid;
@@ -62,7 +63,6 @@ main{
                 .artist-card {
                     background-color: $purple;
                     height: 23.75em; 
-                    // width: auto; 
                     display: flex;
                     flex-direction: column;
                     overflow: hidden;
@@ -71,6 +71,7 @@ main{
                     position: relative;
                     align-items: center; 
                     
+                    //chaque carte est un a qui renvoit vers la page carteLineUp
                     a {
                         display: block;
                         height: 100%;
@@ -81,6 +82,7 @@ main{
                         .image {
                             width: 100%;
                             height: 22em;
+                            //effet noir et blanc à 80% avec animation quand hover -> la couleur apparait
                             filter: grayscale(80%);
                             display: flex;
                             justify-content: center;
@@ -102,6 +104,7 @@ main{
                             }
                         }
 
+                        
                         .info {
                             color: white;
                             padding: 12px;
@@ -112,6 +115,7 @@ main{
                             height: 20%;
                             flex-wrap: nowrap; 
                             
+                            //nom de l'artiste
                             h2 {
                                 width: 100%;
                                 font-size: 1.5em;
@@ -121,17 +125,20 @@ main{
                                 text-transform: uppercase;
                                 cursor: pointer;
                                 position: relative;
+                                //effet de blanc par défaut sur le nom, quand on hover, la couleur orange apparait de la gauche 
                                 background: linear-gradient(to left, white 50%, $orangeLight 50%) right;
                                 background-size: 200% 100%;
                                 background-position: 100%;
                                 background-clip: text;
                                 color: transparent;
+                                //faire ressortir le nom
                                 filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
                                 white-space: nowrap;
                                 transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out; 
                             
                             }
                             
+                            //Jour, heure et endroit du concert de l'artiste affiché sur sa carte
                             .details {
                                 display: flex;
                                 justify-content: space-between;
@@ -150,24 +157,28 @@ main{
                                     height: 100px;
                                 }
                                 
+                                //chevron animé
                                 .chevron {
                                     width: 2em;
                                     height: auto;
                                     transform: rotate(-90deg);
                                     cursor: pointer;
                                     position: relative;
+                                    //revenir a emplacement initial doucement
                                     animation-direction: reverse;
-                                    transition: 0.5s ease;
-                                    
+                                    transition: 0.5s ease;   
                                 }
                             }
                         }
+
+                        //animation sur nom d'artiste quand hover de la carte
                         &:hover h2{
                             transform: scale(1.03);
                             background-position: 0;
                             filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 1));
                         }
 
+                        //animation sur chevron quand hover de la carte
                         &:hover .details .chevron{
                             transform: scale(1.2);
                             transition: 0.5s ease;
@@ -180,11 +191,11 @@ main{
 }
 
 //------------------------------MEDIA QUERIES ------------------
+
 //Média pour petit écran
 @media  screen and (max-width: 1600px) {
     main{
         &.main-line-up{
-            // background-color: pink; 
             .title{
                 margin-top: 3%;
             }
