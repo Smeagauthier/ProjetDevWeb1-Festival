@@ -13,6 +13,7 @@
     left: -5%;
     margin-top:10%; 
     transform: rotate(-4deg);
+    top: 4%; 
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     
     .wrapperSlogan2 {
@@ -220,7 +221,7 @@
 
 //Média petit écran 
 @media  screen and (max-width: 1600px) {
-
+    
     .purple-band2{
         margin-top: 13%; 
     }
@@ -397,7 +398,7 @@
         position: relative;
         height: 85vh; 
         top: 15%; 
-        left:0%; 
+        left:0%;
         
         .photo-artiste {
             max-width: 100%; 
@@ -419,7 +420,7 @@
             align-items: center ;
             text-align: center;
             left:0; 
-            top:0; 
+            top:3%; 
             
             .day{
                 width:100vw;
@@ -460,6 +461,7 @@
         width:100vw; 
         height: auto;
         padding:5% 8%;  
+        margin-bottom: 25%;
         
         
         .bio-content {
@@ -470,7 +472,7 @@
     .purple-band2 {
         height: 50px;
         max-width: 105vw;
-        margin-top: 73%;
+        top:45%; 
         z-index: 99;
         
         .slogan2 {
@@ -507,21 +509,31 @@
 @media screen and (max-width: 415px) {
     
     .container{
-        top: 20%;
+        top: 17%;
         .infos {
-            // background: yellow;
-            margin-top: 10%; 
+            margin-top: 4.5%; 
             min-height: auto;
-            height: 120% !important; 
+            height: 130% !important; 
+            
+            .introducing{
+                padding: 0%;
+                .par{
+                    padding: 1% 0; 
+                    
+                    .icons-social{
+                        margin-top: -5px;
+                    }
+                }
+            }
         }
     }
     
     .purple-band2{
-        margin-top: 87%
+        top: 60%; 
     }
     
     .bio-container{
-        margin-top: 20%;
+        margin-top: 25%;
         margin-bottom: 40%; 
     }
 }
