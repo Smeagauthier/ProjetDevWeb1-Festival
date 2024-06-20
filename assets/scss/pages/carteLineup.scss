@@ -11,7 +11,7 @@
     height: 7vh;
     width: 110%;
     left: -5%;
-    margin-top:13%; 
+    margin-top:10%; 
     transform: rotate(-4deg);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     
@@ -220,6 +220,10 @@
 
 //Média petit écran 
 @media  screen and (max-width: 1600px) {
+
+    .purple-band2{
+        margin-top: 13%; 
+    }
     
     .container{
         top: 20%;
@@ -249,7 +253,7 @@
         height: 50px;
         max-width: 105vw;
         left: -5vw;
-        top: 17%; 
+        top: 7%; 
         
         //Réajustement de la bande défilante -> gérer la font, le défilement plus rapide
         .slogan2 {
@@ -505,7 +509,7 @@
     .container{
         top: 20%;
         .infos {
-            background: yellow;
+            // background: yellow;
             margin-top: 10%; 
             min-height: auto;
             height: 120% !important; 

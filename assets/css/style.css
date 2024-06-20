@@ -2446,7 +2446,7 @@ footer .footer-note {
   height: 7vh;
   width: 110%;
   left: -5%;
-  margin-top: 13%;
+  margin-top: 10%;
   transform: rotate(-4deg);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
 }
@@ -2630,6 +2630,9 @@ footer .footer-note {
 }
 
 @media screen and (max-width: 1600px) {
+  .purple-band2 {
+    margin-top: 13%;
+  }
   .container {
     top: 20%;
   }
@@ -2653,7 +2656,7 @@ footer .footer-note {
     height: 50px;
     max-width: 105vw;
     left: -5vw;
-    top: 17%;
+    top: 7%;
   }
   .purple-band2 .slogan2 {
     font-size: 2.7em;
@@ -2856,7 +2859,6 @@ footer .footer-note {
     top: 20%;
   }
   .container .infos {
-    background: yellow;
     margin-top: 10%;
     min-height: auto;
     height: 120% !important;
